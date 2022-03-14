@@ -39,6 +39,18 @@ class FrontController{
         require "app/Views/front/connexion.php";
     }
 
+    //pour se rendre sur la page createAccount
+    function createAccount($error = ''){
+        require "app/Views/front/createAccount.php";
+    }
+
+    //pour accèder à son espace User
+    function newAccount($nickname, $mail, $password){
+        $user = new \Projet\Models\UserModel();
+        $user->newAccount($nickname, $mail, $password);
+        $this->home();
+    }
+
     
 
     

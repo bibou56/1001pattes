@@ -27,17 +27,38 @@ try {
         elseif($_GET['action']== 'connexion'){
             $controllerFront->connexion(); //va chercher la fonction connexion() dans FrontController pour se rendre sur la page Connexion
         }
+        elseif($_GET['action']== 'createAccount'){
+            $controllerFront->createAccount(); //va chercher la fonction createAccount() dans FrontController pour se rendre sur la page createAccount
+        }
+        elseif($_GET['action']== 'newAccount'){ //
+            $nickname = htmlspecialchars($_POST['nickname']);
+            $mail = htmlspecialchars($_POST['email']);
+            $pass = $_POST['password'];
+            $passVerif = $_POST['password-verif'];
+            if($pass === $passVerif){
+                $password = password_hash($pass, PASSWORD_DEFAULT);
+                
+                if(!empty($nickname) && (!empty($mail) && (!empty($password)))){
+                    $controllerFront->newAccount($nickname, $mail, $password);
+    
+                }else{
+                    $error = '* Tous les champs doivent être remplis !';
+                    $controllerFront->createAccount($error);
+                }
+            }else{
+                // header('Location: index.php?action=createAccount&error1=true' );
+                $error = '* Vérifier votre mot de passe !';
+                $controllerFront->createAccount($error);
+            }
 
 
-
-
-
-
+        }        
     }
     else{
+
         $controllerFront->home();
     }
-}
-catch (Exception $e){
+
+}catch (Exception $e){
     require "app/Views/front/error.php";
 }

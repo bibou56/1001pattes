@@ -1,6 +1,6 @@
         <footer id="bottom">
             <div class="social-media container">
-                <h3>Rejoignez-nous!</h3>
+                <h3>Rejoignez-nous !</h3>
                 <ul>
                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
@@ -18,7 +18,7 @@
             <div class="transition"></div>
 
             <div id="copyright" class="container">
-                <a href="#">- Mentions légales -</a>
+                <a href="index.php?action=legal">- Mentions légales -</a>
             </div>
         </footer>
 
