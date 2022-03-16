@@ -11,31 +11,34 @@
 </head>
 
 <body>
-    <header class="banner">
-        <div class="banner-menu container">
-            <div class="title-header">
-                <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="">Refuge</a></p>
-                <p><a href="/">1000 et Une Pattes</a></p>
-            </div>
-
-            <div class="connect-user">
-                <a href="index.php?action=connexion"><i class="fa-solid fa-user"></i></a>
-            </div>
-
+    <header id="top-content">
+        <div class="title-header container">
+            <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="">Refuge</a></p> 
+            <p><a>1000 et Une Pattes</a></p>
+        </div>
+        <div id="banner" class="container">
             <nav class="menu-principal">     
                 <a id="link" href="#"><span id="burger"></span></a>
                 <ul id="liste-nav">
-                    <li><a href="/">Accueil</a></li>
+                    <li><a class="active" href="/">Accueil</a></li>
                     <li><a href="index.php?action=about">A propos</a></li>
-                    <li><a id="adopt" href="#">Adoptions</a></li>
+                    <li id="adopt"><a href="#">Adoptions</a>
                         <ul id="sous-liste">
-                            <li><a href="index.php?action=cats">Chats</a></li>
-                            <li><a href="index.php?action=dogs">Chiens</a></li>
+                            <li><a href="index.php?action=cats">Les chats</a></li>
+                            <li><a href="index.php?action=dogs">Les chiens</a></li>
                         </ul>
+                    </li>
                     <li><a href="index.php?action=blog">Blog</a></li>
                     <li><a href="index.php?action=contact">Contact</a></li>
                 </ul>
             </nav> 
 
+            
+
+            <div class="connect-user">
+                <a href="index.php?action=connexion"><i class="fa-solid fa-user"></i></a>
+            </div>
+
+                
         </div>     
     </header>

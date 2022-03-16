@@ -1,19 +1,31 @@
         <footer id="bottom">
-            <div class="social-media container">
-                <h3>Rejoignez-nous !</h3>
-                <ul>
-                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="index.php?action=contact"><i class="fa-solid fa-envelope"></i></a></li>
-                </ul>
-            </div>
+            <section id="bottom-content">
+                <div class="social-media container">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="index.php?action=contact"><i class="fa-solid fa-envelope"></i></a></li>
+                    </ul>
+                </div>
 
-            <div class="schedule container">
-                <h3>Nos horaires</h3>
-                <p>lundi : fermé</p>
-                <p>du mardi au vendredi : 14h - 19h30</p>
-                <p>samedi, dimanche : 10h - 17h</p>
-            </div>
+                <div class="address-footer container"> 
+                    <i class="fas fa-map-marker-alt"></i>
+                    <address>
+                        <!-- <h3>Refuge 1000 et Une Pattes</h3> -->
+                        <p>35 rue de la Chapelle de Sainte Avoye</p>
+                        <p>56498 BIGOUBLEN</p>
+                    </address>
+                </div>
+
+                <div class="schedule container">
+                    <i class="fa-solid fa-clock"></i>
+                    <div id="opening-hours">
+                        <p>lundi : fermé</p>
+                        <p>du mardi au vendredi : 14h - 19h30</p>
+                        <p>samedi, dimanche : 10h - 17h</p>
+                    </div>
+                </div>
+            </section>
 
             <div class="transition"></div>
 
