@@ -30,6 +30,9 @@ try {
         elseif($_GET['action']== 'createAccount'){
             $controllerFront->createAccount(); //va chercher la fonction createAccount() dans FrontController pour se rendre sur la page createAccount
         }
+        elseif($_GET['action']== 'legal'){
+            $controllerFront->legal();
+        }
         elseif($_GET['action']== 'newAccount'){ //
             $nickname = htmlspecialchars($_POST['nickname']);
             $mail = htmlspecialchars($_POST['email']);
@@ -47,12 +50,40 @@ try {
                 }
             }else{
                 // header('Location: index.php?action=createAccount&error1=true' );
-                $error = '* Vérifier votre mot de passe !';
+                $error = '* Vérifiez votre mot de passe !';
                 $controllerFront->createAccount($error);
             }
+        } 
+        elseif($_GET['action'] == 'connectUser'){
+            $mail = htmlspecialchars($_POST['email']);
+            $pass = $_POST['password'];
 
+            if (!empty($mail) && (!empty($pass))){
+                $controllerFront->userConnect($mail, $pass);
+            }else{
+                $error = '* Tous les champs doivent être remplis !';
+                $controllerFront->connexion($error);
+            }
+        } 
+        elseif($_GET['action'] == 'disconnect'){
+            session_destroy();
+            header('Location:index.php');
+        }
+        elseif($_GET['action'] == 'contactForm'){
+            $lastname = htmlspecialchars($_POST['lastname']);
+            $firstname = htmlspecialchars($_POST['firstname']);
+            $mail = htmlspecialchars($_POST['email']);
+            $phone = htmlspecialchars($_POST['phone']);
+            $objet = htmlspecialchars($_POST['object']);
+            $content = htmlspecialchars($_POST['content']);
 
-        }        
+            if(!empty($lastname) && (!empty ($firstname) && (!empty($mail) && (!empty($phone) && (!empty($objet) && (!empty($content))))))){
+                $controllerFront->contactPost($lastname, $firstname, $mail, $phone, $objet, $content);
+            } else {
+                $error = '* Tous les champs doivent être remplis !';
+                $controllerFront->contact($error);
+            }
+        }      
     }
     else{
 

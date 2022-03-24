@@ -10,4 +10,11 @@ class UserModel extends Manager{
         $req->execute(array(':nickname'=>$nickname, ':mail'=>$mail, ':password'=>$password));
         return $req;
     }
+
+    public function passCheck($mail){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, nickname, mail, password FROM user WHERE mail=?');
+        $req->execute(array($mail));
+        return $req;
+    }
 }

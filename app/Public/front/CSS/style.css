@@ -12,7 +12,7 @@
 } */
 
 *{
-  /* font-family: ; */
+  font-size: 16px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -47,14 +47,14 @@ li{
 }
 .page-title p{
   /* margin-top: 40px; */
-  margin: 40px 10px 0;
+  margin: 30px 10px 0;
 }
 .page-title p img{
-  width: 50px;
+  width: 30px;
 }
 .page-title h2{
-  font-size: 2.5rem;
-  margin: 50px 0;
+  font-size: 1.5rem;
+  margin: 30px 0;
 }
 
 /* gestion des messages d'erreur */
@@ -72,21 +72,21 @@ li{
 
 .title-header{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
-  font-size: 2rem;
-  text-align: center;
+  justify-content: center;
   font-weight: bold;
   line-height: 2.5rem;
-  padding: 20px 0 0;
+  padding: 20px 20px 10px;
 }
 .title-header .logo{
-  width: 70px;
+  width: 50px;
   /* margin-right: 20px; */
-  margin-bottom: -15px;
+  margin-bottom: -10px;
 }
 .title-header p a{
   color: #fff;
+  font-size: 1.4rem;
 }
 
 #banner{
@@ -104,12 +104,24 @@ li{
 }
 .connect-user a{
   color: #fff;
+}
+.connect-user a i{
   font-size: 1.5rem;
+}
+.connect-user p{
+  color: #fff;
+}
+.connect-user p:first-child{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.connect-user p:last-child{
+  font-size: 0.8rem;
 }
 
 /* menu burger */
 #burger{
-  width: 40px;
+  width: 35px;
   height: 3px;
   background: #fff;
   display: inline-block;
@@ -117,7 +129,7 @@ li{
 }
 #burger::before, #burger::after{
   content:'';
-  width: 40px;
+  width: 35px;
   height: 3px;
   background: #fff;
   display: inline-block;
@@ -144,7 +156,7 @@ li{
   top: 0;
 }
 #liste-nav{
-  background-color: rgb(30, 114, 107, 0.8);
+  background-color: rgb(30, 114, 107, 0.9);
   position: absolute;
   width: 100%;
   left: 0;
@@ -163,14 +175,14 @@ li{
 }
 #liste-nav li a{
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
-#liste-nav li a:hover{
-  font-size: 1.3rem;
+/* #liste-nav li a:hover{
+  font-size: 1.2rem;
   font-weight: bolder;
-}
+} */
 
 #sous-liste {
   display: none;
@@ -187,15 +199,16 @@ li{
 }
 #sous-liste li a{
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
-#sous-liste li a:hover{
+/* #sous-liste li a:hover{
   font-size: 1.1rem;
   font-weight: bold;
-}
+} */
 
 #liste-nav li .active{
-  color: rgb(97, 236, 116);
+  font-size: 1.1rem;
+  font-weight: bold;
   text-decoration: underline;
 }
 
@@ -227,6 +240,8 @@ li{
 }
 #bottom .social-media ul li a{
   color: #fff;
+}
+#bottom .social-media ul li a i{
   font-size: 2rem;
 }
 
@@ -272,31 +287,34 @@ li{
 }
 
 #bottom #copyright{
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
   margin: 10px 0;
+  padding: 0 10px;
 }
-#bottom #copyright a{
+#bottom #copyright a, #bottom #copyright p{
   color: #fff;
   font-size: 0.9rem;
   font-style: italic;
 }
 
 
-/*........................CONNEXION / CREATE ACCOUNT / CONTACT..................*/
+
+/*........................CONNEXION / CREATE ACCOUNT / FORMULAIRE CONTACT..................*/
 .content-form{
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  margin: 50px auto;
+  margin: 30px auto 50px;
   padding: 0 20px;
 }
 .content-form .text-account{
-  font-size: 2.2rem;
-  line-height: 3rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
   text-align: justify;
   padding: 0 10px;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 .content-form .form-connect{
   display: flex;
@@ -308,43 +326,47 @@ li{
   flex-direction: column;
   width: 100%;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 } 
 .content-form .form-connect p label{
   /* text-align: center; */
   width: 90%;
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 .content-form .form-connect p input{
   width: 90%;
-  height: 80px;
+  height: 40px;
   border: solid 1px var(--vert-fonce);
   border-radius: 5px;
   background-color: rgb(48, 185, 112, 0.3);
-  font-size: 2rem;
+  font-size: 1rem;
   padding-left: 10px;
 }
 .content-form .form-connect textarea{
   width: 90%;
-  height: 300px;
+  height: 200px;
   border: solid 1px var(--vert-fonce);
   border-radius: 5px;
   background-color: rgb(48, 185, 112, 0.3);
-  font-size: 1.8rem;
+  font-size: 1rem;
   padding-left: 10px;
   padding-top: 10px;
 }
 .content-form .form-connect .buttons{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+.content-form .form-connect .buttons input:first-child{
+  margin-right: 10px;
 }
 .content-form .form-connect p input[type=submit], 
 .content-form .form-connect p input[type=reset]{
   width: 40%;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
-  margin: 30px auto;
+  padding-left: 0;
 }
 .content-form .form-connect p input[type=submit]:hover,
 .content-form .form-connect p input[type=reset]:hover{
@@ -352,8 +374,8 @@ li{
   background-color: var(--vert-fonce);
 }
 .content-form p, .content-form p a{
-  font-size: 1.9rem;
-  margin-bottom: 50px;
+  font-size: 1.1rem;
+  /* margin-bottom: 50px; */
 }
 .content-form p a{
   text-decoration: underline;
@@ -363,17 +385,59 @@ li{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  padding-left: 20px;
+  width: 90%;
+  margin: 0 auto 30px;
+  /* padding-left: 20px; */
 }
 .content-form .form-connect .consent-box input{
-  width: 30px;
-  margin-right: 20px;
+  width: 15px;
+  margin-right: 10px;
 }
 .content-form .form-connect .consent-box label{
   cursor: pointer;
   padding-top: 10px;
+  
 }
+.content-form .form-connect .consent-box label a{
+  font-size: 1.1rem;
+}
+
+/* ..............PAGE CONTACT................. */
+#contact-info{
+  text-align: center;
+}
+#contact-info .page-title{
+  margin-bottom: -30px;
+}
+#contact-info .address i{
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
+  color: var(--vert-fonce);
+}
+#contact-info .address p{
+  font-size: 1rem;
+  /* margin-bottom: 20px; */
+}
+#contact-info .address address{
+  line-height: 2rem;
+}
+
+#localisation{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -20px;
+}
+#myMap{
+  height: 200px;
+  width: 100%;
+  z-index: 1000;
+}
+.leaflet-control-attribution.leaflet-control a{
+  font-size: 11px;
+}
+
+
 
 
 
@@ -392,15 +456,17 @@ li{
 
   /* HEADER */
   .title-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 2.8rem;
-    padding: 30px 0;
+    padding: 30px 0 10px;
   }
-  .title-header p:first-child{
-    margin-right: 15px;
+  .title-header p a{
+    font-size: 2.2rem;
+
   }
+  .title-header .logo{
+    width: 70px;
+  }
+  
+  
   #banner{
     padding-bottom: 20px;
   }
@@ -410,7 +476,7 @@ li{
   #liste-nav{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 70%;
     transform: scaleY(1);
     background-color: transparent;
     padding: 0 10px;
@@ -433,7 +499,6 @@ li{
   }
 
   #liste-nav li .active{
-    color: rgb(17, 83, 78);
     text-decoration: underline;
     font-size: 1.2rem;
   }

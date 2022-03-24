@@ -38,3 +38,33 @@ for(let i=0; i<links.length; i++){
     links[i].classList.add('active');
   }
 }
+
+/*....................CARTE CONTACT.................... */
+var lat = 47.6505928;
+var lon = -2.9223622;
+var map = null
+
+function initMap(){    
+    
+  map = L.map('myMap').setView([lat, lon], 16);
+    
+  L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        // Il est toujours bien de laisser le lien vers la source des données
+        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+        minZoom: 1,
+        maxZoom: 20
+    }).addTo(map);
+
+    var marker = L.marker([47.6505928, -2.9223622 ]).addTo(map);
+    marker.binPopup("<p>Refuge 1000 et Une Pattes</p>");
+  }
+
+  
+
+  window.onload = function(){
+    initMap();
+  }
+  
+
+
+        
