@@ -156,7 +156,8 @@ li{
   top: 0;
 }
 #liste-nav{
-  background-color: rgb(30, 114, 107, 0.9);
+  background-color: rgb(30, 114, 107, 0.8);
+  backdrop-filter: blur(3px);
   position: absolute;
   width: 100%;
   left: 0;
@@ -416,10 +417,10 @@ li{
 }
 #contact-info .address p{
   font-size: 1rem;
-  /* margin-bottom: 20px; */
 }
 #contact-info .address address{
   line-height: 2rem;
+  font-style: normal;
 }
 
 #localisation{
@@ -430,8 +431,10 @@ li{
 }
 #myMap{
   height: 200px;
-  width: 100%;
-  z-index: 1000;
+  width: 95%;
+  margin: 0 auto;
+  
+  
 }
 .leaflet-control-attribution.leaflet-control a{
   font-size: 11px;

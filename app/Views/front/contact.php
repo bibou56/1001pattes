@@ -78,8 +78,6 @@
         </div>
     </section>
 
-    
-
     <section id="localisation">
         <div class="page-title">
             <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
@@ -89,15 +87,6 @@
         <div id="myMap"></div>
        
     </section>
-
-
-
-
-
-
-
-    
-    
     
 </main>
 

@@ -5,8 +5,10 @@ session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-    $controllerFront = new \Projet\Controllers\FrontController();
+    $controllerAdmin = new \Projet\Controllers\AdminController();
 
     if(isset($_GET['action'])){
         
+    } else {
+        $controllerAdmin->home();
     }
