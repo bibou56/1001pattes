@@ -59,7 +59,7 @@ class FrontController extends Controller{
     //pour accéder à son espace user
     function userConnect($mail, $pass){
         $user = new \Projet\Models\UserModel();
-        $connexUser = $user->passCheck($mail);
+        $connexUser = $user->mailCheck($mail);
 
         $result = $connexUser->fetch();
 

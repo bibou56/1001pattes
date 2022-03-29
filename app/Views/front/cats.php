@@ -1,6 +1,6 @@
 <?php include('header.php') ?>
 
-chats
+<main></main>
 
 
 <?php include('footer.php') ?>

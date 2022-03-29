@@ -16,7 +16,7 @@
         <div class="title-header container">
             <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="">Refuge 1000 et Une Pattes</a></p> 
         </div>
-        <div id="banner" class="container">
+        <div class="banner container">
             <nav class="menu-principal">     
                 <a id="link" href="#"><span id="burger"></span></a>
                 <ul id="liste-nav">

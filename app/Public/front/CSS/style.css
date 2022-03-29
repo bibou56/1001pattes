@@ -89,7 +89,7 @@ li{
   font-size: 1.4rem;
 }
 
-#banner{
+.banner{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,16 +121,16 @@ li{
 
 /* menu burger */
 #burger{
-  width: 35px;
-  height: 3px;
+  width: 32px;
+  height: 2px;
   background: #fff;
   display: inline-block;
   position: relative;
 }
 #burger::before, #burger::after{
   content:'';
-  width: 35px;
-  height: 3px;
+  width: 32px;
+  height: 2px;
   background: #fff;
   display: inline-block;
   position: absolute;
@@ -176,8 +176,8 @@ li{
 }
 #liste-nav li a{
   color: #fff;
-  font-size: 1rem;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  /* text-transform: uppercase; */
   /* font-weight: bold; */
 }
 /* #liste-nav li a:hover{
@@ -200,7 +200,7 @@ li{
 }
 #sous-liste li a{
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 /* #sous-liste li a:hover{
   font-size: 1.1rem;

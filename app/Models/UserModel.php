@@ -11,7 +11,7 @@ class UserModel extends Manager{
         return $req;
     }
 
-    public function passCheck($mail){
+    public function mailCheck($mail){
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT id, nickname, mail, password FROM user WHERE mail=?');
         $req->execute(array($mail));
