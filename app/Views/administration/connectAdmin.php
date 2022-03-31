@@ -15,9 +15,9 @@
 
        <div class="error">
        <?php 
-            if(isset($error)){
-                if($error != ""){?>
-                <p><?= $error ?></p>
+            if(isset($data)){
+                if($data != ""){?>
+                <p><?= $data ?></p>
             <?php }} 
         ?>
        </div>

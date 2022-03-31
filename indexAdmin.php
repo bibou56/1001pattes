@@ -24,11 +24,18 @@ try{
             $mdp = $_POST['password'];
 
             if(!empty($mail) && (!empty($mdp))){
-                $controllerAdmin->sessionAdmin($mail, $mdp);
+                $data = [
+                    'mail' => $mail,
+                    'password' => $mdp,
+                ];
+                $controllerAdmin->sessionAdmin($data);
             } else {
                 $error = '* Tous les champs doivent être remplis !';
                 $controllerAdmin->connectAdmin($error);
             }
+        }
+        elseif($_GET['action'] == 'homeAdmin'){
+            $controllerAdmin->sessionAdmin(['test']);
         }
         elseif($_GET['action'] == "disconnectAdmin"){
             session_destroy();
@@ -38,43 +45,50 @@ try{
             $controllerAdmin->animals(); //va chercher la fonction animals() dans AdminController pour se rendre sur la page des fiches animaux
         }
         elseif($_GET['action'] == 'createAnimal'){
-            $typeId = htmlspecialchars($_POST['type_id']);
+            $typeId = htmlspecialchars($_POST['race']);
             $name = htmlspecialchars($_POST['name']);
             $breed = htmlspecialchars($_POST['breed']);
             $info = htmlspecialchars($_POST['info']);
             $age = htmlspecialchars($_POST['age']);
             $content = htmlspecialchars($_POST['content']);
-            $image = htmlspecialchars($_POST['image']);
+            // $image = htmlspecialchars($_FILES['image']);
             
 
             if(isset($_FILES['image'])){
             $tmpName = $_FILES['image']['tmp_name'];
-            $name = $_FILES['image']['name'];
+            $nameImg = $_FILES['image']['name'];
             $size = $_FILES['image']['size'];
             $error = $_FILES['image']['error'];
+            }
 
             $extensions = ['jpeg', 'jpg', 'png', 'gif'];
+            $split = explode(".", $nameImg);
+            $extension = strtolower(end($split));
             $maxSize = 400000;
+            
+            if(!empty($typeId) && (!empty($name) && (!empty($breed) && (!empty($info) && (!empty($age) && (!empty($content) && (!empty($nameImg)))))))){
 
                 if(in_array($extension, $extensions) && $size <= $maxSize){
-                    move_uploaded_file($tmpName, 'app/Public/administration/images/'.$name);
-                } else {
-                    echo "Mauvaise extension ou taille du fichier trop importante";
-                }
+                    move_uploaded_file($tmpName, 'app/Public/administration/images/'.$nameImg);
 
-                if(!empty($typeId) && (!empty($name) && (!empty($breed) && (!empty($info) && (!empty($age) && (!empty($content) && (!empty($image) && (!empty($race))))))))){
                     $valid = "La fiche Animale a été éditée";
-                    $controllerAdmin->createAnimal($typeId, $name, $breed, $info, $age, $content, $image, $race);
+                        
+                    $controllerAdmin->createAnimal($typeId, $name, $breed, $info, $age, $content, $nameImg, $valid);
                 } else {
-                    $error = '* Tous les champs doivent être remplis !';
+                    $error = '* Mauvaise extension ou taille du fichier trop importante';
+                       
                     $controllerAdmin->animals($error);
                 }
-            
-            }
+            } else {
+                $error = '* Tous les champs doivent être remplis !';
+                    
+                $controllerAdmin->animals($error);
+            }   
         }
         
     } else {
-        $controllerAdmin->connectAdmin();
+        // $controllerAdmin->connectAdmin();
+        $controllerAdmin->sessionAdmin($data=null);
     }
 
 } catch (Exception $e){

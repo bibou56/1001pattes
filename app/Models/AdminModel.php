@@ -18,8 +18,17 @@ class AdminModel extends Manager{
         return $req;
     }
 
-    // public function animalCreation($typeId, $name, $breed, $info, $age, $content, $image){
-    //     $bdd = $this->dbConnect();
-    //     $req = $bdd->prepare()
-    // }
+    public function getTypes(){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, race FROM type');
+        $req->execute();
+        return $req;
+    }
+
+    public function animalCreation($typeId, $name, $breed, $info, $age, $content, $nameImg){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO animal(type_id, name, breed, info, age, content, image) VALUE (:type_id, :name, :breed, :info, :age, :content, :image)');
+        $req->execute(array(':type_id' => $typeId, ':name' => $name, ':breed' => $breed, ':info' => $info, ':age' => $age, ':content' => $content, ':image' => $nameImg));
+        return $req;
+    }
 }
