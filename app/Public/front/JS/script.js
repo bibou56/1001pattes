@@ -58,9 +58,6 @@ function initMap(){
     var marker = L.marker([47.6505928, -2.9223622 ]).addTo(map);
     marker.binPopup("<p>Refuge 1000 et Une Pattes</p>");
   }
-
-  
-
   window.onload = function(){
     initMap();
   }

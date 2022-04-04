@@ -6,7 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 try{
 
-    $controllerAdmin = new \Projet\Controllers\AdminController();
+    $controllerAdmin = new \Projet\Controllers\AdminController2();
 
     if(isset($_GET['action'])){
         // if($_GET['action'] == 'createAdmin'){
@@ -19,7 +19,15 @@ try{
         //         $controllerAdmin->createAdminSess($fullname, $mail, $mdp);
         //     } 
         // }
-        if($_GET['action'] == 'sessionAdmin'){
+        // if($_GET['action'] == 'formAdminConnect' {
+        //     $controllerAdmin->formAdminConnect();
+        // }
+
+        if($_GET['action'] == 'dashboardAdmin'){
+            $controllerAdmin->dashboardAdmin();
+        }
+
+        if($_GET['action'] == 'connectAdmin'){
             $mail = htmlspecialchars($_POST['email']);
             $mdp = $_POST['password'];
 
@@ -28,22 +36,23 @@ try{
                     'mail' => $mail,
                     'password' => $mdp,
                 ];
-                $controllerAdmin->sessionAdmin($data);
+                $controllerAdmin->connectAdmin($data);
+
             } else {
                 $error = '* Tous les champs doivent être remplis !';
-                $controllerAdmin->connectAdmin($error);
+                $controllerAdmin->formAdminConnect($error);
             }
         }
-        elseif($_GET['action'] == 'homeAdmin'){
-            $controllerAdmin->sessionAdmin(['test']);
-        }
+        
         elseif($_GET['action'] == "disconnectAdmin"){
             session_destroy();
             header('Location:indexAdmin.php');
         }
+
         elseif($_GET['action'] == 'animals'){
             $controllerAdmin->animals(); //va chercher la fonction animals() dans AdminController pour se rendre sur la page des fiches animaux
         }
+
         elseif($_GET['action'] == 'createAnimal'){
             $typeId = htmlspecialchars($_POST['race']);
             $name = htmlspecialchars($_POST['name']);
@@ -51,44 +60,35 @@ try{
             $info = htmlspecialchars($_POST['info']);
             $age = htmlspecialchars($_POST['age']);
             $content = htmlspecialchars($_POST['content']);
-            // $image = htmlspecialchars($_FILES['image']);
+            $picture = $_FILES['image'];
+            $image = $controllerAdmin->verifyFiles($picture);
             
+            if(!empty($typeId) && (!empty($name) && (!empty($breed) && (!empty($info) && (!empty($age) && (!empty($content) && (!empty($picture)))))))){
+                $valid = "La fiche 'Animal' a été éditée";
 
-            if(isset($_FILES['image'])){
-            $tmpName = $_FILES['image']['tmp_name'];
-            $nameImg = $_FILES['image']['name'];
-            $size = $_FILES['image']['size'];
-            $error = $_FILES['image']['error'];
-            }
+                $data = [
+                    'race' => $typeId,
+                    'name' => $name,
+                    'breed' => $breed,
+                    'info' => $info,
+                    'age' => $age,
+                    'content' => $content,
+                    'image' => $image,
+                    'valid' => $valid,
+                ];
 
-            $extensions = ['jpeg', 'jpg', 'png', 'gif'];
-            $split = explode(".", $nameImg);
-            $extension = strtolower(end($split));
-            $maxSize = 400000;
-            
-            if(!empty($typeId) && (!empty($name) && (!empty($breed) && (!empty($info) && (!empty($age) && (!empty($content) && (!empty($nameImg)))))))){
-
-                if(in_array($extension, $extensions) && $size <= $maxSize){
-                    move_uploaded_file($tmpName, 'app/Public/administration/images/'.$nameImg);
-
-                    $valid = "La fiche Animale a été éditée";
-                        
-                    $controllerAdmin->createAnimal($typeId, $name, $breed, $info, $age, $content, $nameImg, $valid);
-                } else {
-                    $error = '* Mauvaise extension ou taille du fichier trop importante';
-                       
-                    $controllerAdmin->animals($error);
-                }
+                $controllerAdmin->createAnimal($data);
+   
             } else {
                 $error = '* Tous les champs doivent être remplis !';
                     
-                $controllerAdmin->animals($error);
+                $controllerAdmin->createAnimal($error);
             }   
         }
         
     } else {
         // $controllerAdmin->connectAdmin();
-        $controllerAdmin->sessionAdmin($data=null);
+        $controllerAdmin->formAdminConnect();
     }
 
 } catch (Exception $e){

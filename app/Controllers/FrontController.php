@@ -53,7 +53,7 @@ class FrontController extends Controller{
     function newAccount($nickname, $mail, $password){
         $newUser = new \Projet\Models\UserModel();
         $newUser->newAccount($nickname, $mail, $password);
-        $this->home();
+        return $this->home();
     }
 
     //pour accéder à son espace user

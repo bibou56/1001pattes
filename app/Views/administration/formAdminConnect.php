@@ -22,7 +22,7 @@
         ?>
        </div>
 
-       <form method="post" action="indexAdmin.php?action=sessionAdmin">
+       <form method="post" action="indexAdmin.php?action=connectAdmin">
            <p>
                <label for="email">email</label>
                <input type="email" name="email" id="email">

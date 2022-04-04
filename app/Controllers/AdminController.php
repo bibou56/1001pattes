@@ -51,8 +51,6 @@ class AdminController extends Controller{
 
         $result = $types->fetchAll();
 
-        
-
         return $this->viewAdmin('animals', $result);
     }
 

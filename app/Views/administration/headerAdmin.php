@@ -15,10 +15,10 @@
         <nav class="menu-principal">     
             <a id="link" href="#"><span id="burger"></span></a>
                 <ul id="liste-nav">
-                    <li><a class="active" href="indexAdmin.php?action=homeAdmin">Accueil</a></li>
+                    <li><a class="active" href="indexAdmin.php?action=dashboardAdmin">Accueil</a></li>
                     <li><a href="">Mes messages</a></li>
                     <li><a href="indexAdmin.php?action=animals">Animaux</a></li>
-                    <!-- <li><a href="">Dernières adoptions</a></li> -->
+                    <li><a href="">Dernières adoptions</a></li>
                     <li><a href="">Articles Blog</a></li>
                     <li><a href="">A propos</a></li>
                     <li><a href="">Voir le site</a></li>
