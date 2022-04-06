@@ -47,14 +47,14 @@ li{
 }
 .page-title p{
   /* margin-top: 40px; */
-  margin: 30px 10px 0;
+  margin: 20px 10px 0;
 }
 .page-title p img{
   width: 30px;
 }
 .page-title h2{
-  font-size: 1.5rem;
-  margin: 30px 0;
+  font-size: 1.3rem;
+  margin: 30px 0 20px;
 }
 
 /* gestion des messages d'erreur */
@@ -62,9 +62,8 @@ li{
   color: red;
 }
 
-/* ...................HOME............... */
 
-/* HEADER */
+/* .............HEADER................ */
 #top-content {
   width: 100%;
   background: linear-gradient(90deg, rgba(40,227,128,1) 0%, rgba(30,114,107,0.82) 100%);
@@ -76,7 +75,6 @@ li{
   width: 100%;
   justify-content: center;
   font-weight: bold;
-  line-height: 2.5rem;
   padding: 20px 20px 10px;
 }
 .title-header .logo{
@@ -86,7 +84,7 @@ li{
 }
 .title-header p a{
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .banner{
@@ -94,10 +92,9 @@ li{
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 20px 20px;
+  padding: 0 20px 15px;
   position: relative;
 }
-
 .connect-user{
   text-align: end;
   padding-top: 10px;
@@ -106,16 +103,19 @@ li{
   color: #fff;
 }
 .connect-user a i{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 .connect-user p{
   color: #fff;
 }
 .connect-user p:first-child{
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 .connect-user p:last-child{
+  margin-top: 5px;
+}
+.connect-user p:last-child a{
   font-size: 0.8rem;
 }
 
@@ -440,8 +440,26 @@ li{
   font-size: 11px;
 }
 
-
-
+/* .............ADOPTIONS................ */
+.adoptCat{
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  width: 90%;
+  box-shadow: 3px 3px 10px black;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.adoptCat .imgCat{
+  width: 100%;
+  height: 300px;
+}
+.adoptCat .imgCat img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
 
 
 

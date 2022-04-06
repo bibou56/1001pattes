@@ -13,8 +13,15 @@ class UserModel extends Manager{
 
     public function mailCheck($mail){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, nickname, mail, password FROM user WHERE mail=?');
+        $req = $bdd->prepare('SELECT id, nickname, mail, password, role FROM user WHERE mail=?');
         $req->execute(array($mail));
+        return $req;
+    }
+
+    public function allCats(){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT type_id, name, breed, info, age, content, image FROM animal WHERE type_id = 1');
+        $req->execute();
         return $req;
     }
 }

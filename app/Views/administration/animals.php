@@ -1,27 +1,33 @@
-<?php include('headerAdmin.php'); ?>
+<?php include('app/Views/front/header.php'); ?>
 
 <main class="container">
-    <section id="createAnimal">
+    
         <div class="page-title">
             <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
-            <h2>Créez une fiche Animal</h2>
+            <h2>Créer une nouvelle fiche</h2>
             <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
         </div>
+
+    <section id="createAnimal">
         <div class="error">  
             <?php  
                 if(isset($error)){
                     if ($error != ""){ ?>
                    <p><?= $error ?></p>
                <?php }}
-            ?>  
-            <?php  
-                if(isset($data['valid'])){
-                    if ($data['valid'] != ""){ ?>
-                   <p><?= $data['valid'] ?></p>
-               <?php }}
-            ?>  
-        </div>  
-        
+            ?> 
+        </div>
+        <?php  
+        if(isset($data['valid'])){ ?>
+            <div class="valid">
+                <div class="modal">
+                    <?php if ($data['valid'] != ""){ ?>
+                        <a href="#" onclick="example()"><i class="fa-solid fa-x"></i></a>
+                        <p><?= $data['valid'] ?></p>
+                    <?php } ?>
+                </div>
+            </div>
+        <?php } ?>
 
         <form method="post" action="indexAdmin.php?action=createAnimal" enctype="multipart/form-data">
             <p>
@@ -31,7 +37,7 @@
                     foreach($result as $type){
 
                     ?>
-                    <option value="<?= $type['id'] ?>"><?= $type['race'] ?></option>
+                        <option value="<?= $type['id'] ?>"><?= $type['race'] ?></option>
                     <?php } ?>
                 </select>
             </p>
@@ -69,4 +75,4 @@
     </section>
 </main>
 
-<?php include('footerAdmin.php') ?>
+<?php include('app/Views/front/footer.php') ?>

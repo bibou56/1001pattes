@@ -6,12 +6,12 @@ class Controller{
 
     public function view($viewName,$error = null)
     {
-        include('app/Views/front/'.$viewName.'.php');
+        return('app/Views/front/'.$viewName.'.php');
     }
 
     public function viewAdmin($viewName, $data = null)
     {
-        include('app/Views/administration/'.$viewName.'.php');
+        return('app/Views/administration/'.$viewName.'.php');
     }
 
     public function verifyFiles($data) //vérifie les images

@@ -15,7 +15,7 @@
                <?php }}
             ?>  
         </div>  
-        <form method="post" action="index.php?action=connectUser">
+        <form method="post" action="index.php?action=connect">
             <p>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="ex: milou@outlook.fr">

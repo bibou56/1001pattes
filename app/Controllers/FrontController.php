@@ -6,58 +6,67 @@ class FrontController extends Controller{
 
     //pour se rendre sur la page d'accueil
     public function home(){ 
-        return $this->view('home');
+        require $this->view('home');
     }
 
     //pour se rendre sur la page A propos
     public function about(){ 
-        return $this->view('about');
+        require $this->view('about');
     }
 
     //pour se rendre sur la page de présentation des chats à l'adoption
     function cats(){
-        return $this->view('cats');
+        $cats = new \Projet\Models\UserModel();
+        $result = $cats->allCats();
+
+        $allCats = $result->fetchAll();
+
+        require $this->view('cats');
     }
 
     //pour se rendre sur la page de présentation des chiens à l'adoption
     function dogs(){
-        return $this->view('dogs');
+        require $this->view('dogs');
     }
 
     //pour se rendre sur la page blog
     function blog(){ 
-        return $this->view('blog');
+        require $this->view('blog');
     }
 
     //pour se rendre sur la page contact "
     function contact($error = null){ 
-        return $this->view('contact', $error);
+        require $this->view('contact', $error);
     }
 
     //pour se rendre sur la page connexion
     function connexion($error = null){
-        return $this->view('connexion', $error);
+        require $this->view('connexion', $error);
+    }
+
+    function dashboardUser(){
+        require $this->view('dashboardUser');
     }
 
     //pour se rendre sur la page createAccount
     public function createAccount($error = null){
-        return $this->view('createAccount', $error);
+        require $this->view('createAccount', $error);
     }
 
     //pour se rendre sur la page des mentions légales
     function legal(){
-        return $this->view('legal');
+        require $this->view('legal');
     }
 
     //pour créer son nouvel espace User
     function newAccount($nickname, $mail, $password){
         $newUser = new \Projet\Models\UserModel();
         $newUser->newAccount($nickname, $mail, $password);
-        return $this->home();
+        require $this->home();
     }
 
     //pour accéder à son espace user
-    function userConnect($mail, $pass){
+    function connectAll($mail, $pass){
         $user = new \Projet\Models\UserModel();
         $connexUser = $user->mailCheck($mail);
 
@@ -65,16 +74,24 @@ class FrontController extends Controller{
 
         $correctPassword = password_verify($pass, $result['password']);
 
-        if($correctPassword){
             $_SESSION['mail'] = $result['mail'];
             $_SESSION['password'] = $result['password'];
             $_SESSION['id'] = $result['id'];
             $_SESSION['nickname'] = $result['nickname'];
+            $_SESSION['role'] = $result['role'];
 
-            return $this->view('home');
-        }else{
+        if($correctPassword && $_SESSION['role'] === 1)
+        {
+            require $this->viewAdmin('dashboard');
+        }
+        elseif($correctPassword && $_SESSION['role'] === 0)
+        {
+            require $this->view('dashboardUser');
+        }
+        else
+        {
             $error = '*Vos identifiants sont incorrects';
-            return $this->view('connexion', $error);
+            require $this->view('connexion', $error);
         }
     }
 
@@ -83,7 +100,7 @@ class FrontController extends Controller{
         $postMail = new \Projet\Models\ContactModel();
         $mailPost = $postMail->postMail($lastname, $firstname, $mail, $phone, $objet, $content);
 
-        return $this->view('contact');
+        require $this->view('contact');
     }
 
     

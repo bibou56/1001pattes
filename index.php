@@ -27,6 +27,9 @@ try {
         elseif($_GET['action']== 'connexion'){
             $controllerFront->connexion(); //va chercher la fonction connexion() dans FrontController pour se rendre sur la page Connexion
         }
+        elseif($_GET['action']== 'dashboardUser'){
+            $controllerFront->dashboardUser();
+        }
         elseif($_GET['action']== 'createAccount'){
             $controllerFront->createAccount(); //va chercher la fonction createAccount() dans FrontController pour se rendre sur la page createAccount
         }
@@ -54,21 +57,25 @@ try {
                 $controllerFront->createAccount($error);
             }
         } 
-        elseif($_GET['action'] == 'connectUser'){
+
+        elseif($_GET['action'] == 'connect'){
+
             $mail = htmlspecialchars($_POST['email']);
             $pass = $_POST['password'];
 
             if (!empty($mail) && (!empty($pass))){
-                $controllerFront->userConnect($mail, $pass);
+                $controllerFront->connectAll($mail, $pass);
             }else{
                 $error = '* Tous les champs doivent être remplis !';
                 $controllerFront->connexion($error);
             }
         } 
+
         elseif($_GET['action'] == 'disconnect'){
             session_destroy();
             header('Location:index.php');
         }
+
         elseif($_GET['action'] == 'contactForm'){
             $lastname = htmlspecialchars($_POST['lastname']);
             $firstname = htmlspecialchars($_POST['firstname']);

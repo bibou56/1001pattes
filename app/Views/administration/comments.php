@@ -1,7 +1,5 @@
 <?php include('app/Views/front/header.php') ?>
 
-<main>
-    admin dashboard
-</main>
+GESTION DES COMMENTAIRES
 
 <?php include('app/Views/front/footer.php') ?>

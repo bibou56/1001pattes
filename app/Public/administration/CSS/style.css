@@ -1,209 +1,5 @@
-/* variable CSS */
-:root{
-  --vert: rgb(48, 185, 112);
-  --vert-fonce: rgb(30, 114, 107);
-  
-}
-
-/* mini reset */
-*{
-    font-size: 16px;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-.container{
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;  
-}
-a{
-  text-decoration: none;
-  color: black;
-}
-li{
-  list-style-type: none;
-}
-
-.error{
-  color: rgb(212, 14, 14);
-  margin-top: 20px;
-}
-
-/* titres des pages */
-.page-title{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-.page-title p{
-  /* margin-top: 40px; */
-  margin: 25px 10px 0;
-}
-.page-title p img{
-  width: 30px;
-}
-.page-title h2{
-  font-size: 1.2rem;
-  margin: 30px 0;
-}
-
-/* ..............CONNECT ADMIN............ */
-.content-connect{
-  width: 95%;
-  margin: 50px auto;
-  text-align: center;
-  background-color: rgb(48, 185, 112, 0.7);
-  border: 2px solid var(--vert-fonce);
-  border-radius: 5px;
-  padding: 30px 5px 0;
-}
-.content-connect h2{
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-.content-connect h3{
-  font-size: 1.1rem;
-}
-.content-connect form{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 20px 0;
-}
-.content-connect form p{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.content-connect form p label{
-  width: 90%;
-  margin-bottom: 10px;
-  text-align: start;
-}
-.content-connect form p input{
-  width: 90%;
-  height: 40px;
-  border: solid 1px var(--vert-fonce);
-  border-radius: 5px;
-  font-size: 1rem;
-  padding-left: 10px;
-}
-.content-connect form p input[type=submit]{
-  width: 40%;
-  margin-top: 20px;
-}
-.content-connect form p input[type=submit]:hover{
-  background-color: var(--vert-fonce);
-  color: #fff;
-  border: 2px solid #fff;
-}
-.content-connect a:hover{
-  color: #fff;
-}
-
-/* .................HEADER ADMIN ...................*/
-#top-content-admin{
-  width: 100%;
-  background: linear-gradient(90deg, rgba(40,227,128,1) 0%, rgba(30,114,107,0.82) 100%);
-}
-#top-content-admin p:first-child{
-  text-align: center;
-  padding-top: 30px;
-}
-#top-content-admin p a{
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: bold;
-  
-}
-#top-content-admin p a .logo{
-  width: 50px;
-  /* margin-right: 20px; */
-  margin-bottom: -10px;
-}
-
-.banner{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 20px 15px;
-  position: relative;
-}
-
-.banner p{
-  color: rgb(255, 255, 255);
-  /* font-weight: bold; */
-  /* padding-bottom: 30px; */
-  padding-top: 0;
-}
-
-/* menu burger */
-#burger{
-  width: 32px;
-  height: 2px;
-  background: #fff;
-  display: inline-block;
-  position: relative;
-}
-#burger::before, #burger::after{
-  content:'';
-  width: 32px;
-  height: 2px;
-  background: #fff;
-  display: inline-block;
-  position: absolute;
-  transform-origin: center;
-  transition: all 0.3s ease;
-}
-#burger::before{
-  top: -10px;
-}
-#burger::after{
-  top: 10px;
-}
-#burger.open{
-  background: transparent; /*la barre du milieu disparaît */
-}
-/* les barres du dessus et dessous s'inclinent pour former une croix */
-#burger.open::before{
-  transform: rotate(45deg);
-  top: 0;
-}
-#burger.open::after{
-  transform: rotate(-45deg);
-  top: 0;
-}
-#liste-nav{
-  background-color: transparent;
-  backdrop-filter: blur(3px);
-  position: absolute;
-  width: 80%;
-  left: 0;
-  top: 100%;
-  padding: 10px 0;
-  transform: scaleX(0);
-  transform-origin: left top;
-  transition: all 0.3s ease;
-}
-#liste-nav.open{
-  transform: scaleX(1);
-}
-#liste-nav li{
-  padding: 20px 30px;
-  text-align: start;
-}
-#liste-nav li a{
-  color: var(--vert-fonce);
-  font-size: 1rem;
-  /* text-transform: uppercase; */
-  /* font-weight: bold; */
-}
-
 /*..............ANIMAUX ADMIN...............*/
+
 #createAnimal form{
   display: flex;
   flex-direction: column;
@@ -257,4 +53,60 @@ li{
   margin: 10px auto 0;
   padding-left: 0;
 }
+
+/* boite modale */
+.hide {
+  display: none !important;
+}
+.valid {
+  /* visibility: hidden; */
+  display: block;
+  position: absolute;
+  backdrop-filter: blur(5px);
+  left: 0;
+  top: 40%;
+  width: 100%;
+  height: 100%;
+  /* text-align: center; */
+  z-index: 1000;
+}
+.valid .modal {
+  /* visibility: visible; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--vert);
+  color: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  padding: 10px;
+  /* text-align: center; */
+  /* font-weight: bold; */
+  /* font-size: 15px; */
+  border: 3px solid var(--vert-fonce);
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+.valid .modal p{
+  font-size: 1.2rem;
+  padding-bottom: 30px;
+  /* font-weight: bold; */
+}
+.valid .modal a{
+  align-self: flex-end;
+}
+.valid .modal i{
+  color: #fff;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+
 

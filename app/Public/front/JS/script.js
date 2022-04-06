@@ -1,9 +1,3 @@
-/*...........BOITE MODALE............... */
-// function example() {
-//   el = document.getElementById("example");
-//   el.style.visibility = el.style.visibility == "visible" ? "hidden" : "visible";
-// }
-
 /* ..........MENU BURGER HEADER............. */
 
 /* menu burger - gestion #liste-nav */
@@ -26,7 +20,7 @@ adopt.addEventListener('click', function(e){
   sousListe.classList.toggle('open')
 });
 
-/*............CLASS ACTIVE........... */
+/*............CLASS ACTIVE MENU........... */
 //classe active sur barre de nav
 let links = document.querySelector("#liste-nav").getElementsByTagName("a");
 
@@ -61,6 +55,13 @@ function initMap(){
   window.onload = function(){
     initMap();
   }
+
+  /*...........BOITE MODALE FICHE ANIMAL............... */
+function example() {
+  el = document.querySelector(".valid");
+  // el.style.visibility = el.style.visibility == "visible" ? "hidden" : "visible";
+  el.classList.add('hide');
+}
   
 
 
