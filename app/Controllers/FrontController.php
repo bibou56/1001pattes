@@ -5,17 +5,28 @@ namespace Projet\Controllers;
 class FrontController extends Controller{
 
     //pour se rendre sur la page d'accueil
-    public function home(){ 
+    public function home()
+    { 
         require $this->view('home');
     }
 
     //pour se rendre sur la page A propos
-    public function about(){ 
+    public function about()
+    { 
         require $this->view('about');
     }
 
+    public function adoptions()
+    {
+        $userManager = new \Projet\Models\AdminModel();
+        $types = $userManager->getTypes();
+        $result = $types->fetchAll();
+        require $this->view('adoptions');
+    }
+
     //pour se rendre sur la page de présentation des chats à l'adoption
-    function cats(){
+    function cats()
+    {
         $cats = new \Projet\Models\UserModel();
         $result = $cats->allCats();
 
@@ -25,7 +36,13 @@ class FrontController extends Controller{
     }
 
     //pour se rendre sur la page de présentation des chiens à l'adoption
-    function dogs(){
+    function dogs()
+    {
+        $dogs = new \Projet\Models\UserModel();
+        $result = $dogs->allDogs();
+
+        $allDogs = $result->fetchAll();
+        
         require $this->view('dogs');
     }
 

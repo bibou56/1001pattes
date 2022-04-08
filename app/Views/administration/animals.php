@@ -8,7 +8,7 @@
             <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
         </div>
 
-    <section id="createAnimal">
+    <section class="cardAnimal">
         <div class="error">  
             <?php  
                 if(isset($error)){

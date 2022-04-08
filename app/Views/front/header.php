@@ -45,17 +45,23 @@
                     }?>
                     <li><a class="active" href="/">Accueil</a></li>
                     <li><a href="index.php?action=about">A propos</a></li>
-                    <li id="adopt"><a href="#">Adoptions</a>
-                        <ul id="sous-liste">
+                    <li id="adopt"><a href="index.php?action=adoptions">Adoptions</a>
+                        <!-- <ul id="sous-liste">
                             <li><a href="index.php?action=cats">Les chats</a></li>
                             <li><a href="index.php?action=dogs">Les chiens</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
                     <li><a href="index.php?action=blog">Blog</a></li>
                     <li><a href="index.php?action=contact">Contact</a></li>
-                    <li><a href="indexAdmin.php?action=animals">Création des fiches Animaux</a></li>
-                    <li><a href="indexAdmin.php?action=mails">Messages</a></li>
-                    <li><a href="indexAdmin.php?action=comments">Gestion des commentaires</a></li>
+                    <?php
+                    if(isset($_SESSION['nickname'])){
+                        if($_SESSION['role'] === 1){ ?>
+                            <li><a href="indexAdmin.php?action=animals">Création des fiches Animaux</a></li>
+                            <li><a href="indexAdmin.php?action=mails">Messages</a></li>
+                            <li><a href="indexAdmin.php?action=comments">Gestion des commentaires</a></li>
+                        <?php }
+                    } ?>
+                    
                 </ul>
             </nav> 
 

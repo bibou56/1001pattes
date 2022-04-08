@@ -47,10 +47,10 @@ li{
 }
 .page-title p{
   /* margin-top: 40px; */
-  margin: 20px 10px 0;
+  margin: 25px 10px 0;
 }
 .page-title p img{
-  width: 30px;
+  width: 25px;
 }
 .page-title h2{
   font-size: 1.3rem;
@@ -84,7 +84,7 @@ li{
 }
 .title-header p a{
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .banner{
@@ -185,7 +185,7 @@ li{
   font-weight: bolder;
 } */
 
-#sous-liste {
+/* #sous-liste {
   display: none;
 }
 #sous-liste.open{
@@ -205,7 +205,7 @@ li{
 /* #sous-liste li a:hover{
   font-size: 1.1rem;
   font-weight: bold;
-} */
+} */ 
 
 #liste-nav li .active{
   font-size: 1.1rem;
@@ -441,24 +441,90 @@ li{
 }
 
 /* .............ADOPTIONS................ */
-.adoptCat{
+#btnAnimals{
   display: flex;
   flex-direction: column;
-  margin: 10px auto;
+  align-items: center;
+  margin: 50px auto;
+}
+#btnAnimals button{
+  width: 70%;
+  padding: 10px 0;
+  font-size: 1.3rem;
+  background-color: var(--vert);
+  border: 1px solid var(--vert-fonce);
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px var(--vert-fonce);
+}
+#btnAnimals button:first-child{
+  margin-bottom: 30px;
+}
+#btnAnimals button a{
+  color: #fff;
+}
+#btnAnimals button i{
+  font-size: 1.2rem;
+}
+/* .............CATS AND DOGS.............. */
+.content-animals i{
+  font-size: 1.5rem;
+  padding: 20px 0 0 10px;
+}
+.adoptPet{
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
   width: 90%;
   box-shadow: 3px 3px 10px black;
   border: 1px solid black;
   border-radius: 5px;
 }
-.adoptCat .imgCat{
+.adoptPet .allInfoPet{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.adoptPet .imgPet{
   width: 100%;
   height: 300px;
 }
-.adoptCat .imgCat img{
+.adoptPet .imgPet img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
+}
+.adoptPet .infoPet, .adoptPet .contentPet{
+  padding: 20px 10px;
+  line-height: 1.6rem;
+}
+.adoptPet .infoPet span, .adoptPet .contentPet span{
+  text-decoration: underline;
+  font-weight: bold;
+}
+.adoptPet .infoPet .petName{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.adoptPet .UD-pet{
+  margin: 10px auto 20px;
+}
+.adoptPet .UD-pet button{
+  padding: 5px 10px;
+}
+.adoptPet .UD-pet button:first-child{
+  margin-right: 30px;
+  background-color: var(--vert);
+  border: none;
+  border-radius: 5px;
+}
+.adoptPet .UD-pet button:last-child{
+  background-color: rgb(212, 8, 8);
+  border: none;
+  border-radius: 5px;
 }
 
 

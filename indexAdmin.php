@@ -4,12 +4,14 @@ session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-try{
-
+try
+{
     $controllerAdmin = new \Projet\Controllers\AdminController();
+    $controllerAnimal = new \Projet\Controllers\AnimalController();
+    $controllerBlog = new \Projet\Controllers\BlogController();
 
-    if(isset($_GET['action'])){
-        
+    if(isset($_GET['action']))
+    { 
         if($_GET['action'] == 'dashboardAdmin')
         {
             $controllerAdmin->dashboardAdmin();
@@ -23,7 +25,7 @@ try{
 
         elseif($_GET['action'] == 'animals')
         {
-            $controllerAdmin->animals(); //va chercher la fonction animals() dans AdminController pour se rendre sur la page des fiches animaux
+            $controllerAnimal->animals(); //va chercher la fonction animals() dans AdminController pour se rendre sur la page des fiches animaux
         }
 
         elseif($_GET['action'] == 'createAnimal')
@@ -38,8 +40,7 @@ try{
             $image = $controllerAdmin->verifyFiles($picture);
             
             if(!empty($typeId) && (!empty($name) && (!empty($breed) && (!empty($info) && (!empty($age) && (!empty($content) && (!empty($picture)))))))){
-                $valid = "La fiche 'Animal' a été éditée !";
-
+                $valid = "La fiche a été éditée !";
                 $data = [
                     'race' => $typeId,
                     'name' => $name,
@@ -50,29 +51,59 @@ try{
                     'image' => $image,
                     'valid' => $valid,
                 ];
-
-                $controllerAdmin->createAnimal($data);
-   
-            } else {
-                $error = '* Tous les champs doivent être remplis !';
-                    
-                $controllerAdmin->createAnimal($error);
+                $controllerAnimal->createAnimal($data);
+            } 
+            else 
+            {
+                $error = '* Tous les champs doivent être remplis !';  
+                $controllerAnimal->createAnimal($error);
             }   
         }
+
+        elseif($_GET['action'] == 'viewUpdatePet')
+        {
+            $controllerAnimal->viewUpdatePet($_GET['id']);
+        }
+
+        elseif($_GET['action'] == 'updateAnimal')
+        {   
+            $data = [
+            'id' => $_GET['id'],
+            'name' => htmlspecialchars($_POST['name']),
+            'breed' => htmlspecialchars($_POST['breed']),
+            'age' => htmlspecialchars($_POST['age']),
+            'info' => htmlspecialchars($_POST['info']),
+            'content' => htmlspecialchars($_POST['content']),
+            ];
+            
+            $controllerAnimal->updateAnimal($data);  
+        }
+
+        elseif($_GET['action'] == 'deletePet')
+        {
+            $id = $_GET['id'];
+            $controllerAnimal->deletePet($id);
+        }
+
         elseif($_GET['action'] == 'mails')
         {
             $controllerAdmin->mails();
         }
+
         elseif($_GET['action'] == 'comments')
         {
             $controllerAdmin->comments();
         }
         
-    } else {
+    } 
+    else 
+    {
         // $controllerAdmin->connectAdmin();
         $controllerAdmin->dashboardAdmin();
     }
 
-} catch (Exception $e){
+} 
+catch (Exception $e)
+{
     require "app/Views/administration/error.php";
 }
