@@ -71,10 +71,19 @@ class FrontController extends Controller{
     {
         $eachArticle = new \Projet\Models\UserModel();
         $result = $eachArticle->oneArticle($id);
-
         $oneArticle = $result->fetch();
+        $result2 = $eachArticle->allComments($id);
+        $comments = $result2->fetchAll();
 
         require $this->view('eachArticle');
+    }
+
+    function writeComment($data)
+    {
+        $comment = new \Projet\Models\UserModel();
+        $result = $comment->createComment($data);
+
+        $this->eachArticle($data['idArticle']);
     }
 
     //pour se rendre sur la page contact "

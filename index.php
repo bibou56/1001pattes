@@ -46,6 +46,17 @@ try {
             $controllerFront->eachArticle($id);
         }
 
+        elseif($_GET['action'] == 'writeComment')
+        {
+            $data = [
+                'idUser' => htmlspecialchars($_GET['user_id']) ,
+                'idArticle' => htmlspecialchars($_GET['article_id']) ,
+                'content' => htmlspecialchars($_POST['comment']),
+            ];
+
+            $controllerFront->writeComment($data);
+        }
+
         elseif($_GET['action']== 'contact')
         {
             $controllerFront->contact(); //va chercher la fonction contact() dans FrontController pour se rendre sur la page Contact

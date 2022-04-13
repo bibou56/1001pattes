@@ -8,9 +8,11 @@
         </div>
 
         <div class="infoPet">
-            <p class="dateArticle"><?= $oneAnimal['createdAt'] ?></p>
-            <p class="titleArticle">- <?= $oneAnimal['title'] ?> -</p>
-            <p class="contentArticle"><?= $oneAnimal['content'] ?></p>
+            <p class="petName">- <?= $oneAnimal['name'] ?> -</p>
+            <p><span>Age</span> : <?= $oneAnimal['age'] ?></p>
+            <p><span>Race/type</span> : <?= $oneAnimal['breed'] ?></p>
+            <p><span>Informations générales</span> : <?= $oneAnimal['info'] ?></p>
+            <p class="petContent"><span>Présentation</span> : <?= $oneAnimal['content'] ?></p>
             
             <?php
             if(isset($_SESSION['nickname'])){

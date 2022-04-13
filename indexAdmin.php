@@ -62,7 +62,8 @@ try
 
         elseif($_GET['action'] == 'viewUpdatePet')
         {
-            $controllerAnimal->viewUpdatePet($_GET['id']);
+            $id = $_GET['id'];
+            $controllerAnimal->viewUpdatePet($id);
         }
 
         elseif($_GET['action'] == 'updateAnimal')
@@ -109,10 +110,36 @@ try
             }   
         }
 
+        elseif($_GET['action'] == 'viewUpdateArticle')
+        {
+            $id = $_GET['id'];
+            $controllerBlog->viewUpdateArticle($id);
+        }
+
+        elseif($_GET['action'] == 'updateArticle')
+        {   
+            $data = [
+            'id' => $_GET['id'],
+            'title' => htmlspecialchars($_POST['title']),
+            'content' => htmlspecialchars($_POST['content']),
+            ];
+            
+            $controllerBlog->updateArticle($data);  
+        }
+
+        elseif($_GET['action'] == 'deleteArticle')
+        {
+            $id = $_GET['id'];
+            $controllerBlog->deleteArticle($id);
+        }
+
+
         elseif($_GET['action'] == 'mails')
         {
             $controllerAdmin->mails();
         }
+
+        
 
         elseif($_GET['action'] == 'comments')
         {

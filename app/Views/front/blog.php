@@ -19,7 +19,7 @@
 
         <div class="infoArticle">
             <p class="dateArticle"><?= $article['createdAt'] ?></p>
-            <p class="titleArticle">- <?= $article['title'] ?> -</p>
+            <p class="titleArticle"><?= $article['title'] ?></p>
             <p class="extractArticle"><?= substr($article['content'], 0, 150) ?>[...]</p>
             
             <button><a href="index.php?action=eachArticle&id=<?= $article['id'] ?>">Lire la suite</a></button>

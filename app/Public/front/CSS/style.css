@@ -504,6 +504,8 @@ li{
   border-radius: 5px 5px 0 0;
 }
 .adoptPet .infoPet, .adoptPet .extractPet{
+  display: flex;
+  flex-direction: column;
   padding: 20px 10px;
   line-height: 1.6rem;
 }
@@ -518,23 +520,70 @@ li{
   text-align: center;
   margin-bottom: 10px;
 }
-.adoptPet .UD-pet{
-  margin: 10px auto 20px;
+.adoptPet .extractPet button{
+  padding: 10px 10px;
+  background-color: rgb(30, 114, 107, 0.8);
+  border-radius: 5px;
+  margin: 30px auto 20px;
+  text-align: center;
 }
-.adoptPet .UD-pet button{
+.adoptPet .extractPet button a{
+  color: #fff;
+}
+
+/* ..............EACH ANIMAL............. */
+.eachAnimal{
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+}
+.eachAnimal .imgPet{
+  width: 100%;
+  height: 300px;
+}
+.eachAnimal .imgPet img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.eachAnimal .infoPet{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  line-height: 1.6rem;
+}
+.eachAnimal .infoPet .petName{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+.eachAnimal .infoPet .petContent{
+  margin-top: 30px;
+}
+.eachAnimal .infoPet span{
+  text-decoration: underline;
+  font-weight: bold;
+}
+.eachAnimal .infoPet .UD-pet{
+  margin: 10px auto 0;
+}
+.eachAnimal .infoPet .UD-pet button{
   padding: 5px 10px;
 }
-.adoptPet .UD-pet button:first-child{
+.eachAnimal .infoPet .UD-pet button:first-child{
   margin-right: 30px;
   background-color: var(--vert);
   border: none;
   border-radius: 5px;
 }
-.adoptPet .UD-pet button:last-child{
+.eachAnimal .infoPet .UD-pet button:last-child{
   background-color: rgb(212, 8, 8);
   border: none;
   border-radius: 5px;
 }
+
 
 
 /*................BLOG................*/
@@ -610,7 +659,7 @@ li{
 .eachArticle{
   display: flex;
   flex-direction: column;
-  margin: 30px auto;
+  margin: 30px auto 10px;
 }
 .eachArticle .imgArticle{
   width: 100%;
@@ -656,6 +705,50 @@ li{
   background-color: rgb(212, 8, 8);
   border: none;
   border-radius: 5px;
+}
+
+.writeComment form{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+}
+.writeComment form p{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.writeComment form p label{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.writeComment form p textarea{
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: solid 1px var(--vert-fonce);
+  border-radius: 5px;
+  background-color: rgb(48, 185, 112, 0.3);
+}
+.writeComment form p input{
+  font-weight: bold;
+  padding: 5px 10px;
+  border: solid 1px var(--vert-fonce);
+  border-radius: 5px;
+  background-color: rgb(48, 185, 112, 0.3);
+}
+.writeComment form p input:hover{
+  color: #fff;
+  background-color: var(--vert-fonce);
+}
+
+.comments{
+  padding: 10px;
+}
+.comments h3{
+  font-size: 1.1rem;
 }
 
 

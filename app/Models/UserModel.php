@@ -55,8 +55,27 @@ class UserModel extends Manager{
     public function oneArticle($id)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, title, content, image, createdAt FROM article WHERE id=?');
+        $req = $bdd->prepare('SELECT id, title, content, image, createdAt  FROM article WHERE id=?');
         $req->execute(array($id));
+        return $req;
+    }
+
+    public function allComments($id)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT user_id, nickname, content, createdAt FROM comment INNER JOIN user ON user_id=user.id WHERE article_id=?');
+        $req->execute(array($id));
+        return $req;
+    }
+
+    public function createComment($data)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO comment (content, article_id, user_id ) VALUE (:content , :article_id, :user_id)');
+        $req->execute(array(
+            ':content'=>$data['content'],
+            ':article_id'=>$data['idArticle'],
+            ':user_id'=>$data['idUser']));
         return $req;
     }
 }

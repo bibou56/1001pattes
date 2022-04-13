@@ -24,19 +24,10 @@
                 <p><span>Race/type</span> : <?= $dog['breed'] ?></p>
                 <p><span>Informations Générales</span> : <?= $dog['info'] ?></p>
             </div>
-            <div class="contentPet">
+            <div class="extractPet">
                 <p><span>Présentation</span> : <?= $dog['content'] ?></p>
+                <button><a href="index.php?action=eachAnimal&id=<?= $dog['id'] ?>">Lire la suite</a></button>
             </div>
-
-            <?php
-            if(isset($_SESSION['nickname'])){
-                if($_SESSION['role'] === 1){ ?>
-                    <div class="UD-pet">
-                        <button><a href="indexAdmin.php?action=viewUpdatePet&id=<?= $dog['id'] ?>">Modifier</a></button>
-                        <button><a href="indexAdmin.php?action=deletePet&id=<?= $dog['id'] ?>">Supprimer</a></button>
-                    </div>
-                <?php }
-            } ?>
         </div>
 
     </article>

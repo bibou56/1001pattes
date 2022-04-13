@@ -28,7 +28,7 @@
                 <p><span>Présentation</span> : <?= substr($cat['content'], 0, 200) ?>[...]</p>
                 <button><a href="index.php?action=eachAnimal&id=<?= $cat['id'] ?>">Lire la suite</a></button>
             </div>
-
+        </div>
     </article>
     <?php } ?>
     
