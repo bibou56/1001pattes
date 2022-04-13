@@ -4,7 +4,7 @@
     
         <div class="page-title">
             <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
-            <h2>Créer une nouvelle fiche</h2>
+            <h2>Créer un article</h2>
             <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
         </div>
 
@@ -29,17 +29,10 @@
             </div>
         <?php } ?>
 
-        <form method="post" action="indexAdmin.php?action=createAnimal" enctype="multipart/form-data">
+        <form method="post" action="indexAdmin.php?action=createArticle" enctype="multipart/form-data">
             <p>
-                <label for="race"></label>
-                <select name="race" id="race">
-                    <?php 
-                    foreach($result as $type){
-
-                    ?>
-                        <option value="<?= $type['id'] ?>"><?= $type['race'] ?></option>
-                    <?php } ?>
-                </select>
+                <label for="title">Titre de l'article</label>
+                <input type="text" name="title" id="title">
             </p>
             <p class="img">
                 <label for="image">Choisissez une photo</label>
@@ -47,25 +40,10 @@
                
             </p>
             <p>
-                <label for="name">Nom de l'animal</label>
-                <input type="text" name="name" id="name">
-            </p>
-            <p>
-                <label for="breed">Race</label>
-                <input type="text" name="breed" id="breed">
-            </p>
-            <p>
-                <label for="age">Age</label>
-                <input type="text" name="age" id="age">
-            </p>
-            <p>
-                <label for="info">Infos générales (sexe, poids, santé...)</label>
-                <input type="text" name="info" id="info">
-            </p>
-            <p>
-                <label for="content">Présentation de l'animal</label>
+                <label for="content">Contenu de votre article</label>
                 <textarea name="content" id="content"></textarea>
             </p>
+            
             <p>
                 <input type="submit" name="submit" value="Créer">
             </p>

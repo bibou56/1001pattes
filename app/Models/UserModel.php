@@ -35,4 +35,28 @@ class UserModel extends Manager{
         $req->execute();
         return $req;
     }
+
+    public function oneAnimal($id)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, name, breed, info, age, content, image FROM animal WHERE id=?');
+        $req->execute(array($id));
+        return $req;
+    }
+
+    public function allArticles()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, title, content, image, createdAt FROM article');
+        $req->execute();
+        return $req;
+    }
+
+    public function oneArticle($id)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, title, content, image, createdAt FROM article WHERE id=?');
+        $req->execute(array($id));
+        return $req;
+    }
 }

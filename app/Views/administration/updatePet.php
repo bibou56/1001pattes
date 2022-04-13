@@ -8,7 +8,7 @@
             <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
         </div>
 
-    <section class="cardAnimal">
+    <section class="createElement">
 
         <form method="post" action="indexAdmin.php?action=updateAnimal&id=<?= $result['id'] ?>" enctype="multipart/form-data">
             

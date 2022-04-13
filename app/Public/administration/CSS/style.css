@@ -1,23 +1,23 @@
 /*..............ANIMAUX ADMIN...............*/
 
-.cardAnimal form{
+.createElement form{
   display: flex;
   flex-direction: column;
   width: 90%;
   margin: 0 auto;
   /* background-color: aqua; */
 }
-.cardAnimal form p{
+.createElement form p{
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
 }
-.cardAnimal form p label{
+.createElement form p label{
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
-.cardAnimal form p select{
+.createElement form p select{
   width: 50%;
   height: 30px;
   font-size: 1.1rem;
@@ -26,7 +26,7 @@
   border: solid 2px var(--vert-fonce) ;
   border-radius: 5px;
 }
-.cardAnimal form p input {
+.createElement form p input {
   width: 100%;
   height: 40px;
   font-size: 1.1rem;
@@ -35,11 +35,11 @@
   border: solid 2px var(--vert-fonce) ;
   border-radius: 5px;
 }
-.cardAnimal form p.img input{
+.createElement form p.img input{
   padding: 5px 0;
   
 }
-.cardAnimal form p textarea{
+.createElement form p textarea{
   width: 100%;
   height: 200px;
   padding: 10px 0 0 10px;
@@ -48,7 +48,7 @@
   border: solid 2px var(--vert-fonce) ;
   border-radius: 5px;
 }
-.cardAnimal form p input[type=submit]{
+.createElement form p input[type=submit]{
   width: 40%;
   margin: 10px auto 0;
   padding-left: 0;

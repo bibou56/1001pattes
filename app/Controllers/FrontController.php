@@ -18,7 +18,7 @@ class FrontController extends Controller{
 
     public function adoptions()
     {
-        $userManager = new \Projet\Models\AdminModel();
+        $userManager = new \Projet\Models\AnimalModel();
         $types = $userManager->getTypes();
         $result = $types->fetchAll();
         require $this->view('adoptions');
@@ -46,9 +46,35 @@ class FrontController extends Controller{
         require $this->view('dogs');
     }
 
+    function eachAnimal($id)
+    {
+        $eachAnimal = new \Projet\Models\UserModel();
+        $result = $eachAnimal->oneAnimal($id);
+
+        $oneAnimal = $result->fetch();
+
+        require $this->view('eachAnimal');
+    }
+
     //pour se rendre sur la page blog
-    function blog(){ 
+    function blog()
+    { 
+        $blog = new \Projet\Models\UserModel();
+        $result = $blog->allArticles();
+
+        $allArticles = $result->fetchAll();
+
         require $this->view('blog');
+    }
+
+    function eachArticle($id)
+    {
+        $eachArticle = new \Projet\Models\UserModel();
+        $result = $eachArticle->oneArticle($id);
+
+        $oneArticle = $result->fetch();
+
+        require $this->view('eachArticle');
     }
 
     //pour se rendre sur la page contact "

@@ -2,6 +2,15 @@
 
 <main class="content-animals container">
     <a href="index.php?action=adoptions"><i class="fa-solid fa-arrow-left"></i></a>
+    <?php  
+    if(isset($_SESSION['nickname'])){
+        if($_SESSION['role'] === 1){ ?>
+            <div class="addPet">
+                <button><a href="indexAdmin.php?action=animals">Créer une nouvelle fiche</a></button>
+            </div>
+        <?php }
+    }
+    ?>
     <?php foreach($allCats as $cat){ ?>
     <article class="adoptPet">
         <div class="imgPet">
@@ -15,23 +24,14 @@
                 <p><span>Race/type</span> : <?= $cat['breed'] ?></p>
                 <p><span>Informations Générales</span> : <?= $cat['info'] ?></p>
             </div>
-            <div class="contentPet">
-                <p><span>Présentation</span> : <?= $cat['content'] ?></p>
+            <div class="extractPet">
+                <p><span>Présentation</span> : <?= substr($cat['content'], 0, 200) ?>[...]</p>
+                <button><a href="index.php?action=eachAnimal&id=<?= $cat['id'] ?>">Lire la suite</a></button>
             </div>
-
-            <?php
-            if(isset($_SESSION['nickname'])){
-            if($_SESSION['role'] === 1){ ?>
-                <div class="UD-pet">
-                    <button><a href="indexAdmin.php?action=viewUpdatePet&id=<?= $cat['id'] ?>">Modifier</a></button>
-                    <button><a href="indexAdmin.php?action=deletePet&id=<?= $cat['id'] ?>">Supprimer</a></button>
-                </div>
-            <?php }
-            } ?>
-        </div>
 
     </article>
     <?php } ?>
+    
 
 </main>
 

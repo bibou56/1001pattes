@@ -2,6 +2,15 @@
 
 <main class="content-animals container">
 <a href="index.php?action=adoptions"><i class="fa-solid fa-arrow-left"></i></a>
+<?php  
+    if(isset($_SESSION['nickname'])){
+        if($_SESSION['role'] === 1){ ?>
+            <div class="addPet">
+                <button><a href="indexAdmin.php?action=animals">Créer une nouvelle fiche</a></button>
+            </div>
+        <?php }
+    }
+    ?>
     <?php foreach($allDogs as $dog){ ?>
     <article class="adoptPet">
         <div class="imgPet">

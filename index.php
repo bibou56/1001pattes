@@ -29,9 +29,21 @@ try {
             $controllerFront->dogs(); //va chercher la fonction dogs() dans FrontController pour se rendre sur la page Adoptions Chiens
         }
 
+        elseif($_GET['action']== 'eachAnimal')
+        {
+            $id = $_GET['id'];
+            $controllerFront->eachAnimal($id);
+        }
+
         elseif($_GET['action']== 'blog')
         {
             $controllerFront->blog(); //va chercher la fonction blog() dans FrontController pour se rendre sur la page Blog
+        }
+
+        elseif($_GET['action']== 'eachArticle')
+        {
+            $id = $_GET['id'];
+            $controllerFront->eachArticle($id);
         }
 
         elseif($_GET['action']== 'contact')
