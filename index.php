@@ -8,10 +8,11 @@ try {
 
     $controllerFront = new \Projet\Controllers\FrontController();
 
-    if(isset($_GET['action'])){
+    if(isset($_GET['action']))
+    {
         if($_GET['action']== 'about')
         { 
-            $controllerFront->about(); //va chercher la fonction about() dans FrontController pour se rendre sur la page A propos
+            $controllerFront->about(); //pour se rendre sur la page A propos
         }
 
         elseif($_GET['action'] == 'adoptions')
@@ -59,27 +60,34 @@ try {
 
         elseif($_GET['action']== 'contact')
         {
-            $controllerFront->contact(); //va chercher la fonction contact() dans FrontController pour se rendre sur la page Contact
+            $controllerFront->contact(); //pour se rendre sur la page Contact
         }
 
         elseif($_GET['action']== 'connexion')
         {
-            $controllerFront->connexion(); //va chercher la fonction connexion() dans FrontController pour se rendre sur la page Connexion
+            $controllerFront->connexion(); //pour se rendre sur la page Connexion
         }
 
         elseif($_GET['action']== 'dashboardUser')
         {
-            $controllerFront->dashboardUser();
+            $id = $_GET['id'];
+            $controllerFront->dashboardUser($id);
+        }
+
+        elseif($_GET['action'] == 'deleteComment')
+        {
+            $id = $_GET['id'];
+            $controllerFront->deleteComment($id);
         }
 
         elseif($_GET['action']== 'createAccount')
         {
-            $controllerFront->createAccount(); //va chercher la fonction createAccount() dans FrontController pour se rendre sur la page createAccount
+            $controllerFront->createAccount(); //pour se rendre sur la page createAccount
         }
 
         elseif($_GET['action']== 'legal')
         {
-            $controllerFront->legal();
+            $controllerFront->legal(); //pour se rendre sur la page Mentions légales
         }
 
         elseif($_GET['action']== 'newAccount')

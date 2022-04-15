@@ -14,7 +14,8 @@ try
     { 
         if($_GET['action'] == 'dashboardAdmin')
         {
-            $controllerAdmin->dashboardAdmin();
+            $id = $_GET['id'];
+            $controllerAdmin->dashboardAdmin($id);
         }
 
         elseif($_GET['action'] == "disconnectAdmin")
@@ -133,6 +134,51 @@ try
             $controllerBlog->deleteArticle($id);
         }
 
+        elseif($_GET['action'] == 'teamMember') //pour se rendre sur la page de création d'un nouveau membre
+        {
+            $controllerAdmin->teamMember();
+        }
+
+        elseif($_GET['action'] == 'createTeamMember') //pour envoyer les données d'un nouveau memebre dans la BDD
+        {   
+            $surname = htmlspecialchars($_POST['surname']);
+            $content = htmlspecialchars($_POST['content']);
+            $picture = $_FILES['image'];
+            $image = $controllerAdmin->verifyFiles($picture);
+           
+            if(!empty($surname) && (!empty($content) && (!empty($image)))){
+                // $valid = "La fiche a été éditée !";
+                $controllerAdmin->createTeamMember($surname, $content, $image); 
+                }
+                else 
+                {
+                $error = '* Tous les champs doivent être remplis !';  
+                $controllerAdmin->createTeamMember($error);
+                }   
+        }
+
+        elseif($_GET['action'] == 'viewUpdateMember') //pour se rendre sur la page de modif d'un membre
+        {
+            $id = $_GET['id'];
+            $controllerAdmin->viewUpdateMember($id);
+        }
+
+        elseif($_GET['action'] == 'updateMember') //pour envoyer les modifs d'un membre dans la BDD
+        {   
+            $data = [
+            'id' => $_GET['id'],
+            'surname' => htmlspecialchars($_POST['surname']),
+            'content' => htmlspecialchars($_POST['content']),
+            ];
+            
+            $controllerAdmin->updateMember($data);  
+        }
+
+        elseif($_GET['action'] == 'deleteMember')
+        {
+            $id = $_GET['id'];
+            $controllerAdmin->deleteMember($id);
+        }
 
         elseif($_GET['action'] == 'mails')
         {

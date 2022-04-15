@@ -8,8 +8,8 @@
         </div>
 
         <div class="infoArticle">
-            <p class="dateArticle"><?= $oneArticle['createdAt'] ?></p>
-            <p class="titleArticle">- <?= $oneArticle['title'] ?> -</p>
+            <p class="dateArticle"><?= $oneArticle['date'] ?></p>
+            <p class="titleArticle"><?= $oneArticle['title'] ?></p>
             <p class="contentArticle"><?= $oneArticle['content'] ?></p>
             
             <?php
@@ -44,7 +44,21 @@
         <h3>Commentaires</h3>
         <?php 
         foreach($comments as $comment) {?>
-        <p><?= $comment['content'] ?></p>
+        <div class="eachComment">
+            <div class="content-comment">
+                <p class="nicknameUser"><?= $comment['nickname'] ?></p>
+                <p><?= $comment['date'] ?></p>
+                <p>"<?= $comment['content'] ?>"</p>
+            </div>
+            <?php
+            if(isset($_SESSION['nickname'])){
+                if($_SESSION['role'] === 1){ ?>
+                <div class="deleteComment">
+                    <a href="index.php?action=deleteComment&id=<?= $comment['user_id'] ?>"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
+                </div>
+                <?php }
+            } ?>
+        </div>
         <?php } ?>
     </section>
 

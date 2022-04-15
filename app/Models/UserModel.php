@@ -47,7 +47,7 @@ class UserModel extends Manager{
     public function allArticles()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, title, content, image, createdAt FROM article');
+        $req = $bdd->prepare('SELECT id, title, content, image, DATE_FORMAT(createdAt, "%d/%m/%Y à %H:%i") AS date FROM article ORDER BY createdAt DESC');
         $req->execute();
         return $req;
     }
@@ -55,7 +55,7 @@ class UserModel extends Manager{
     public function oneArticle($id)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, title, content, image, createdAt  FROM article WHERE id=?');
+        $req = $bdd->prepare('SELECT id, title, content, image, DATE_FORMAT(createdAt, "%d/%m/%Y à %H:%i") AS date FROM article WHERE id=?');
         $req->execute(array($id));
         return $req;
     }
@@ -63,7 +63,7 @@ class UserModel extends Manager{
     public function allComments($id)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT user_id, nickname, content, createdAt FROM comment INNER JOIN user ON user_id=user.id WHERE article_id=?');
+        $req = $bdd->prepare('SELECT user_id, nickname, content, DATE_FORMAT(createdAt, "Posté le %d/%m/%Y à %H:%i") AS date FROM comment INNER JOIN user ON user_id=user.id WHERE article_id=? ORDER BY createdAt DESC');
         $req->execute(array($id));
         return $req;
     }
@@ -76,6 +76,30 @@ class UserModel extends Manager{
             ':content'=>$data['content'],
             ':article_id'=>$data['idArticle'],
             ':user_id'=>$data['idUser']));
+        return $req;
+    }
+
+    public function userAllComments($id)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, content, DATE_FORMAT(createdAt, "Posté le %d/%m/%Y à %H:%i") AS date FROM comment WHERE user_id=? ORDER BY createdAt DESC');
+        $req->execute(array(intval($id)));
+        return $req;
+    }
+
+    public function findTeam()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, surname, content, image FROM team');
+        $req->execute();
+        return $req;
+    }
+
+    public function commentDelete($id) //supprime un commentaire dans la BDD
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM comment WHERE id=?');
+        $req->execute(array($id));
         return $req;
     }
 }

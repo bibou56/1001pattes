@@ -299,6 +299,83 @@ li{
   font-style: italic;
 }
 
+/* ..............ABOUT................ */
+#aboutUs{
+  display: flex;
+  flex-direction: column;
+}
+#aboutUs #content-presentation{
+  padding: 0 10px;
+  line-height: 1.4rem;
+}
+#aboutUs #content-presentation p{
+  margin-bottom: 10px;
+}
+#aboutUs #img-presentation{
+  width: 100%;
+  height: 250px;
+  margin-bottom: 20px;
+}
+#aboutUs #img-presentation img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 5px 5px 0 0; */
+}
+
+#ourTeam{
+  margin: 20px 10px;
+}
+#ourTeam .eachMember{
+  margin-bottom: 50px;
+  text-align: center;
+}
+#ourTeam .eachMember img{
+  width: 70%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+#ourTeam .eachMember .surname{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#ourTeam .eachMember .who{
+  text-align: justify;
+  line-height: 1.2rem;
+  padding: 0 10px;
+}
+#ourTeam .eachMember .UD-team{
+  margin: 10px auto 0;
+}
+#ourTeam .eachMember .UD-team button{
+  padding: 5px 10px;
+}
+#ourTeam #members .eachMember .UD-team button:first-child{
+  margin-right: 30px;
+  background-color: var(--vert);
+  border: none;
+  border-radius: 5px;
+}
+#ourTeam #members .eachMember .UD-team button:last-child{
+  background-color: rgb(212, 8, 8);
+  border: none;
+  border-radius: 5px;
+}
+
+#ourTeam #members{
+  text-align: center;
+}
+#ourTeam #members #btnCreate{
+  padding: 10px 10px;
+  background-color: rgb(30, 114, 107, 0.8);
+  border-radius: 5px;
+}
+#ourTeam #members #btnCreate a{
+  color: #fff;
+}
 
 
 /*........................CONNEXION / CREATE ACCOUNT / FORMULAIRE CONTACT..................*/
@@ -673,18 +750,19 @@ li{
 .eachArticle .infoArticle{
   display: flex;
   flex-direction: column;
-  padding: 10px 10px;
+  padding: 0 20px;
   line-height: 1.6rem;
 }
 .eachArticle .infoArticle .dateArticle{
   text-align: end;
+  margin-top: 10px;
 }
 .eachArticle .infoArticle .titleArticle{
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  margin: 10px 0;
+  margin: 10px 0 20px;
 }
 .eachArticle .infoArticle .contentArticle{
   margin-bottom: 20px;
@@ -711,7 +789,8 @@ li{
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+  padding: 0 20px;
 }
 .writeComment form p{
   display: flex;
@@ -745,11 +824,69 @@ li{
 }
 
 .comments{
-  padding: 10px;
+  padding: 0 20px;
+  line-height: 1.5rem;
 }
 .comments h3{
+  font-size: 1.2rem;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+.comments .eachComment{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto 20px;
+  box-shadow: 3px 3px 5px rgb(156, 154, 154);
+  border-radius: 5px;
+}
+.comments .eachComment .nicknameUser{
+  font-weight: bold;
   font-size: 1.1rem;
 }
+.comments .eachComment .content-comment{
+  width: 90%;
+}
+.comments .eachComment .deleteComment{
+  width: 10%;
+  text-align: center;
+}
+.comments .eachComment .deleteComment a img{
+  width: 20px;
+}
+
+/* .................DASHBOARD USER................ */
+.userComments{
+  padding: 0 20px;
+  line-height: 1.5rem;
+}
+.userComments h2{
+  font-size: 1.2rem;
+  margin: 20px 0;
+  text-decoration: underline;
+}
+.userComments #howTo {
+  margin: 20px 0;
+}
+.userComments .commentsUser{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+  box-shadow: 3px 3px 5px rgb(156, 154, 154);
+  border-radius: 5px;
+}
+.userComments .commentsUser .content{
+  width: 90%;
+}
+.userComments .commentsUser .deleteComment{
+  width: 10%;
+  text-align: center;
+}
+.userComments .commentsUser .deleteComment a img{
+  width: 20px;
+}
+
 
 
 

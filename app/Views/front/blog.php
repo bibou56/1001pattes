@@ -18,7 +18,7 @@
         </div>
 
         <div class="infoArticle">
-            <p class="dateArticle"><?= $article['createdAt'] ?></p>
+            <p class="dateArticle"><?= $article['date'] ?></p>
             <p class="titleArticle"><?= $article['title'] ?></p>
             <p class="extractArticle"><?= substr($article['content'], 0, 150) ?>[...]</p>
             

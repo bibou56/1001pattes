@@ -34,15 +34,6 @@
             <nav class="menu-principal">     
                 <a id="link" href="#"><span id="burger"></span></a>
                 <ul id="liste-nav">
-                    <?php 
-                    if(isset($_SESSION['nickname'])){
-                        if($_SESSION['role'] === 1){ ?>
-                            <li><a href="indexAdmin.php?action=dashboardAdmin">Tableau de bord</a></li>
-                        <?php }
-                        elseif($_SESSION['role'] === 0){ ?>
-                            <li><a href="index.php?action=dashboardAdmin">Mon espace</a></li>
-                        <?php }
-                    }?>
                     <li><a class="active" href="/">Accueil</a></li>
                     <li><a href="index.php?action=about">A propos</a></li>
                     <li id="adopt"><a href="index.php?action=adoptions">Adoptions</a></li>
@@ -55,7 +46,15 @@
                             <li><a href="indexAdmin.php?action=comments">Gestion des commentaires</a></li>
                         <?php }
                     } ?>
-                    
+                    <?php 
+                    if(isset($_SESSION['nickname'])){
+                        if($_SESSION['role'] === 1){ ?>
+                            <li><a href="indexAdmin.php?action=dashboardAdmin&id=<?= $_SESSION['id'] ?>">Tableau de bord</a></li>
+                        <?php }
+                        elseif($_SESSION['role'] === 0){ ?>
+                            <li><a href="index.php?action=dashboardUser&id=<?= $_SESSION['id'] ?>">Mon espace</a></li>
+                        <?php }
+                    }?>
                 </ul>
             </nav> 
 

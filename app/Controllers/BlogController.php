@@ -14,7 +14,8 @@ class BlogController extends Controller
         $userManager = new \Projet\Models\BlogModel();
         $result = $userManager->creationArticle($title, $content, $image);
         
-        require $this->viewAdmin('articles');
+        // require $this->view('blog');
+        header('Location:index.php?action=blog');
     }
 
     public function viewUpdateArticle($id)
@@ -42,9 +43,9 @@ class BlogController extends Controller
         $userManager = new \Projet\Models\BlogModel();
         $deleteArticle = $userManager->articleDelete($id);
 
-        $blog = new \Projet\Models\UserModel();
-        $result = $blog->allArticles();
-        $allArticles = $result->fetchAll();
-        require $this->view('blog');
+        // $blog = new \Projet\Models\UserModel();
+        // $result = $blog->allArticles();
+        // $allArticles = $result->fetchAll();
+        header('Location:index.php?action=blog');
     }
 }

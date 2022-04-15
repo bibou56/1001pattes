@@ -10,9 +10,14 @@ class FrontController extends Controller{
         require $this->view('home');
     }
 
-    //pour se rendre sur la page A propos
+    //affiche la page A propos et ses éléments
     public function about()
     { 
+        $userManager = new \Projet\Models\UserModel();
+        $teamMembers = $userManager->findTeam();
+
+        $resultTeam = $teamMembers->fetchAll();
+
         require $this->view('about');
     }
 
@@ -92,12 +97,27 @@ class FrontController extends Controller{
     }
 
     //pour se rendre sur la page connexion
-    function connexion($error = null){
-        require $this->view('connexion', $error);
+    function connexion($error = null){ 
+            require $this->view('connexion', $error);
     }
 
-    function dashboardUser(){
+    function dashboardUser($id)
+    {
+        $userComments = new \Projet\Models\UserModel();
+        
+        $result = $userComments->userAllComments($id);
+        
+        $userAllComments = $result->fetchAll();
+        
         require $this->view('dashboardUser');
+    }
+
+    function deleteComment($id)
+    {
+        $userComments = new \Projet\Models\UserModel();
+        $deleteComment = $userComments->commentDelete($id);
+
+        header('Location:index.php?action=dashboardUser&id='. $_SESSION['id']);
     }
 
     //pour se rendre sur la page createAccount
@@ -114,7 +134,7 @@ class FrontController extends Controller{
     function newAccount($nickname, $mail, $password){
         $newUser = new \Projet\Models\UserModel();
         $newUser->newAccount($nickname, $mail, $password);
-        require $this->home();
+        require $this->connexion();
     }
 
     //pour accéder à son espace user
@@ -134,11 +154,12 @@ class FrontController extends Controller{
 
         if($correctPassword && $_SESSION['role'] === 1)
         {
-            require $this->viewAdmin('dashboard');
+            // require $this->viewAdmin('dashboardAdmin');
+            header('Location:indexAdmin.php?action=dashboardAdmin&id='. $_SESSION['id']);
         }
         elseif($correctPassword && $_SESSION['role'] === 0)
         {
-            require $this->view('dashboardUser');
+            header('Location:index.php?action=dashboardUser&id='. $_SESSION['id']);
         }
         else
         {
