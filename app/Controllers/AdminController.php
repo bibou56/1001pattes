@@ -7,7 +7,33 @@ class AdminController extends Controller
     //affichage de la page dashboard admin
     public function dashboardAdmin($id)
     {
+        $countMails = new \Projet\Models\AdminModel();
+        $mailCount = $countMails->countMails(); //permet de compter le nombre de messages
+        
+        $showMails = new \Projet\Models\AdminModel();
+        $messages = $showMails->allMessages(); //permet d'afficher les messages
+        
+        $totalMessages = $messages->fetchAll();
+
         require $this->viewAdmin('dashboardAdmin');
+    }
+
+    public function eachMail($id)
+    {
+        $eachMail = new \Projet\Models\AdminModel();
+        $oneMail = $eachMail->findMail($id);
+
+        $result = $oneMail->fetch();
+
+        require $this->viewAdmin('eachMail');
+    }
+
+    public function deleteMail($id)
+    {
+        $deleteMail = new \Projet\Models\AdminModel();
+        $mailDelete = $deleteMail->mailDelete($id);
+
+        header('Location:indexAdmin.php?action=dashboardAdmin&id='. $_SESSION['id']);
     }
 
     public function teamMember()

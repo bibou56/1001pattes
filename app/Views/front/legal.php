@@ -1,7 +1,11 @@
 <?php include('header.php') ?>
 
-<main class="content container">
-    <h2>Mentions Légales</h2>
+<main class="content-legal container">
+    <div class="page-title">
+        <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
+        <h2>Mentions légales</h2>
+        <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
+    </div>
 
     <section id="edition">
         <h3>Editeur</h3>

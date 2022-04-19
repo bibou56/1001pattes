@@ -108,5 +108,71 @@
   font-size: 1.2rem;
 }
 
+/* ..............DASHBOARD ADMIN............ */
+.content-dashboardAdmin{
+  /* padding: 0 10px; */
+  margin-bottom: 30px;
+}
+#countMails{
+  margin: 20px 0 30px 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#countMails span{
+  background-color: var(--vert);
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+#allMails #tableMails{
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(212, 199, 199);
+}
+#allMails #tableMails th, #allMails #tableMails td{
+  border: 2px solid #fff;
+  padding: 5px 0;
+  text-align: center;
+}
+#allMails #tableMails .mailAddress, #allMails #tableMails .mailObject {
+  display: none;
+}
+#allMails #tableMails .UD-mail a img{
+  width: 20px;
+}
 
-
+/* .............EACH MAIL............... */
+.content-mail i{
+  font-size: 1.5rem;
+  padding: 20px 0 0 10px;
+}
+.eachMail{
+  margin: 30px auto;
+  padding: 0 10px;
+  line-height: 1.3rem;
+}
+.eachMail p{
+  margin-bottom: 10px;
+}
+.eachMail .mailContent{
+  box-shadow: 3px 3px 5px rgb(156, 154, 154);
+  border-radius: 5px;
+  padding: 10px;
+}
+#actions-mail{
+  margin: 30px auto 0;
+  text-align: center;
+}
+#actions-mail button{
+  padding: 5px 10px;
+}
+#actions-mail button:first-child{
+  margin-right: 30px;
+  background-color: var(--vert);
+  border: none;
+  border-radius: 5px;
+}
+#actions-mail button:last-child{
+  background-color: rgb(212, 8, 8);
+  border: none;
+  border-radius: 5px;
+}

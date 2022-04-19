@@ -47,7 +47,7 @@
         <div class="eachComment">
             <div class="content-comment">
                 <p class="nicknameUser"><?= $comment['nickname'] ?></p>
-                <p><?= $comment['date'] ?></p>
+                <p class="datePost"><?= $comment['date'] ?></p>
                 <p>"<?= $comment['content'] ?>"</p>
             </div>
             <?php

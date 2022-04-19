@@ -167,3 +167,7 @@ catch (Exception $e)
 {
     require "app/Views/front/error.php";
 }
+catch (Error $e)
+{
+    require "app/Views/front/error.php";
+}

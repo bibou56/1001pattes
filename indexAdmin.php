@@ -9,13 +9,27 @@ try
     $controllerAdmin = new \Projet\Controllers\AdminController();
     $controllerAnimal = new \Projet\Controllers\AnimalController();
     $controllerBlog = new \Projet\Controllers\BlogController();
-
+    if(empty($_SESSION)){
+        throw new Exception('Vous n\'êtes pas connecté', 401);
+    }
     if(isset($_GET['action']))
     { 
         if($_GET['action'] == 'dashboardAdmin')
         {
             $id = $_GET['id'];
             $controllerAdmin->dashboardAdmin($id);
+        }
+
+        elseif($_GET['action'] == "eachMail")
+        {
+            $id = $_GET['id'];
+            $controllerAdmin->eachMail($id);
+        }
+
+        elseif($_GET['action'] == 'deleteMail')
+        {
+            $id = $_GET['id'];
+            $controllerAdmin->deleteMail($id);
         }
 
         elseif($_GET['action'] == "disconnectAdmin")
@@ -196,11 +210,17 @@ try
     else 
     {
         // $controllerAdmin->connectAdmin();
-        $controllerAdmin->dashboardAdmin();
+        $controllerAdmin->dashboardAdmin($id);
     }
 
 } 
 catch (Exception $e)
 {
+    $error = $e->getMessage();
+    require "app/Views/administration/error.php";
+}
+catch(Error $e)
+{
+    $error = $e->getMessage();
     require "app/Views/administration/error.php";
 }

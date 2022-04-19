@@ -8,7 +8,7 @@
         foreach($userAllComments as $allComments){ ?>
             <div class="commentsUser">
                 <div class="content">
-                    <p><?= $allComments['date'] ?></p>
+                    <p class="datePost"><?= $allComments['date'] ?></p>
                     <p>"<?= $allComments['content'] ?>"</p>
                 </div>
                 <div class="deleteComment">

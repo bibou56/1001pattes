@@ -1,5 +1,5 @@
         <footer id="bottom">
-            <section id="bottom-content">
+            <div id="bottom-content">
                 <div class="social-media container">
                     <ul>
                         <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -25,7 +25,7 @@
                         <p>samedi, dimanche : 10h - 17h</p>
                     </div>
                 </div>
-            </section>
+            </div>
 
             <div class="transition"></div>
 
@@ -37,8 +37,9 @@
         </footer>
 
         <!-- Fichiers JS -->
-        <script src="/app/Public/front/JS/script.js"></script>
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+        <script src="/app/Public/front/JS/script.js"></script>
+       
         
         
     </body>

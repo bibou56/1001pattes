@@ -53,15 +53,23 @@ function initMap(){
     marker.binPopup("<p>Refuge 1000 et Une Pattes</p>");
   }
   window.onload = function(){
+    
+
+    el = document.querySelector(".valid"); console.log(el);
+    if(el){
+      el.querySelector('i').addEventListener('click', function(){
+        el.classList.add('hide');
+      })
+    }
     initMap();
   }
 
   /*...........BOITE MODALE FICHE ANIMAL............... */
-function example() {
-  el = document.querySelector(".valid");
+ 
+ 
   // el.style.visibility = el.style.visibility == "visible" ? "hidden" : "visible";
-  el.classList.add('hide');
-}
+  
+
   
 
 

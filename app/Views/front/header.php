@@ -43,7 +43,6 @@
                     if(isset($_SESSION['nickname'])){
                         if($_SESSION['role'] === 1){ ?>
                             <li><a href="indexAdmin.php?action=mails">Messages</a></li>
-                            <li><a href="indexAdmin.php?action=comments">Gestion des commentaires</a></li>
                         <?php }
                     } ?>
                     <?php 

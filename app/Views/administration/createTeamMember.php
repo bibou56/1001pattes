@@ -22,7 +22,7 @@
             <div class="valid">
                 <div class="modal">
                     <?php if ($data['valid'] != ""){ ?>
-                        <a href="#" onclick="example()"><i class="fa-solid fa-x"></i></a>
+                        <a href="#"><i class="fa-solid fa-x"></i></a>
                         <p><?= $data['valid'] ?></p>
                     <?php } ?>
                 </div>
