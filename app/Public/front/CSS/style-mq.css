@@ -1,0 +1,435 @@
+/* ............MEDIA QUERIES............ */
+@media screen and (min-width: 768px) and (max-width: 992px){
+
+}
+
+
+@media screen and (min-width: 992px){
+  /* reset */
+  .page-title p img{
+    width: 30px;
+  }
+  .page-title h2{
+    font-size: 1.5rem;
+    margin: 30px 0 20px;
+  }
+  /*............. HEADER............. */
+  #top-content{
+    height: 250px;
+    background-position: center;
+  }
+  .title-header{
+    padding: 50px 0 30px;
+  }
+  .title-header p a{
+    font-size: 2.8rem;
+
+  }
+  .title-header .logo{
+    width: 100px;
+  }
+  
+  .connect-user{
+    margin-top: 20px;
+  }
+  .connect-user a i{
+    font-size: 2rem;
+  }
+  .connect-user p:first-child{
+    font-size: 1.5rem;
+  }
+  .connect-user p:last-child a{
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+  
+  #burger{
+    display: none;
+  }
+  #liste-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    transform: scaleY(1);
+    background-color: transparent;
+    top: 10px;
+    backdrop-filter: blur(0px);
+    margin-bottom: 50px;
+    min-height: 0;
+    
+  }
+  #liste-nav li a{
+    font-size: 1.5rem;
+    
+  }
+  #liste-nav li .active{
+    font-size: 1.6rem;
+    text-decoration: underline;
+  }
+  
+  
+  /*............FOOTER..............*/
+  #bottom-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  #bottom .address-footer{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    margin: 30px 0;
+    color: #fff;
+  }
+  #bottom .address-footer i{
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  #bottom .address-footer address{
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-style: normal;
+  }
+  #bottom .address-footer address h3, #bottom .address-footer address p{
+    font-size: 1.1rem;
+  }
+
+  #bottom .social-media{
+    width: 33%;
+    text-align: center;
+  }
+  /* #bottom .social-media ul li{
+    margin-bottom: 20px;
+  } */
+  /* #bottom .social-media ul li:last-child{
+    margin-bottom: 0;
+  } */
+  #bottom .schedule{
+    width: 33%;
+  }
+  #bottom .schedule #opening-hours p{
+    font-size: 1.1rem;
+  }
+
+  /* ..............ABOUT............... */
+  #aboutUs{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 450px;
+    margin: 40px auto 70px;
+    box-sizing: border-box;
+  }
+  #aboutUs #img-presentation{
+    width: 30%;
+    height: 450px;
+    margin: 0;
+  }
+  #aboutUs #content-presentation{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 1.4rem;
+    padding: 0;
+  }
+  #aboutUs #content-presentation p{
+    font-size: 1.2rem;
+    margin: 0 0 30px 15px;
+    text-align: justify;
+  }
+  #aboutUs #content-presentation p:last-child{
+    margin-bottom: 0;
+  }
+
+  #ourTeam #members{
+    display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 20px;
+  }
+  #ourTeam .eachMember{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
+  #ourTeam .eachMember img{
+    width: 15vw;
+    height: 15vw;
+  }
+  #ourTeam .eachMember .surname{
+    margin-top: 10px;
+    font-size: 1.4rem;
+  }
+  #ourTeam .eachMember .who{
+    width: 90% ;
+    font-size: 1.2rem;
+  }
+  #ourTeam .eachMember .UD-team button a{
+    font-size: 1.2rem;
+  }
+
+  #ourTeam #btnCreate a{
+    font-size: 1.2rem;
+  }
+
+  /*........... CONNEXION / CREATE ACCOUNT / FORMULAIRE CONTACT............ */
+  .content-form .text-account{
+    width: 60%;
+    padding: 0;
+  }
+  .content-form .form-connect{
+    width: 60%;
+  }
+  .content-form .form-connect p{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .content-form .form-connect p label{
+    width: 100%;
+    text-align: start;
+    /* margin-right: 20px; */
+    margin-bottom: 15px;
+  }
+  .content-form .form-connect p input{
+    width: 100%;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  .content-form p, .content-form p a{
+    font-size: 1.2rem;
+  }
+  .content-form .form-connect .consent-box input{
+    width: 20px;
+  }
+  .content-form .form-connect .consent-box label{
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  .content-form .form-connect .consent-box label a{
+    font-size: 1.2rem;
+  }
+  .content-form .form-connect .buttons input:first-child{
+    margin-right: 0;
+  }
+  .content-form .form-connect p input[type=submit], 
+  .content-form .form-connect p input[type=reset]{
+    width: 30%;
+  }
+
+  /* .............PAGE CONTACT............ */
+  #contact-info .address p, #contact-info .address h3{
+    font-size: 1.2rem;
+  }
+
+  #myMap{
+    height: 300px;
+  }
+
+  /* ...........ADOPTIONS........... */
+  #btnAnimals{
+    width: 40%;
+    margin: 100px auto;
+  }
+  #btnAnimals button{
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 50px;
+  }
+  #btnAnimals button:last-child{
+    margin-bottom: 0;
+  }
+  #btnAnimals button a{
+    font-size: 1.3rem;
+  }
+  #btnAnimals button i{
+    font-size: 1.7rem;
+    margin-right: 10px;
+  }
+
+  /* .............CATS AND DOGS............ */
+  .content-pets i{
+    display: none;
+  }
+  .content-pets .addPet{
+    margin: 70px 0 50px;
+  }
+  .content-pets .addPet button{
+    padding: 15px;
+  }
+  .content-pets .addPet button a{
+    font-size: 1.3rem;
+  }
+
+  .adoptPet{
+    width: 30%;
+  }
+  .adoptPet .infoPet .petName{
+    font-size: 1.4rem;
+  }
+  .adoptPet .infoPet p{
+    margin-bottom: 10px;
+  }
+  .adoptPet .infoPet p, .adoptPet .infoPet p span,
+  .adoptPet .extractPet p, .adoptPet .extractPet span{
+    font-size: 1.1rem;
+  }
+  .adoptPet .extractPet button a{
+    font-size: 1.1rem;
+  }
+
+  /* ...............EACH ANIMAL................ */
+  .content-animal i{
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+  .eachAnimal{
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  .eachAnimal .imgPet{
+    float: left;
+    width: 50%;
+    height: 400px;
+    margin: 0 40px 20px 0;
+  }
+  .eachAnimal .infoPet{
+    display: block;
+    padding: 0;
+  }
+  .eachAnimal .infoPet .petName{
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+  }
+  .eachAnimal .infoPet p, .eachAnimal .infoPet p span{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    text-align: justify;
+  }
+  .eachAnimal .infoPet .petContent{
+    margin-top: 50px;
+    line-height: 2.2rem;
+  }
+
+  .eachAnimal  .UD-pet{
+    margin: 50px 0;
+  }
+  .eachAnimal  .UD-pet button{
+    padding: 10px 15px;
+  }
+  .eachAnimal  .UD-pet button a{
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  /* ..............BLOG.............. */
+  .content-articles .addArticle button{
+    padding: 10px 15px ;
+  }
+  .content-articles .addArticle a{
+    font-size: 1.2rem;
+  }
+  .allArticles{
+    width: 30%;
+  }
+  .allArticles .infoArticle .dateArticle{
+    font-size: 1rem;
+  }
+  .allArticles .infoArticle p, .allArticles .infoArticle button a{
+    font-size: 1.1rem;
+  }
+
+  /* ...................EACH ARTICLE.............. */
+  .content-articles i{
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .eachArticle{
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  .eachArticle .imgArticle{
+    float: left;
+    width: 50%;
+    height: 400px;
+    margin: 0 40px 25px 0;
+  }
+  .eachArticle .infoArticle{
+    display: block;
+    padding: 0;
+  }
+  .eachArticle .infoArticle .dateArticle{
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .eachArticle .infoArticle .titleArticle{
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+  }
+  .eachArticle .infoArticle .contentArticle{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    text-align: justify;
+  }
+  .eachArticle .infoArticle .UD-article{
+    text-align: center;
+    margin: 50px 0;
+  }
+  .eachArticle .infoArticle .UD-article button{
+    padding: 10px 15px;
+  }
+  .eachArticle .infoArticle .UD-article button a{
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  .writeComment form{
+    width: 50%;
+    margin: 30px 0;
+  }
+  .writeComment form p label{
+    font-size: 1.2rem;
+  }
+  .writeComment form p textarea{
+    height: 200px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  .writeComment form p input{
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  .comments h3{
+    font-size: 1.5rem;
+  }
+  .comments .eachComment{
+    width: 50%;
+    margin: 30px 0;
+    padding-left: 5px;
+  }
+  .comments .eachComment .nicknameUser p{
+    font-size: 1.3rem;
+  }
+  .comments .eachComment .datePost{
+    margin-bottom: 10px;
+  }
+  .comments .eachComment .content-comment p, .comments .eachComment .datePost p{
+    font-size: 1.2rem;
+  }
+  .comments .eachComment .deleteComment a img{
+    width: 20px;
+  }
+}

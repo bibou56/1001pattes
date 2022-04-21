@@ -17,17 +17,6 @@
                <?php }}
             ?> 
         </div>
-        <?php  
-        if(isset($data['valid'])){ ?>
-            <div class="valid">
-                <div class="modal">
-                    <?php if ($data['valid'] != ""){ ?>
-                        <a href="#"><i class="fa-solid fa-x"></i></a>
-                        <p><?= $data['valid'] ?></p>
-                    <?php } ?>
-                </div>
-            </div>
-        <?php } ?>
 
         <form method="post" action="indexAdmin.php?action=createArticle" enctype="multipart/form-data">
             <p>

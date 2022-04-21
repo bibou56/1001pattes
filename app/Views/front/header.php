@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
     <title>Refuge 1001 Pattes</title>
     <link rel="stylesheet" href="/app/Public/front/CSS/style.css">
+    <link rel="stylesheet" href="/app/Public/front/CSS/style-mq.css">
     <link rel="stylesheet" href="/app/Public/administration/CSS/style.css">
 </head>
 
@@ -39,12 +40,6 @@
                     <li id="adopt"><a href="index.php?action=adoptions">Adoptions</a></li>
                     <li><a href="index.php?action=blog">Blog</a></li>
                     <li><a href="index.php?action=contact">Contact</a></li>
-                    <?php
-                    if(isset($_SESSION['nickname'])){
-                        if($_SESSION['role'] === 1){ ?>
-                            <li><a href="indexAdmin.php?action=mails">Messages</a></li>
-                        <?php }
-                    } ?>
                     <?php 
                     if(isset($_SESSION['nickname'])){
                         if($_SESSION['role'] === 1){ ?>
@@ -74,8 +69,6 @@
                     <a href="index.php?action=connexion"><i class="fa-solid fa-user"></i></a>
                 <?php }
             ?>
-            </div>
-
-                
+            </div>      
         </div>     
     </header>

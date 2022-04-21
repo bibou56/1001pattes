@@ -71,7 +71,7 @@ try
             else 
             {
                 $error = '* Tous les champs doivent être remplis !';  
-                $controllerAnimal->createAnimal($error);
+                $controllerAnimal->animals($error);
             }   
         }
 
@@ -114,14 +114,18 @@ try
             $image = $controllerBlog->verifyFiles($picture);
            
             if(!empty($title) && (!empty($content) && (!empty($image)))){
-                // $valid = "La fiche a été éditée !";
-                // var_dump($title, $content, $image); die;
-                $controllerBlog->articleCreate($title, $content, $image);
+                $data = [
+                    'title' => $title,
+                    'content' => $content,
+                    'image' => $image,
+                ];
+
+                $controllerBlog->articleCreate($data);
             } 
             else 
             {
                 $error = '* Tous les champs doivent être remplis !';  
-                $controllerBlog->articleCreate($error);
+                $controllerBlog->articles($error);
             }   
         }
 
@@ -161,13 +165,12 @@ try
             $image = $controllerAdmin->verifyFiles($picture);
            
             if(!empty($surname) && (!empty($content) && (!empty($image)))){
-                // $valid = "La fiche a été éditée !";
                 $controllerAdmin->createTeamMember($surname, $content, $image); 
                 }
                 else 
                 {
                 $error = '* Tous les champs doivent être remplis !';  
-                $controllerAdmin->createTeamMember($error);
+                $controllerAdmin->teamMember($error);
                 }   
         }
 

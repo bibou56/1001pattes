@@ -31,7 +31,7 @@
             <h2>Contactez-nous !</h2>
             <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
         </div>
-        <p class="text-account">Vous avez une question ? Vous voulez devenir bénévole ? Vous voulez adopter un animal ? Laissez-nous votre message, nous vous répondrons le plus vite possible !</p>
+        <p class="text-account">Vous avez une question? Vous voulez devenir bénévole? Vous voulez adopter un animal? Laissez-nous votre message, nous vous répondrons le plus vite possible !</p>
 
         <div class="form-connect">
         <div class="error">  

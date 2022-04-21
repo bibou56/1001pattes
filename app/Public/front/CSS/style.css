@@ -6,11 +6,6 @@
 }
 
 /* mini reset */
-/* @font-face{
-  font-family: "Antipasto";
-  src:url("assets/fonts/Antipasto.ttf");
-} */
-
 *{
   font-size: 16px;
   box-sizing: border-box;
@@ -69,6 +64,7 @@ li{
   /* background: linear-gradient(90deg, rgba(40,227,128,1) 0%, rgba(30,114,107,0.82) 100%); */
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) , url(/app/Public/front/images/collage.png);
   background-size: cover; 
+  margin-bottom: 30px;
 }
 
 .title-header{
@@ -105,7 +101,7 @@ li{
   color: #fff;
 }
 .connect-user a i{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 .connect-user p{
   color: #fff;
@@ -180,11 +176,11 @@ li{
 #liste-nav li a{
   color: #fff;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #liste-nav li .active{
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bolder;
   text-decoration: underline;
 }
@@ -218,19 +214,7 @@ li{
 }
 
 #bottom .address-footer{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 30px 0;
-  color: #fff;
-}
-#bottom .address-footer i{
-  font-size: 1.6rem;
-}
-#bottom .address-footer address{
-  font-size: 1.1rem;
-  line-height: 2rem;
-  padding: 0 10px;
+  display: none;
 }
 
 #bottom .schedule{
@@ -276,34 +260,44 @@ li{
   flex-direction: column;
 }
 #aboutUs #content-presentation{
-  padding: 0 10px;
-  line-height: 1.4rem;
+  padding: 0 20px;
+  line-height: 1.5rem;
 }
 #aboutUs #content-presentation p{
-  margin-bottom: 10px;
+  margin: 30px 0 10px;
 }
 #aboutUs #img-presentation{
   width: 100%;
   height: 250px;
-  margin-bottom: 20px;
+  margin: 30px 0 20px;
 }
 #aboutUs #img-presentation img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* border-radius: 5px 5px 0 0; */
+  /* margin-top: 30px; */
 }
 
 #ourTeam{
-  margin: 20px 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 10px;
+}
+#ourTeam .page-title{
+  width: 100%;
+  margin-bottom: 30px;
 }
 #ourTeam .eachMember{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 70px;
-  text-align: center;
 }
 #ourTeam .eachMember img{
-  width: 60vw;
-  height: 60vw;
+  width: 50vw;
+  height: 50vw;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
@@ -314,15 +308,18 @@ li{
   margin-bottom: 10px;
 }
 #ourTeam .eachMember .who{
+  width: 80%;
   text-align: justify;
-  line-height: 1.2rem;
-  padding: 0 10px;
+  line-height: 1.3rem;
 }
 #ourTeam .eachMember .UD-team{
-  margin: 10px auto 0;
+  margin: 30px auto 0;
 }
 #ourTeam .eachMember .UD-team button{
-  padding: 5px 10px;
+  padding: 8px 10px;
+}
+#ourTeam .eachMember .UD-team button a{
+  color: #fff;
 }
 #ourTeam #members .eachMember .UD-team button:first-child{
   margin-right: 30px;
@@ -336,15 +333,13 @@ li{
   border-radius: 5px;
 }
 
-#ourTeam #members{
-  text-align: center;
-}
-#ourTeam #members #btnCreate{
+#ourTeam #btnCreate{
   padding: 10px 10px;
   background-color: rgb(30, 114, 107, 0.8);
   border-radius: 5px;
+  margin-bottom: 50px;
 }
-#ourTeam #members #btnCreate a{
+#ourTeam #btnCreate a{
   color: #fff;
 }
 
@@ -413,9 +408,10 @@ li{
 .content-form .form-connect p input[type=submit], 
 .content-form .form-connect p input[type=reset]{
   width: 40%;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   padding-left: 0;
+  margin: 20px auto 0;
 }
 .content-form .form-connect p input[type=submit]:hover,
 .content-form .form-connect p input[type=reset]:hover{
@@ -458,10 +454,13 @@ li{
 #contact-info .page-title{
   margin-bottom: -30px;
 }
+#contact-info .address i:first-child{
+  margin-top: 30px;
+}
 #contact-info .address i{
   font-size: 1.8rem;
   margin: 20px 0 10px;
-  color: var(--vert-fonce);
+  color: var(--vert);
 }
 #contact-info .address p{
   font-size: 1rem;
@@ -511,21 +510,29 @@ li{
 #btnAnimals button i{
   font-size: 1.2rem;
 }
+
 /* .............CATS AND DOGS.............. */
-.content-animals i{
+.content-pets i{
   font-size: 1.5rem;
-  padding: 20px 0 0 10px;
+  padding-left: 20px;
 }
-.content-animals .addPet{
+.content-pets .addPet{
   text-align: center;
+  margin: 20px 0;
 }
-.content-animals .addPet button{
+.content-pets .addPet button{
   padding: 10px 10px;
   background-color: rgb(30, 114, 107, 0.8);
   border-radius: 5px;
 }
-.content-animals .addPet a{
+.content-pets .addPet a{
   color: #fff;
+}
+#allPets{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .adoptPet{
   display: flex;
@@ -580,6 +587,10 @@ li{
 }
 
 /* ..............EACH ANIMAL............. */
+.content-animal i{
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
 .eachAnimal{
   display: flex;
   flex-direction: column;
@@ -597,8 +608,12 @@ li{
 .eachAnimal .infoPet{
   display: flex;
   flex-direction: column;
-  padding: 10px 10px;
+  padding: 10px 20px;
   line-height: 1.6rem;
+}
+.eachAnimal .infoPet p{
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 .eachAnimal .infoPet .petName{
   font-size: 1.2rem;
@@ -609,24 +624,34 @@ li{
 }
 .eachAnimal .infoPet .petContent{
   margin-top: 30px;
+  text-align: justify;
 }
 .eachAnimal .infoPet span{
   text-decoration: underline;
   font-weight: bold;
 }
-.eachAnimal .infoPet .UD-pet{
-  margin: 10px auto 0;
+.eachAnimal .imgPet{
+  margin: 30px auto 0;
 }
-.eachAnimal .infoPet .UD-pet button{
-  padding: 5px 10px;
+
+.eachAnimal .UD-pet{
+  text-align: center;
+  margin: 30px 0;
 }
-.eachAnimal .infoPet .UD-pet button:first-child{
+.eachAnimal .UD-pet button{
+  padding: 8px 10px;
+}
+.eachAnimal .UD-pet button:first-child{
   margin-right: 30px;
   background-color: var(--vert);
   border: none;
   border-radius: 5px;
 }
-.eachAnimal .infoPet .UD-pet button:last-child{
+.eachAnimal .UD-pet button a{
+  color: #fff;
+  font-size: 1.1rem;
+}
+.eachAnimal .UD-pet button:last-child{
   background-color: rgb(212, 8, 8);
   border: none;
   border-radius: 5px;
@@ -640,15 +665,23 @@ li{
 }
 .content-articles .addArticle{
   text-align: center;
-  margin-top: 50px;
+  margin: 50px 0;
 }
 .content-articles .addArticle button{
-  padding: 10px 10px;
+  padding: 10px;
   background-color: rgb(30, 114, 107, 0.8);
   border-radius: 5px;
 }
 .content-articles .addArticle a{
   color: #fff;
+}
+
+#seeAllArticles{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
 }
 .allArticles{
   display: flex;
@@ -743,6 +776,9 @@ li{
 }
 .eachArticle .infoArticle .UD-article button{
   padding: 5px 10px;
+}
+.eachArticle .infoArticle .UD-article button a{
+  color: #fff;
 }
 .eachArticle .infoArticle .UD-article button:first-child{
   margin-right: 30px;
@@ -890,95 +926,5 @@ li{
 
 
 
-/* ............MEDIA QUERIES............ */
-@media screen and (min-width: 768px) and (max-width: 992px){
 
-}
-
-
-@media screen and (min-width: 992px){
-
-  /* HEADER */
-  .title-header{
-    padding: 30px 0 10px;
-  }
-  .title-header p a{
-    font-size: 2.2rem;
-
-  }
-  .title-header .logo{
-    width: 70px;
-  }
-  
-  
-  #banner{
-    padding-bottom: 20px;
-  }
-  #burger{
-    display: none;
-  }
-  #liste-nav{
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    transform: scaleY(1);
-    background-color: transparent;
-    padding: 0 10px;
-    top: 0;
-    backdrop-filter: blur(0px);
-    
-  }
-  #liste-nav li a{
-    font-size: 1rem;
-  }
-  #liste-nav li a:hover{
-    font-size: 1.1rem;
-    font-weight: bolder;
-  }
-  
-  .connect-user a{
-    font-size: 1.5rem;
-  }
-  #liste-nav li .active{
-    text-decoration: underline;
-    font-size: 1.2rem;
-  }
-  
-
-  /*FOOTER*/
-  #bottom-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
-  #bottom .social-media{
-    width: 33%;
-    /* background-color: aqua; */
-    text-align: center;
-  }
-  #bottom .social-media ul{
-    display: flex;
-    flex-direction: column;
-  }
-  #bottom .social-media ul li{
-    margin-bottom: 20px;
-  }
-  #bottom .social-media ul li:last-child{
-    margin-bottom: 0;
-  }
-  #bottom .schedule{
-    width: 33%;
-    /* background-color: blue; */
-  }
-
-  #bottom .address-footer{
-    width: 33%;
-    /* background-color: blueviolet; */
-  }
-
-  /* CONTACT */
-  
-  
-}
   

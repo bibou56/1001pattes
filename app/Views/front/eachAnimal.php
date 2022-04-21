@@ -1,6 +1,6 @@
 <?php include('header.php') ?>
 
-<main class="content-animals container">
+<main class="content-animal container">
     <a href="index.php?action=adoptions"><i class="fa-solid fa-arrow-left"></i></a>
     <article class="eachAnimal">
         <div class="imgPet">
@@ -13,21 +13,18 @@
             <p><span>Race/type</span> : <?= $oneAnimal['breed'] ?></p>
             <p><span>Informations générales</span> : <?= $oneAnimal['info'] ?></p>
             <p class="petContent"><span>Présentation</span> : <?= $oneAnimal['content'] ?></p>
-            
-            <?php
-            if(isset($_SESSION['nickname'])){
-                if($_SESSION['role'] === 1){ ?>
-                    <div class="UD-pet">
-                        <button><a href="indexAdmin.php?action=viewUpdatePet&id=<?= $oneAnimal['id'] ?>">Modifier</a></button>
-                        <button><a href="indexAdmin.php?action=deletePet&id=<?= $oneAnimal['id'] ?>">Supprimer</a></button>
-                    </div>
-                <?php }
-            } ?>
+        </div>  
 
-        </div>
-
+        <?php
+        if(isset($_SESSION['nickname'])){
+            if($_SESSION['role'] === 1){ ?>
+                <div class="UD-pet">
+                    <button><a href="indexAdmin.php?action=viewUpdatePet&id=<?= $oneAnimal['id'] ?>">Modifier</a></button>
+                    <button><a href="indexAdmin.php?action=deletePet&id=<?= $oneAnimal['id'] ?>">Supprimer</a></button>
+                </div>
+            <?php }
+        } ?>
     </article>
-    
 </main>
 
 <?php include('footer.php') ?>

@@ -36,7 +36,7 @@ class AdminController extends Controller
         header('Location:indexAdmin.php?action=dashboardAdmin&id='. $_SESSION['id']);
     }
 
-    public function teamMember()
+    public function teamMember($error = '')
     {
         require $this->viewAdmin('createTeamMember');
     }

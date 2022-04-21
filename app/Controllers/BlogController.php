@@ -9,10 +9,10 @@ class BlogController extends Controller
         require $this->viewAdmin('articles');
     }
 
-    public function articleCreate($title, $content, $image)
+    public function articleCreate($data)
     {
         $userManager = new \Projet\Models\BlogModel();
-        $result = $userManager->creationArticle($title, $content, $image);
+        $result = $userManager->creationArticle($data);
         
         // require $this->view('blog');
         header('Location:index.php?action=blog');

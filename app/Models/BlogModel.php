@@ -4,12 +4,14 @@ namespace Projet\Models;
 
 class BlogModel extends Manager
 {
-    public function creationArticle($title, $content, $image)
+    public function creationArticle($data)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO article(title, content, image ) VALUE(?, ?, ?)');
-        $req->execute(array($title, $content, $image));
-        
+        $req = $bdd->prepare('INSERT INTO article(title, content, image ) VALUE(:title, :content, :image)');
+        $req->execute(array(
+            ':title' => $data['title'],
+            ':content' => $data['content'],
+            ':image' => $data['image']));
         return $req;
     }
 

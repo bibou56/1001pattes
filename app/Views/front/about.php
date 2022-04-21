@@ -45,14 +45,15 @@
                 } ?>
             </article>
             <?php } ?>
-
-            <?php
-            if(isset($_SESSION['nickname'])){
-                if($_SESSION['role']===1){ ?>
-                <button id="btnCreate"><a href="indexAdmin.php?action=teamMember">Créer un nouveau membre</a></button>
-                <?php }
-            } ?>
         </div>
+
+        <?php
+        if(isset($_SESSION['nickname'])){
+            if($_SESSION['role']===1){ ?>
+            <button id="btnCreate"><a href="indexAdmin.php?action=teamMember">Créer un nouveau membre</a></button>
+            <?php }
+        } ?>
+        
     </section>
 
 </main>

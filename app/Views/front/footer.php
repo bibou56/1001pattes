@@ -1,5 +1,15 @@
         <footer id="bottom">
             <div id="bottom-content">
+
+                <div class="address-footer container"> 
+                    <i class="fas fa-map-marker-alt"></i>
+                    <address>
+                        <h3>Refuge 1000 et Une Pattes</h3>
+                        <p>35 rue de la Chapelle de Sainte Avoye</p>
+                        <p>56498 BIGOUBLEN</p>
+                    </address>
+                </div>
+
                 <div class="social-media container">
                     <ul>
                         <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -8,17 +18,8 @@
                     </ul>
                 </div>
 
-                <!-- <div class="address-footer container"> 
-                    <i class="fas fa-map-marker-alt"></i>
-                    <address>
-                        <h3>Refuge 1000 et Une Pattes</h3>
-                        <p>35 rue de la Chapelle de Sainte Avoye</p>
-                        <p>56498 BIGOUBLEN</p>
-                    </address>
-                </div> -->
-
                 <div class="schedule container">
-                    <!-- <i class="fa-solid fa-clock"></i> -->
+                    <i class="fa-solid fa-clock"></i>
                     <div id="opening-hours">
                         <p>lundi : fermé</p>
                         <p>du mardi au vendredi : 14h - 19h30</p>
