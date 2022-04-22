@@ -4,6 +4,18 @@ namespace Projet\Models;
 
 class AdminModel extends Manager
 {
+    public function creationEvent($data)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO event(image, title, date, content) VALUE(:image, :title, :date, :content)');
+        $req->execute(array(
+            ':image' => $data['image'],
+            ':title' => $data['title'],
+            ':date' => $data['date'],
+            ':content' => $data['content'], ));
+        return $req;
+    }
+    
     public function teamCreate($surname, $content, $image)
     {
         $bdd = $this->dbConnect();

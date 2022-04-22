@@ -27,7 +27,7 @@
                     <p><span>Informations Générales</span> : <?= $dog['info'] ?></p>
                 </div>
                 <div class="extractPet">
-                    <p><span>Présentation</span> : <?= mb_substr($dog['content'], 0, 200) ?>[...]</p>
+                    <p><span>Présentation</span> : <?= mb_substr($dog['content'], 0, 150) ?>[...]</p>
                     <button><a href="index.php?action=eachAnimal&id=<?= $dog['id'] ?>">Lire la suite</a></button>
                 </div>
             </div>

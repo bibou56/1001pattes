@@ -38,6 +38,35 @@ try
             header('Location:indexAdmin.php');
         }
 
+        elseif($_GET['action'] == 'event') //pour aller sur la page de crétaion d'un évènement à afficher dans la page d'accueil
+        { 
+            $controllerAdmin->event();
+        }
+
+        elseif($_GET['action'] == 'createEvent'){
+            $title = htmlspecialchars($_POST['title']);
+            $date = htmlspecialchars($_POST['date']);
+            $content = htmlspecialchars($_POST['content']);
+            $picture = $_FILES['image'];
+            $image = $controllerBlog->verifyFiles($picture);
+           
+            if(!empty($title) && (!empty($content) && (!empty($date) &&(!empty($image))))){
+                $data = [
+                    'title' => $title,
+                    'content' => $content,
+                    'image' => $image,
+                    'date' => $date,
+                ];
+
+                $controllerAdmin->eventCreate($data);
+            } 
+            else 
+            {
+                $error = '* Tous les champs doivent être remplis !';  
+                $controllerAdmin->event($error);
+            }   
+        }
+
         elseif($_GET['action'] == 'animals')
         {
             $controllerAnimal->animals(); //va chercher la fonction animals() dans AdminController pour se rendre sur la page des fiches animaux

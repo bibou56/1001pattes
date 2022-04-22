@@ -36,6 +36,20 @@ class AdminController extends Controller
         header('Location:indexAdmin.php?action=dashboardAdmin&id='. $_SESSION['id']);
     }
 
+    public function event($error = '')
+    {
+        require $this->viewAdmin('createEvent');
+    }
+
+    public function eventCreate($data)
+    {
+        $userManager = new \Projet\Models\AdminModel();
+        $result = $userManager->creationEvent($data);
+
+        $controllerFront = new \Projet\Controllers\FrontController();
+        $controllerFront->home();
+    }
+
     public function teamMember($error = '')
     {
         require $this->viewAdmin('createTeamMember');
@@ -72,18 +86,6 @@ class AdminController extends Controller
         $deleteMember = $userManager->memberDelete($id);
 
         header('Location: index.php?action=about');
-    }
-
-
-    public function mails()
-    {
-        require $this->viewAdmin('mails');
-    }
-
-    
-    public function comments()
-    {
-        require $this->viewAdmin('comments');
     }
 
 }

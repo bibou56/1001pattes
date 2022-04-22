@@ -48,7 +48,7 @@ li{
   width: 25px;
 }
 .page-title h2{
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin: 30px 0 20px;
 }
 
@@ -165,6 +165,7 @@ li{
   transform: scaleY(0);
   transform-origin: center top;
   transition: all 0.3s ease;
+  z-index: 1000;
 }
 #liste-nav.open{
   transform: scaleY(1);
@@ -176,16 +177,119 @@ li{
 #liste-nav li a{
   color: #fff;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
-
 #liste-nav li .active{
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bolder;
   text-decoration: underline;
 }
 
 /*................. MAIN................... */
+.main-content{
+  padding: 0 10px;
+  margin-bottom: 50px;
+}
+.main-content h1{
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--vert-fonce);
+}
+
+/* number of pets */
+#nbrOfPets{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+#nbrOfPets div{
+  margin-bottom: 30px;
+}
+#nbrOfPets .page-title{
+  width: 100%;
+  margin-top: 30px;
+}
+#nbrOfPets #nbrOfCats, #nbrOfPets #nbrOfDogs{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nbrOfPets #nbrOfCats img, #nbrOfPets #nbrOfDogs img{
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  filter: brightness(80%);
+}
+#nbrOfPets #nbrOfCats p:first-child, #nbrOfPets #nbrOfDogs p:first-child{
+  position: relative;
+}
+#nbrOfPets #nbrOfCats span, #nbrOfPets #nbrOfDogs span{
+  position: absolute;
+  font-size: 3.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+ 
+}
+#nbrOfPets #nbrOfCats p:last-child, #nbrOfPets #nbrOfDogs p:last-child{
+  font-size: 1.3rem;
+  margin-left: 20px;
+}
+
+/* next event */
+.event{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 3px 3px 10px black;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.event img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 10px;
+}
+.event p{
+  padding: 0 10px 20px;
+}
+.event .titleEvent{
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.event .dateEvent{
+  font-style: italic;
+}
+.event .contentEvent{
+  line-height: 1.4rem;
+}
+
+#nextEvent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#nextEvent button{
+  margin: 30px auto 0;
+  width: 60%;
+  padding: 10px 10px;
+  background-color: rgb(30, 114, 107, 0.8);
+  border-radius: 5px;
+}
+#nextEvent button a{
+  color: #fff;
+}
+
 
 
 
@@ -245,8 +349,8 @@ li{
 #bottom #copyright{
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
-  padding: 0 10px;
+  margin: 10px auto;
+  padding: 0 20px;
 }
 #bottom #copyright a, #bottom #copyright p{
   color: #fff;

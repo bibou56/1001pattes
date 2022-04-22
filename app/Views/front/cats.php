@@ -27,7 +27,7 @@
                     <p><span>Informations Générales</span> : <?= $cat['info'] ?></p>
                 </div>
                 <div class="extractPet">
-                    <p><span>Présentation</span> : <?= mb_substr($cat['content'], 0, 200) ?>[...]</p>
+                    <p><span>Présentation</span> : <?= mb_substr($cat['content'], 0, 150) ?>[...]</p>
                     <button><a href="index.php?action=eachAnimal&id=<?= $cat['id'] ?>">Lire la suite</a></button>
                 </div>
             </div>

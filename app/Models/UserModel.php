@@ -12,6 +12,30 @@ class UserModel extends Manager{
         return $req;
     }
 
+    public function countCats()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(id) FROM animal WHERE type_id=1');
+        $req->execute();
+        return $req;
+    }
+
+    public function countDogs()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(id) FROM animal WHERE type_id=2');
+        $req->execute();
+        return $req;
+    }
+
+    public function findEvent()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT image, title, date, content, createdAt FROM event ORDER BY createdAt DESC LIMIT 1');
+        $req->execute();
+        return $req;
+    }
+
     public function mailCheck($mail)
     {
         $bdd = $this->dbConnect();
@@ -23,7 +47,7 @@ class UserModel extends Manager{
     public function allCats()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, type_id, name, breed, info, age, content, image FROM animal WHERE type_id = 1');
+        $req = $bdd->prepare('SELECT id, type_id, name, breed, info, age, content, image, createdAt FROM animal WHERE type_id = 1 ORDER BY createdAt DESC');
         $req->execute();
         return $req;
     }
@@ -31,7 +55,7 @@ class UserModel extends Manager{
     public function allDogs()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, type_id, name, breed, info, age, content, image FROM animal WHERE type_id = 2');
+        $req = $bdd->prepare('SELECT id, type_id, name, breed, info, age, content, image, createdAt FROM animal WHERE type_id = 2 ORDER BY createdAt DESC');
         $req->execute();
         return $req;
     }

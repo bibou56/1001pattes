@@ -7,6 +7,16 @@ class FrontController extends Controller{
     //pour se rendre sur la page d'accueil
     public function home()
     { 
+        $countCats = new \Projet\Models\UserModel();
+        $catCount = $countCats->countCats();
+
+        $countDogs = new \Projet\Models\UserModel();
+        $dogCount = $countDogs->countDogs();
+
+        $userManager = new \Projet\Models\UserModel();
+        $findEvent = $userManager->findEvent();
+        $resultEvent = $findEvent->fetch();
+
         require $this->view('home');
     }
 

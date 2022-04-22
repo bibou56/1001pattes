@@ -2,7 +2,7 @@
 
 <main class="container">
     <section class="userComments">
-    <p id="howTo">Bienvenue sur votre espace personnel. Vous pouvez y retrouver tous vos commentaires laissés dans nos articles. Vous avez la possibilté de les supprimer si vous le souhaitez.</p>   
+    <p id="howTo">Bienvenue sur votre espace personnel. Vous pouvez y retrouver tous vos commentaires laissés dans nos articles. Vous avez la possibilité de les supprimer si vous le souhaitez.</p>   
     <h2>Vos commentaires</h2> 
         <?php
         foreach($userAllComments as $allComments){ ?>

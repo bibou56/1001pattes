@@ -31,6 +31,7 @@
   
   .connect-user{
     margin-top: 20px;
+    padding-right: 20px;
   }
   .connect-user a i{
     font-size: 2rem;
@@ -56,6 +57,7 @@
     backdrop-filter: blur(0px);
     margin-bottom: 50px;
     min-height: 0;
+    padding-left: 20px;
     
   }
   #liste-nav li a{
@@ -66,7 +68,6 @@
     font-size: 1.6rem;
     text-decoration: underline;
   }
-  
   
   /*............FOOTER..............*/
   #bottom-content{
@@ -83,37 +84,97 @@
     width: 33%;
     margin: 30px 0;
     color: #fff;
+    padding-left: 20px;
   }
   #bottom .address-footer i{
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-bottom: 10px;
   }
   #bottom .address-footer address{
-    font-size: 1.3rem;
     line-height: 2rem;
     font-style: normal;
   }
   #bottom .address-footer address h3, #bottom .address-footer address p{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   #bottom .social-media{
     width: 33%;
     text-align: center;
   }
-  /* #bottom .social-media ul li{
-    margin-bottom: 20px;
-  } */
-  /* #bottom .social-media ul li:last-child{
-    margin-bottom: 0;
-  } */
+  
   #bottom .schedule{
     width: 33%;
+    padding-right: 20px;
+  }
+  #bottom .schedule i{
+    font-size: 2rem;
   }
   #bottom .schedule #opening-hours p{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
+  #bottom #copyright a, #bottom #copyright p{
+    font-size: 1rem;
+  }
+
+  /* ..........MAIN................. */
+  .main-content h1{
+    margin-top: 70px;
+    font-size: 1.8rem;
+  }
+
+  /* number of pets */
+  #nbrOfPets #nbrOfCats, #nbrOfPets #nbrOfDogs{
+    width: 33%;
+  }
+  #nbrOfPets #nbrOfCats img, #nbrOfPets #nbrOfDogs img{
+    width: 10vw;
+    height: 10vw;
+  }
+  #nbrOfPets #nbrOfCats p:last-child, #nbrOfPets #nbrOfDogs p:last-child{
+    font-size: 1.5rem;
+  }
+
+  /* next event */
+  #nextEvent .page-title{
+    margin-top: 50px;
+  }
+  .event{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    margin: 30px auto;
+  }
+  .event img{
+    width: 40%;
+    height: 400px;
+    margin-bottom: 0;
+  }
+  .event .eventContent{
+    width: 60%;
+  }
+  .event p{
+    padding: 10px 10px 10px 20px
+  }
+  .event .titleEvent{
+    font-size: 1.3rem;
+  }
+  .event .dateEvent{
+    font-size: 1.1rem;
+  }
+  .event .contentEvent{
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+  #nextEvent button{
+    width: 20%;
+  }
+  #nextEvent button a{
+    font-size: 1.1rem;
+  }
+  
   /* ..............ABOUT............... */
   #aboutUs{
     display: flex;
@@ -298,9 +359,9 @@
   }
   .eachAnimal .imgPet{
     float: left;
-    width: 50%;
-    height: 400px;
-    margin: 0 40px 20px 0;
+    width: 40%;
+    height: 500px;
+    margin: 0 40px 15px 0;
   }
   .eachAnimal .infoPet{
     display: block;
@@ -316,12 +377,12 @@
     text-align: justify;
   }
   .eachAnimal .infoPet .petContent{
-    margin-top: 50px;
+    margin: 50px 0;
     line-height: 2.2rem;
   }
 
   .eachAnimal  .UD-pet{
-    margin: 50px 0;
+    margin-bottom: 50px;
   }
   .eachAnimal  .UD-pet button{
     padding: 10px 15px;
@@ -358,7 +419,8 @@
     display: block;
     width: 100%;
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 0 auto 70px;
+
   }
   .eachArticle .imgArticle{
     float: left;
@@ -431,5 +493,30 @@
   }
   .comments .eachComment .deleteComment a img{
     width: 20px;
+  }
+
+  /* .............DASHBOARD USER............. */
+  .userComments{
+    width: 80%;
+    margin: 50px auto;
+  }
+  .userComments #howTo{
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .userComments h2{
+    font-size: 1.3rem;
+  }
+  .commentsUser{
+    width: 60%;
+  }
+  .commentsUser .content{
+    padding-left: 5px;
+  }
+  .commentsUser .content p{
+    font-size: 1.1rem;
+  }
+  .commentsUser .content .datePost{
+    margin-bottom: 10px;
   }
 }

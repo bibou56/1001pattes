@@ -247,6 +247,7 @@
   }
   #countMails, #countMails span{
     font-size: 1.3rem;
+    margin-bottom: 50px;
   }
 
   #allMails #tableMails .mailAddress, #allMails #tableMails .mailObject{
@@ -258,6 +259,10 @@
   }
 
   /* .............EACH MAIL............... */
+.content-mail{
+  width: 80%;
+  margin: 0 auto;
+}
 .content-mail i{
   font-size: 2rem;
   padding-left: 20px;

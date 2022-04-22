@@ -32,8 +32,7 @@
 
             <div id="copyright" class="container">
                 <p>Copyright ©M.K 2022</p>
-                <a href="index.php?action=legal">Mentions légales</a>
-                
+                <a href="index.php?action=legal">Mentions légales</a> 
             </div>
         </footer>
 
