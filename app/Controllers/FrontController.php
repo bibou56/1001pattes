@@ -17,6 +17,10 @@ class FrontController extends Controller{
         $findEvent = $userManager->findEvent();
         $resultEvent = $findEvent->fetch();
 
+        $pets = new \Projet\Models\UserModel();
+        $result = $pets->lastPets();
+        $lastPets = $result->fetchAll();
+
         require $this->view('home');
     }
 

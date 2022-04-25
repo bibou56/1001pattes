@@ -36,6 +36,14 @@ class UserModel extends Manager{
         return $req;
     }
 
+    public function lastPets()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, name, image, createdAt FROM animal ORDER BY createdAt DESC');
+        $req->execute();
+        return $req;
+    }
+
     public function mailCheck($mail)
     {
         $bdd = $this->dbConnect();

@@ -116,7 +116,6 @@
 
 /* ..............DASHBOARD ADMIN............ */
 .content-dashboardAdmin{
-  /* padding: 0 10px; */
   margin-bottom: 30px;
 }
 #countMails{
@@ -126,6 +125,7 @@
 }
 #countMails span{
   background-color: var(--vert);
+  font-size: 1.1rem;
   padding: 5px 10px;
   border-radius: 50%;
 }
@@ -194,7 +194,44 @@
   border-radius: 5px;
 }
 
+/*****************************************/
+/*****************************************/
+/* ............MEDIA QUERIES............ */
+/*****************************************/
+/*****************************************/
 
+
+/*****************************************/
+/* ...........ECRANS TABLETTES.......... */
+/*****************************************/
+@media screen and (min-width: 768px) and (max-width: 992px){
+  
+
+
+
+  /*****************************************/
+  /*.........DASHBOARD ADMIN.............. */
+  /*****************************************/
+  .content-dashboardAdmin{
+    width: 80%;
+  }
+  #countMails, #countMails span{
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+
+  /*****************************************/
+  /*...............EACH MAIL.............. */
+  /*****************************************/
+  .content-mail{
+    width: 90%;
+  }
+}
+
+
+/*****************************************/
+/* ...............ECRANS PC............. */
+/*****************************************/
 @media screen and (min-width: 992px){
 
   /* .................CREATE ELEMENT............. */
@@ -257,39 +294,41 @@
     padding: 10px 15px;
     font-size: 1.2rem;
   }
+  #allMails #tableMails .UD-mail a img{
+    width: 25px;
+  }
 
   /* .............EACH MAIL............... */
-.content-mail{
-  width: 80%;
-  margin: 0 auto;
-}
-.content-mail i{
-  font-size: 2rem;
-  padding-left: 20px;
-}
-.eachMail{
-  margin: 30px auto;
-  padding: 0 20px;
-  line-height: 1.3rem;
-}
-.eachMail p{
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-}
-.eachMail .mailContent{
-  line-height: 1.9rem;
-}
+  .content-mail{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .content-mail i{
+    font-size: 2rem;
+    padding-left: 20px;
+  }
+  .eachMail{
+    margin: 30px auto;
+    padding: 0 20px;
+    line-height: 1.3rem;
+  }
+  .eachMail p{
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  .eachMail .mailContent{
+    line-height: 1.9rem;
+  }
 
-#actions-mail{
-  margin: 50px auto;
-  text-align: center;
-}
-#actions-mail button{
-  padding: 10px 15px;
-}
-#actions-mail button a{
-  font-size: 1.2rem;
-}
+  #actions-mail{
+    margin: 50px auto;
+    text-align: center;
+  }
+  #actions-mail button{
+    padding: 10px 15px;
+  }
+  #actions-mail button a{
+    font-size: 1.1rem;
+  }
 
-  
 }
