@@ -4,12 +4,12 @@
     <a href="index.php?action=blog"><i class="fa-solid fa-arrow-left"></i></a>
     <article class="eachArticle">
         <div class="imgArticle">
-            <img src="app/Public/administration/images/<?= $oneArticle['image'] ?>" alt="">
+            <img src="app/Public/administration/images/<?= $oneArticle['image'] ?>" alt="<?= $oneArticle['alt'] ?>">
         </div>
 
         <div class="infoArticle">
             <p class="dateArticle"><?= $oneArticle['date'] ?></p>
-            <p class="titleArticle"><?= $oneArticle['title'] ?></p>
+            <h1 class="titleArticle"><?= $oneArticle['title'] ?></h1>
             <p class="contentArticle"><?= $oneArticle['content'] ?></p>
             
             <?php
@@ -54,7 +54,7 @@
             if(isset($_SESSION['nickname'])){
                 if($_SESSION['role'] === 1){ ?>
                 <div class="deleteComment">
-                    <a href="index.php?action=deleteComment&id=<?= $comment['user_id'] ?>"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
+                    <a href="indexAdmin.php?action=deleteCommentAdmin&id=<?= $comment['id'] ?>"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
                 </div>
                 <?php }
             } ?>

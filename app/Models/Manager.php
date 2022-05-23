@@ -5,13 +5,15 @@ use Exception;
 
 class Manager{
 
-    protected function dbConnect(){
-
-        try{
-        $bdd = new \PDO('mysql:host=localhost;dbname=refuge;charset=utf8', 'root', '');
-        return $bdd;
+    protected function dbConnect()
+    {
+        try
+        {
+            $bdd = new \PDO('mysql:host=localhost;dbname=refuge;charset=utf8', 'root', '');
+            return $bdd;
         } 
-        catch (Exception $e){
+        catch (Exception $e)
+        {
             die('Erreur:' . $e->getMessage()); 
         }
     }

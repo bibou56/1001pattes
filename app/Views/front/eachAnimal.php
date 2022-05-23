@@ -1,14 +1,15 @@
 <?php include('header.php') ?>
 
 <main class="content-animal container">
+
     <a href="index.php?action=adoptions"><i class="fa-solid fa-arrow-left"></i></a>
     <article class="eachAnimal">
         <div class="imgPet">
-            <img src="app/Public/administration/images/<?= $oneAnimal['image'] ?>" alt="">
+            <img src="app/Public/administration/images/<?= $oneAnimal['image'] ?>" alt="<?= $oneAnimal['alt'] ?>">
         </div>
 
         <div class="infoPet">
-            <p class="petName">- <?= $oneAnimal['name'] ?> -</p>
+            <h1 class="petName">- <?= $oneAnimal['name'] ?> -</h1>
             <p><span>Age</span> : <?= $oneAnimal['age'] ?></p>
             <p><span>Race/type</span> : <?= $oneAnimal['breed'] ?></p>
             <p><span>Informations générales</span> : <?= $oneAnimal['info'] ?></p>

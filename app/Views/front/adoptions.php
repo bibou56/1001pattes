@@ -1,6 +1,13 @@
 <?php include('header.php') ?>
 
 <main class="container">
+
+    <div class="page-title">
+        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <h1>Venez les découvrir !</h1>
+        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+    </div>
+
     <div id="btnAnimals">
         <button><a href="index.php?action=cats"><i class="fa-solid fa-cat"></i> Voir les chats à l'adoption</a></button>
         <button><a href="index.php?action=dogs"><i class="fa-solid fa-dog"></i> Voir les chiens à l'adoption</a></button>

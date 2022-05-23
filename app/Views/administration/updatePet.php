@@ -3,20 +3,25 @@
 <main class="container">
     
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
-            <h2>Modifier la fiche</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
+            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <h1>Modifiez la fiche Animal</h1>
+            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
 
     <section class="createElement">
 
         <form method="post" action="indexAdmin.php?action=updateAnimal&id=<?= $result['id'] ?>" enctype="multipart/form-data">
-            
-            <!-- <p class="img">
-                <label for="image">Choisissez une photo</label>
-                <input type="file" name="image" id="image" value="">card
-               
-            </p> -->
+            <p class="imgChosen">Votre image actuelle</p>
+            <img src="app/Public/administration/images/<?= $result['image'] ?>" alt="<?= $result['alt'] ?>">
+           
+            <p class="img">
+                <label for="image">Choisissez une photo </label>
+                <input type="file" name="image" id="image">
+            </p>
+            <p>
+                <label for="alt">Pour permettre le bon référencement de votre site, vous devez décrire brièvement l'image choisie</label>
+                <input type="text" name="alt" id="alt" value="<?= $result['alt'] ?>"> 
+            </p>
             <p>
                 <label for="name">Nom de l'animal</label>
                 <input type="text" name="name" id="name" value="<?= $result['name'] ?>">

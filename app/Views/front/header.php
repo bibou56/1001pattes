@@ -19,14 +19,14 @@
             <?php
             if(isset($_SESSION['nickname'])){
                 if($_SESSION['role'] === 1){ ?>
-                    <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="">Votre espace admin</a></p>
+                    <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Votre espace admin</a></p>
                 <?php }
                 elseif($_SESSION['role'] === 0){ ?>
-                    <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="">Refuge 1000 et Une Pattes</a></p>
+                    <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Refuge 1000 et Une Pattes</a></p>
                 <?php }
             }
             else { ?>
-                <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="">Refuge 1000 et Une Pattes</a></p>
+                <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Refuge 1000 et Une Pattes</a></p>
             <?php }
             ?>   
         </div>

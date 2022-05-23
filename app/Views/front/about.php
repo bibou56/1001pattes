@@ -3,9 +3,9 @@
 <main class="container">
     <section id="presentation">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
-            <h2>Qui sommes-nous ?</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
+            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <h1>Qui sommes-nous ?</h1>
+            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
         <div id="aboutUs">
             <div id="img-presentation">
@@ -22,16 +22,16 @@
 
     <section id="ourTeam">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
+            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h2>Découvrez l'équipe</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
+            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
         
         <div id="members">
             <?php
             foreach($resultTeam as $oneMember)  {?>
             <article class="eachMember">
-                <img src="app/Public/administration/images/<?= $oneMember['image'] ?>" alt="">
+                <img src="app/Public/administration/images/<?= $oneMember['image'] ?>" alt="<?= $oneMember['alt'] ?>">
                 <p class="surname"><?= $oneMember['surname'] ?></p>
                 <p class="who"><?= $oneMember['content'] ?></p>
                 <?php

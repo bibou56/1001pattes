@@ -4,12 +4,12 @@ namespace Projet\Controllers;
 
 class Controller{
 
-    public function view($viewName,$error = null)
+    protected function view($viewName,$error = null)
     {
         return('app/Views/front/'.$viewName.'.php');
     }
 
-    public function viewAdmin($viewName, $data = null)
+    protected function viewAdmin($viewName, $data = null)
     {
         return('app/Views/administration/'.$viewName.'.php');
     }
@@ -22,19 +22,15 @@ class Controller{
         $error = $_FILES['image']['error'];
         }
 
-        // $extensions = ['jpeg', 'jpg', 'png', 'gif'];
-        // $split = explode(".", $data['image']);
-        // $extension = strtolower(end($split));
         $maxSize = 400000;
-        
         
         if($size <= $maxSize && $error==0){
             move_uploaded_file($tmpName, 'app/Public/administration/images/'.$nameImg);
 
         return $nameImg;
-    
-
-        } else {
+        } 
+        else 
+        {
                 $error = '* Mauvaise extension ou taille du fichier trop importante';  
         }    
     }

@@ -2,7 +2,6 @@
 :root{
   --vert: rgb(48, 185, 112);
   --vert-fonce: rgb(30, 114, 107);
-  
 }
 
 /* mini reset */
@@ -12,23 +11,27 @@
   padding: 0;
   margin: 0;
 }
+
 .container{
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
+
 a{
   text-decoration: none;
   color: black;
 }
+
 li{
   list-style-type: none;
 }
+
 .our-name{
   font-weight: bold;
 }
 
-/* titres des pages hors accueil */
+/* titres des pages accueil */
 .page-title{
   display: flex;
   width: 100%;
@@ -40,7 +43,7 @@ li{
 .page-title p img{
   width: 25px;
 }
-.page-title h2{
+.page-title h1, .page-title h2{
   font-size: 1.2rem;
   margin: 30px 0 20px;
 }
@@ -54,13 +57,13 @@ li{
 /*****************************************/
 /*................. HEADER.............. */
 /*****************************************/
-#top-content {
+/* bandeau header */
+#top-content { 
   width: 100vw;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) , url(/app/Public/front/images/collage.png);
   background-size: cover; 
   margin-bottom: 30px;
 }
-
 .title-header{
   display: flex;
   flex-wrap: wrap;
@@ -78,6 +81,7 @@ li{
   font-size: 1.4rem;
 }
 
+/* div comprenant le menu et la connexion */
 .banner{
   display: flex;
   justify-content: space-between;
@@ -87,6 +91,7 @@ li{
   position: relative;
 }
 
+/* connexion et déconnexion */
 .connect-user{
   text-align: end;
   padding-top: 10px;
@@ -179,6 +184,7 @@ li{
   text-decoration: underline;
 }
 
+
 /*****************************************/
 /* ................MAIN................. */
 /*****************************************/
@@ -254,7 +260,7 @@ li{
 }
 .event img{
   width: 100%;
-  height: 200px;
+  height: 55vw;
   object-fit: cover;
   border-radius: 6px 6px 0 0;
   margin-bottom: 10px;
@@ -273,19 +279,40 @@ li{
 .event .contentEvent{
   line-height: 1.4rem;
 }
-#nextEvent{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.event .UD-event{
+  width: 100%;
+  margin: 10px auto 20px;
+  text-align: center;
 }
-#nextEvent button{
+.event .UD-event button{
+  width: 30%;
+  padding: 10px 0;
+}
+.event .UD-event button a{
+  color: #fff;
+}
+.event .UD-event button:first-child{
+  margin-right: 30px;
+  background-color: var(--vert);
+  border: none;
+  border-radius: 5px;
+}
+.event .UD-event button:last-child{
+  background-color: rgb(212, 8, 8);
+  border: none;
+  border-radius: 5px;
+}
+#nextEvent #createEvent{
   margin: 30px auto 0;
-  width: 60%;
+  width: 100%;
+  text-align: center;
+}
+#nextEvent #createEvent button{
   padding: 10px 10px;
   background-color: rgb(30, 114, 107, 0.8);
   border-radius: 5px;
 }
-#nextEvent button a{
+#nextEvent #createEvent button a{
   color: #fff;
 }
 
@@ -304,9 +331,9 @@ li{
 }
 .arrival p img{
   width: 100%;
-  height: 250px;
+  height: 70vw;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .arrival button{
   margin: 10px auto 0;
@@ -334,7 +361,7 @@ li{
   text-align: center;
   background: linear-gradient(90deg, rgba(40,227,128,1) 0%, rgba(30,114,107,0.82) 100%);
 }
-
+/* présentation réseaux sociaux */
 #bottom .social-media ul{
   display: flex;
   justify-content: space-around;
@@ -348,11 +375,11 @@ li{
 #bottom .social-media ul li a i{
   font-size: 2rem;
 }
-
+/* présentation adresse - non affichée en mobile */
 #bottom .address-footer{
   display: none;
 }
-
+/* présentation horaires ouverture */
 #bottom .schedule{
   color: #fff;
   display: flex;
@@ -370,12 +397,14 @@ li{
   padding: 0 10px;
 }
 
+/* bande de séparation entre bottom et copyright */
 .transition{
   height: 2px;
   width: 100%;
   background: #fff;
 }
 
+/* partie copyright */
 #bottom #copyright{
   display: flex;
   justify-content: space-between;
@@ -391,6 +420,7 @@ li{
 /*****************************************/
 /* ................ABOUT................ */
 /*****************************************/
+/* présentation refuge */
 #aboutUs{
   display: flex;
   flex-direction: column;
@@ -404,7 +434,7 @@ li{
 }
 #aboutUs #img-presentation{
   width: 100%;
-  height: 250px;
+  height: 60vw;
   margin: 30px 0 20px;
 }
 #aboutUs #img-presentation img{
@@ -412,7 +442,7 @@ li{
   height: 100%;
   object-fit: cover;
 }
-
+/* présentation des membres de l'équipe */
 #ourTeam{
   display: flex;
   justify-content: space-between;
@@ -431,8 +461,8 @@ li{
   margin-bottom: 70px;
 }
 #ourTeam .eachMember img{
-  width: 50vw;
-  height: 50vw;
+  width: 45vw;
+  height: 45vw;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
@@ -447,6 +477,7 @@ li{
   text-align: justify;
   line-height: 1.3rem;
 }
+/* boutons visibles uniquement par l'admin */
 #ourTeam .eachMember .UD-team{
   margin: 30px auto 0;
 }
@@ -467,12 +498,13 @@ li{
   border: none;
   border-radius: 5px;
 }
-
 #ourTeam #btnCreate{
-  padding: 10px 10px;
+  width: 70%;
+  margin: 0 auto 50px;
+  padding: 10px 0;
   background-color: rgb(30, 114, 107, 0.8);
   border-radius: 5px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 #ourTeam #btnCreate a{
   color: #fff;
@@ -482,6 +514,7 @@ li{
 /*************************************************************/
 /*.....CONNEXION / CREATE ACCOUNT / FORMULAIRE CONTACT...... */
 /*************************************************************/
+/* présentation des formulaires de connexion, de création de compte et de contact */
 .content-form{
   display: flex;
   flex-direction: column;
@@ -583,6 +616,7 @@ li{
 /*****************************************/
 /* .............PAGE CONTACT............ */
 /*****************************************/
+/* section coordonnées */
 #contact-info{
   text-align: center;
 }
@@ -605,6 +639,7 @@ li{
   font-style: normal;
 }
 
+/* section localisation */
 #localisation{
   width: 100%;
   text-align: center;
@@ -627,7 +662,7 @@ li{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 20px;
+  margin: 20px auto 20px;
 }
 #btnAnimals button{
   width: 70%;
@@ -649,11 +684,12 @@ li{
 /*****************************************/
 /* ............CATS AND DOGS............ */
 /*****************************************/
+/* flèche de retour à la page précedente */
 .content-pets i{
   font-size: 1.5rem;
   padding-left: 20px;
 }
-
+/* bouton visible unqiuement par l'admin pour créer une nouvelle fiche animal */
 .content-pets .addPet{
   text-align: center;
   margin: 20px 0;
@@ -666,14 +702,14 @@ li{
 .content-pets .addPet a{
   color: #fff;
 }
-
+/* page de présentation de toutes les 'cartes' animaux */
 #allPets{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
 }
-
+/* construction de chaque 'carte' animal */
 .adoptPet{
   display: flex;
   flex-direction: column;
@@ -690,7 +726,7 @@ li{
 }
 .adoptPet .imgPet{
   width: 100%;
-  height: 300px;
+  height: 75vw;
 }
 .adoptPet .imgPet img{
   width: 100%;
@@ -729,10 +765,12 @@ li{
 /*****************************************/
 /* .............EACH ANIMAL............. */
 /*****************************************/
+/* flèche de retour à la page adoption */
 .content-animal i{
   font-size: 1.5rem;
   margin-left: 20px;
 }
+/* contenu de la page */
 .eachAnimal{
   display: flex;
   flex-direction: column;
@@ -740,7 +778,7 @@ li{
 }
 .eachAnimal .imgPet{
   width: 100%;
-  height: 300px;
+  height: 80vw;
 }
 .eachAnimal .imgPet img{
   width: 100%;
@@ -775,7 +813,7 @@ li{
 .eachAnimal .imgPet{
   margin: 30px auto 0;
 }
-
+/* boutons visibles uniquement par l'admin pour modif ou suppression */
 .eachAnimal .UD-pet{
   text-align: center;
   margin: 30px 0;
@@ -805,9 +843,10 @@ li{
 .content-articles{
   margin: 0 auto 50px;
 }
+/* bouton visible uniquement par l'admin pour créer un nouvel article */
 .content-articles .addArticle{
   text-align: center;
-  margin: 50px 0 20px;
+  margin: 20px 0 20px;
 }
 .content-articles .addArticle button{
   padding: 10px;
@@ -817,7 +856,7 @@ li{
 .content-articles .addArticle a{
   color: #fff;
 }
-
+/* page de présentation de toutes les 'cartes' article */
 #seeAllArticles{
   display: flex;
   justify-content: space-between;
@@ -825,6 +864,7 @@ li{
   width: 100%;
   margin: 0 auto;
 }
+/* construction de chaque 'carte' article */
 .allArticles{
   display: flex;
   flex-direction: column;
@@ -836,7 +876,7 @@ li{
 }
 .allArticles .imgArticle{
   width: 100%;
-  height: 300px;
+  height: 75vw;
 }
 .allArticles .imgArticle img{
   width: 100%;
@@ -877,10 +917,12 @@ li{
 /*****************************************/
 /* ............EACH ARTICLE............. */
 /*****************************************/
+/* flèche de retour à la page blog */
 .content-articles i{
   font-size: 1.5rem;
   padding: 20px 0 0 10px;
 }
+/* contenu de la page */
 .eachArticle{
   display: flex;
   flex-direction: column;
@@ -888,7 +930,7 @@ li{
 }
 .eachArticle .imgArticle{
   width: 100%;
-  height: 300px;
+  height: 80vw;
 }
 .eachArticle .imgArticle img{
   width: 100%;
@@ -915,6 +957,7 @@ li{
 .eachArticle .infoArticle .contentArticle{
   margin-bottom: 20px;
 }
+/* boutons visibles uniquement par l'admin pour modif ou suppression */
 .eachArticle .infoArticle .UD-article{
   margin: 10px auto 0;
 }
@@ -935,11 +978,11 @@ li{
   border: none;
   border-radius: 5px;
 }
-
+/* possibilité d'écrire un commentaire pour les abonnés. Visible par las abonnés et l'admin */
 .writeComment form{
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 40px auto 0;
   width: 100%;
   padding: 0 20px;
 }
@@ -974,7 +1017,7 @@ li{
   color: #fff;
   background-color: var(--vert-fonce);
 }
-
+/* les commentaires écrits. Visibles par tous */
 .comments{
   padding: 0 20px;
   line-height: 1.5rem;
@@ -1027,6 +1070,7 @@ li{
 .userComments #howTo {
   margin: 20px 0;
 }
+/* les commentaires écrits par l'abonné connecté à son compte */
 .userComments .commentsUser{
   display: flex;
   justify-content: space-between;
@@ -1042,6 +1086,7 @@ li{
 .userComments .commentsUser .content .datePost{
   font-style: italic;
 }
+/* possibilité de suppression de ses commentaires */
 .userComments .commentsUser .deleteComment{
   width: 10%;
   text-align: center;
@@ -1053,6 +1098,7 @@ li{
 /*****************************************/
 /* ...............LEGAL................. */
 /*****************************************/
+/* page de mentions légales et copyright */
 .content-legal{
   padding: 0 20px;
   margin-bottom: 30px;

@@ -9,6 +9,10 @@
 /* ...........ECRANS TABLETTES.......... */
 /*****************************************/
 @media screen and (min-width: 768px) and (max-width: 992px){
+  /* reset */
+  .page-title h2, .page-title h1{
+    font-size: 1.4rem;
+  }
 
   /*****************************************/
   /*................. HEADER.............. */
@@ -42,11 +46,24 @@
   }
 
   /* menu */
+  #burger, #burger::before, #burger::after{
+    width: 40px;
+    height: 2px;
+  }
+  #burger::before{
+    top: -12px;
+  }
+  #burger::after{
+    top: 12px;
+  }
+  #liste-nav li:first-child{
+    margin-top: 40px;
+  }
   #liste-nav li a{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   #liste-nav li .active{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   /*****************************************/
@@ -96,13 +113,22 @@
     width: 80%;
     margin: 0 auto;
   }
-  #nextEvent button{
+  .event img{
+    height: 40vw;
+  }
+  .event .UD-event button{
+    width: 20%;
+  }
+  #nextEvent #createEvent button{
     width: 40%;
   }
 
   /* dernières arrivées */
   .arrival{
     width: 32%;
+  }
+  .arrival p img{
+    height: 35vw;
   }
   .arrival button a{
     font-size: 1.1rem;
@@ -111,6 +137,9 @@
   /*****************************************/
   /* ................ABOUT................ */
   /*****************************************/
+  #aboutUs #img-presentation{
+    height: 40vw;
+  }
   #ourTeam .page-title{
     margin-top: 40px;
   }
@@ -138,16 +167,25 @@
   /*.....CONNEXION / CREATE ACCOUNT / FORMULAIRE CONTACT...... */
   /*************************************************************/
   .content-form .text-account{
-    width: 90%;
+    width: 80%;
+    font-size: 1.1rem;
   }
   .content-form .form-connect{
     width: 70%;
+  }
+  .content-form .form-connect p input[type=submit], 
+  .content-form .form-connect p input[type=reset]{
+    width: 30%;
   }
 
   /*****************************************/
   /* .............PAGE CONTACT............ */
   /*****************************************/
 
+  /* section coordonnées */
+  #contact-info .address p, #contact-info .address h3{
+    font-size: 1.1rem;
+  }
   /* section localisation */
   #myMap{
     height: 300px;
@@ -168,6 +206,9 @@
   .adoptPet{
     width: 45%;
   }
+  .adoptPet .imgPet{
+    height: 45vw;
+  }
 
   /*****************************************/
   /* .............EACH ANIMAL............. */
@@ -181,7 +222,7 @@
   }
   .eachAnimal .imgPet{
     width: 70%;
-    height: 400px;
+    height: 50vw;
   }
   .eachAnimal .infoPet{
     width: 70%;
@@ -197,7 +238,9 @@
   .allArticles{
     width: 45%;
   }
-
+  .allArticles .imgArticle{
+    height: 45vw;
+  }
   /*****************************************/
   /* ............EACH ARTICLE............. */
   /*****************************************/
@@ -210,7 +253,7 @@
   }
   .eachArticle .imgArticle{
     width: 80%;
-    height: 400px;
+    height: 50vw;
     margin: 0 auto;
   }
   .eachArticle .infoArticle{
@@ -231,6 +274,22 @@
   .writeComment form p textarea{
     height: 200px;
   }
+  
+  .comments{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /*****************************************/
+  /* ...........DASHBOARD USER............ */
+  /*****************************************/
+  .userComments{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .commentsUser{
+    width: 80%;
+  }
 }
 
 
@@ -246,7 +305,7 @@
   .page-title p img{
     width: 30px;
   }
-  .page-title h2{
+  .page-title h2, .page-title h1{
     font-size: 1.5rem;
     margin: 30px 0 20px;
   }
@@ -398,14 +457,14 @@
     flex-direction: column;
   }
   #nbrOfPets #nbrOfCats img, #nbrOfPets #nbrOfDogs img{
-    width: 15vw;
-    height: 15vw;
+    width: 13vw;
+    height: 13vw;
   }
   #nbrOfPets #nbrOfCats span, #nbrOfPets #nbrOfDogs span{
     font-size: 4rem;
   }
   #nbrOfPets #nbrOfCats p:last-child, #nbrOfPets #nbrOfDogs p:last-child{
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     margin-left: 0;
     margin-top: 10px;
   }
@@ -430,8 +489,8 @@
     border-radius: none;
   }
   .event img{
-    width: 90%;
-    height: 300px;
+    width: 80%;
+    height: 28vw;
     margin-bottom: 0;
     margin-top: -20px;
     border-radius: 6px;
@@ -453,17 +512,26 @@
     font-size: 1.1rem;
     line-height: 1.6rem;
   }
-  #nextEvent button{
-    width: 35%;
-    margin: 0 auto 30px;
+  .event .UD-event button{
+    width: 20%;
   }
-  #nextEvent button a{
+  .event .UD-event button a{
+    font-size: 1.1rem;
+  }
+  #nextEvent #createEvent button{
+    width: 35%;
+    margin: -20px auto 30px;
+  }
+  #nextEvent #createEvent button a{
     font-size: 1.1rem;
   }
 
   /* dernières arrivées */
   .arrival{
-    width: 30%;
+    width: 25%;
+  }
+  .arrival p img{
+    height: 25vw;
   }
   
   /*****************************************/
@@ -535,6 +603,9 @@
   #ourTeam .eachMember .UD-team button a{
     font-size: 1.1rem;
   }
+  #ourTeam #btnCreate{
+    width: 25%;
+  }
   #ourTeam #btnCreate a{
     font-size: 1.1rem;
   }
@@ -603,7 +674,7 @@
   /*****************************************/
   #btnAnimals{
     width: 40%;
-    margin: 100px auto;
+    margin: 50px auto 100px;
   }
   #btnAnimals button{
     width: 100%;
@@ -630,7 +701,7 @@
 
   /* bouton création animal */
   .content-pets .addPet{
-    margin: 70px 0 50px;
+    margin: 40px 0 50px;
   }
   .content-pets .addPet button{
     padding: 15px;
@@ -642,6 +713,9 @@
   /* article pour chaque animal */
   .adoptPet{
     width: 30%;
+  }
+  .adoptPet .imgPet{
+    height: 25vw;
   }
   .adoptPet .infoPet .petName{
     font-size: 1.4rem;
@@ -667,7 +741,7 @@
 
   .eachAnimal{
     display: block;
-    width: 100%;
+    width: 90%;
     padding: 0 20px;
     margin: 0 auto;
   }
@@ -722,6 +796,9 @@
   /* construction de chaque présentation d'article */
   .allArticles{
     width: 30%;
+  }
+  .allArticles .imgArticle{
+    height: 25vw;
   }
   .allArticles .infoArticle .dateArticle{
     font-size: 1rem;
@@ -781,11 +858,13 @@
 
   /* section pour écrire commentaire */
   .writeComment form{
-    width: 50%;
+    width: 60%;
     margin: 30px 0 50px;
   }
   .writeComment form p label{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    margin-bottom: 30px;
   }
   .writeComment form p textarea{
     height: 200px;
@@ -793,27 +872,27 @@
     margin-bottom: 20px;
   }
   .writeComment form p input{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 10px 15px;
   }
 
   /* section pour lire les commentaires existants */
   .comments h3{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .comments .eachComment{
-    width: 50%;
+    width: 60%;
     margin: 30px 0;
     padding-left: 5px;
   }
   .comments .eachComment .content-comment .nicknameUser{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .comments .eachComment .content-comment .datePost{
     margin-bottom: 10px;
   }
   .comments .eachComment .content-comment p, .comments .eachComment .datePost p{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .comments .eachComment .deleteComment a img{
     width: 20px;
@@ -824,7 +903,7 @@
   /*****************************************/
   .userComments{
     width: 80%;
-    margin: 50px auto;
+    margin: 30px auto;
   }
   .userComments #howTo{
     font-size: 1.2rem;

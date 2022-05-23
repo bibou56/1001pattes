@@ -3,9 +3,9 @@
 <main class="container">
     
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
-            <h2>Nouveau membre de l'équipe</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
+            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <h1>Nouveau membre de l'équipe</h1>
+            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
 
     <section class="createElement">
@@ -23,7 +23,11 @@
                 <label for="image">Choisissez une photo</label>
                 <input type="file" name="image" id="image">
                
-            </p>    
+            </p>  
+            <p>
+                <label for="alt">Pour permettre le bon référencement de votre site, vous devez décrire l'image choisie</label>
+                <input type="text" name="alt" id="alt" placeholder="Description brève">
+            </p>  
             <p>
                 <label for="surname">Prénom</label>
                 <input type="text" name="surname" id="surname">

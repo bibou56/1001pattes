@@ -12,12 +12,12 @@ try {
     {
         if($_GET['action']== 'about')
         { 
-            $controllerFront->about(); //pour se rendre sur la page A propos
+            $controllerFront->about(); //va chercher la fonction about() dans FrontController pour se rendre sur la page A propos
         }
 
         elseif($_GET['action'] == 'adoptions')
         {
-            $controllerFront->adoptions();
+            $controllerFront->adoptions(); //va chercher la fonction adoptions() dans FrontController pour se rendre sur la page Adoptions
         }
 
         elseif($_GET['action']== 'cats')
@@ -33,7 +33,7 @@ try {
         elseif($_GET['action']== 'eachAnimal')
         {
             $id = $_GET['id'];
-            $controllerFront->eachAnimal($id);
+            $controllerFront->eachAnimal($id); //va chercher la fonction eachAnimal() dans FrontController pour se rendre sur la page de chaque animal
         }
 
         elseif($_GET['action']== 'blog')
@@ -43,8 +43,8 @@ try {
 
         elseif($_GET['action']== 'eachArticle')
         {
-            $id = $_GET['id'];
-            $controllerFront->eachArticle($id);
+            $id = $_GET['id']; 
+            $controllerFront->eachArticle($id); //va chercher la fonction eachArticle() dans FrontController pour se rendre sur la page de chaque article
         }
 
         elseif($_GET['action'] == 'writeComment')
@@ -55,39 +55,39 @@ try {
                 'content' => htmlspecialchars($_POST['comment']),
             ];
 
-            $controllerFront->writeComment($data);
+            $controllerFront->writeComment($data); //va chercher la fonction writeComment() dans FrontController pour se rendre sur la page de chaque article et pouvoir écrire un commentaire
         }
 
         elseif($_GET['action']== 'contact')
         {
-            $controllerFront->contact(); //pour se rendre sur la page Contact
+            $controllerFront->contact(); //va chercher la fonction contact() dans FrontController pour se rendre sur la page Contact
         }
 
         elseif($_GET['action']== 'connexion')
         {
-            $controllerFront->connexion(); //pour se rendre sur la page Connexion
+            $controllerFront->connexion(); //va chercher la fonction connexion() dans FrontController pour se rendre sur la page Connexion à son compte
         }
 
         elseif($_GET['action']== 'dashboardUser')
         {
             $id = $_GET['id'];
-            $controllerFront->dashboardUser($id);
+            $controllerFront->dashboardUser($id); //va chercher la fonction dashboardUser() dans FrontController pour que chaque personne connectée à son compte puisse aller sur son espace perso
         }
 
         elseif($_GET['action'] == 'deleteComment')
         {
             $id = $_GET['id'];
-            $controllerFront->deleteComment($id);
+            $controllerFront->deleteComment($id); //va chercher la fonction deleteComment() dans FrontController pour que chaque personne connectée puisse supprimer ses commentaires
         }
 
         elseif($_GET['action']== 'createAccount')
         {
-            $controllerFront->createAccount(); //pour se rendre sur la page createAccount
+            $controllerFront->createAccount(); //va chercher la fonction createAccount() dans FrontController pour se rendre sur la page de création de compte
         }
 
         elseif($_GET['action']== 'legal')
         {
-            $controllerFront->legal(); //pour se rendre sur la page Mentions légales
+            $controllerFront->legal(); //va chercher la fonction legal() dans FrontController pour se rendre sur la page des mentions légales et copyright
         }
 
         elseif($_GET['action']== 'newAccount')
@@ -106,14 +106,14 @@ try {
                 else
                 {
                     $error = '* Tous les champs doivent être remplis !';
-                    $controllerFront->createAccount($error);
+                    $controllerFront->createAccount($error); //va chercher la fonction createAccount() dans FrontController pour envoyer les infos d'une personne dans la BDD pour la création d'un compte
                 }
             }
             else
             {
                 // header('Location: index.php?action=createAccount&error1=true' );
                 $error = '* Vérifiez votre mot de passe !';
-                $controllerFront->createAccount($error);
+                $controllerFront->createAccount($error); // renvoi un message d'erreur si des éléments sont faux et ne peuvent être envoyés à la BDD
             }
         } 
 
@@ -123,18 +123,18 @@ try {
             $pass = $_POST['password'];
 
             if (!empty($mail) && (!empty($pass))){
-                $controllerFront->connectAll($mail, $pass);
+                $controllerFront->connectAll($mail, $pass); //va chercher la fonction connectAll() dans FrontController pour ouvrir son compte perso
             }
             else
             {
                 $error = '* Tous les champs doivent être remplis !';
-                $controllerFront->connexion($error);
+                $controllerFront->connexion($error); // renvoi un message d'erreur si l'email ou mot de passe sont faux
             }
         } 
 
         elseif($_GET['action'] == 'disconnect')
         {
-            session_destroy();
+            session_destroy(); // déconnecte l'utilisateur de son compte
             header('Location:index.php');
         }
 
@@ -148,24 +148,25 @@ try {
             $content = htmlspecialchars($_POST['content']);
 
             if(!empty($lastname) && (!empty ($firstname) && (!empty($mail) && (!empty($phone) && (!empty($objet) && (!empty($content))))))){
-                $controllerFront->contactPost($lastname, $firstname, $mail, $phone, $objet, $content);
+                $controllerFront->contactPost($lastname, $firstname, $mail, $phone, $objet, $content); //va chercher la fonction contactPost() dans FrontController pour permettre l'envoi d'un message à l'admin par le biais du formulaire de contact
             } 
             else 
             {
                 $error = '* Tous les champs doivent être remplis !';
-                $controllerFront->contact($error);
+                $controllerFront->contact($error); // renvoi un message d'erreur si tous les champs ne sont pas remplis dans le formulaire de contact
             }
         }      
     }
     else
     {
-        $controllerFront->home();
+        $controllerFront->home(); // renvoi à la page d'accueil si aucune des actiosn ci-dessus n'a eu lieu
     }
 
 }
 catch (Exception $e)
 {
-    require "app/Views/front/error.php";
+    require "app/Views/front/error.php"; // renvoi à la page d'erreur 
+    
 }
 catch (Error $e)
 {

@@ -2,6 +2,12 @@
 
 <main class="content-articles container">
     
+    <div class="page-title">
+        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <h1>La vie du refuge</h1>
+        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+    </div>
+
     <?php  
     if(isset($_SESSION['nickname'])){
         if($_SESSION['role'] === 1){ ?>
@@ -16,7 +22,7 @@
         <?php foreach($allArticles as $article){ ?>
         <article class="allArticles">
             <div class="imgArticle">
-                <img src="app/Public/administration/images/<?= $article['image'] ?>" alt="">
+                <img src="app/Public/administration/images/<?= $article['image'] ?>" alt="<?= $article['alt'] ?>">
             </div>
 
             <div class="infoArticle">
@@ -30,6 +36,5 @@
         <?php } ?>
     </div>
 </main>
-
 
 <?php include('footer.php') ?>

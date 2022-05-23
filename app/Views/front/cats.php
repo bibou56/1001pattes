@@ -2,6 +2,13 @@
 
 <main class="content-pets container">
     <a href="index.php?action=adoptions"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <div class="page-title">
+        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <h1>Adoptez un chat !</h1>
+        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+    </div>
+
     <?php  
     if(isset($_SESSION['nickname'])){
         if($_SESSION['role'] === 1){ ?>
@@ -16,12 +23,12 @@
         <?php foreach($allCats as $cat){ ?>
         <article class="adoptPet">
             <div class="imgPet">
-                <img src="app/Public/administration/images/<?= $cat['image'] ?>" alt="">
+                <img src="app/Public/administration/images/<?= $cat['image'] ?>" alt="<?= $cat['alt'] ?>">
             </div>
 
             <div class="allInfoPet">
                 <div class="infoPet">
-                    <p class="petName">- <?= $cat['name'] ?> -</p>
+                    <h2 class="petName">- <?= $cat['name'] ?> -</h2>
                     <p><span>Age</span> : <?= $cat['age'] ?></p>
                     <p><span>Race/type</span> : <?= $cat['breed'] ?></p>
                     <p><span>Informations Générales</span> : <?= $cat['info'] ?></p>

@@ -33,7 +33,7 @@ for(let i=0; i<links.length; i++){
   }
 }
 
-/*....................CARTE CONTACT.................... */
+/*....................CARTE CONTACT ET BOITES MODALES.................... */
 var lat = 47.6505928;
 var lon = -2.9223622;
 var map = null
@@ -56,11 +56,13 @@ function initMap(){
     
 
     el = document.querySelector(".valid"); console.log(el);
-    if(el){
+    if(el)
+    {
       el.querySelector('i').addEventListener('click', function(){
         el.classList.add('hide');
       })
     }
+
     initMap();
   }
 

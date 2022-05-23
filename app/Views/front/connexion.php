@@ -2,9 +2,9 @@
 
 <main class="content-form container">
     <div class="page-title">
-        <p><img src="/app/Public/front/images/dogprint-black.png" alt=""></p>
-        <h2>Connectez-vous</h2>
-        <p><img src="/app/Public/front/images/catprint-black.png" alt=""></p>
+        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <h1>Connectez-vous</h1>
+        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
     </div>
     <div class="form-connect">
         <div class="error">  
