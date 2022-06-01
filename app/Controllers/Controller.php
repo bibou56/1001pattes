@@ -15,8 +15,9 @@ class Controller{
     }
 
     public function verifyFiles($data) //vérifie les images
-    {  if(isset($_FILES['image'])){
-        $tmpName = $_FILES['image']['tmp_name'];
+    {  
+        if(isset($_FILES['image'])){
+        $tmpName = htmlspecialchars($_FILES['image']['tmp_name']);
         $nameImg = htmlspecialchars($_FILES['image']['name']);
         $size = $_FILES['image']['size'];
         $error = $_FILES['image']['error'];
@@ -31,7 +32,7 @@ class Controller{
         } 
         else 
         {
-                $error = '* Mauvaise extension ou taille du fichier trop importante';  
+            $error = '* Mauvaise extension ou taille du fichier trop importante';  
         }    
     }
 
