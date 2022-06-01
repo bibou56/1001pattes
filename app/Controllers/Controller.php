@@ -34,7 +34,7 @@ class Controller{
 
             if($size <= $maxSize && $error==0)
             {
-                move_uploaded_file($tmpName, $path);
+                move_uploaded_file(htmlspecialchars($tmpName) , htmlspecialchars($path));
                 return $nameImg;
             } 
             else 
