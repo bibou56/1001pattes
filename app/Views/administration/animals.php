@@ -22,7 +22,7 @@
             <div class="valid">
                 <div class="modal">
                     <?php if ($data['valid'] != ""){ ?>
-                        <a href="#"><i class="fa-solid fa-x"></i></a>
+                        <a href="#" title="croix pour quitter la boite modale"><i class="fa-solid fa-x"></i></a>
                         <p><?= $data['valid'] ?></p>
                     <?php } ?>
                 </div>

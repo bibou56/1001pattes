@@ -1,7 +1,7 @@
 <?php include('header.php') ?>
 
 <main class="content-articles container">
-    <a href="index.php?action=blog"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="index.php?action=blog" title="retour vers le blog"><i class="fa-solid fa-arrow-left"></i></a>
     <article class="eachArticle">
         <div class="imgArticle">
             <img src="app/Public/administration/images/<?= $oneArticle['image'] ?>" alt="<?= $oneArticle['alt'] ?>">
@@ -16,8 +16,8 @@
             if(isset($_SESSION['nickname'])){
                 if($_SESSION['role'] === 1){ ?>
                     <div class="UD-article">
-                        <button><a href="indexAdmin.php?action=viewUpdateArticle&id=<?= $oneArticle['id'] ?>">Modifier</a></button>
-                        <button><a href="indexAdmin.php?action=deleteArticle&id=<?= $oneArticle['id'] ?>">Supprimer</a></button>
+                        <button><a href="indexAdmin.php?action=viewUpdateArticle&id=<?= $oneArticle['id'] ?>" title="dirige vers la page de modification de l'article">Modifier</a></button>
+                        <button><a href="indexAdmin.php?action=deleteArticle&id=<?= $oneArticle['id'] ?>" title="supprime l'article">Supprimer</a></button>
                     </div>
                 <?php }
             } ?>
@@ -54,7 +54,7 @@
             if(isset($_SESSION['nickname'])){
                 if($_SESSION['role'] === 1){ ?>
                 <div class="deleteComment">
-                    <a href="indexAdmin.php?action=deleteCommentAdmin&id=<?= $comment['id'] ?>"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
+                    <a href="indexAdmin.php?action=deleteCommentAdmin&id=<?= $comment['id'] ?>&articleId=<?= $comment['article_id'] ?>" title="supprime le commentaire"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
                 </div>
                 <?php }
             } ?>

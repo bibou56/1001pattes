@@ -31,7 +31,7 @@
     </div>
 
     <p>Vous n'avez pas de compte?</p> 
-    <p><a href="index.php?action=createAccount"> Créez-en un ici !</a></p>
+    <p><a href="index.php?action=createAccount" title="dirige vers la page de création d'un compte"> Créez-en un ici !</a></p>
     
 </main>
 

@@ -159,7 +159,7 @@ try {
     }
     else
     {
-        $controllerFront->home(); // renvoi à la page d'accueil si aucune des actiosn ci-dessus n'a eu lieu
+        $controllerFront->home(); // renvoi à la page d'accueil si aucune des actions ci-dessus n'a eu lieu
     }
 
 }

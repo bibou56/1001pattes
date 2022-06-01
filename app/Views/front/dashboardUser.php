@@ -18,7 +18,7 @@
                     <p>"<?= $allComments['content'] ?>"</p>
                 </div>
                 <div class="deleteComment">
-                    <a href="index.php?action=deleteComment&id=<?= $allComments['id'] ?>"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
+                    <a href="index.php?action=deleteComment&id=<?= $allComments['id'] ?>" title="supprime le commentaire"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
                 </div>
             </div>
 

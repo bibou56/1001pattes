@@ -68,11 +68,11 @@ class BlogController extends Controller
     }
 
     //permet à l'admin de supprimer n'importe quel commentaire
-    public function deleteCommentAdmin($id)
+    public function deleteCommentAdmin($id, $idArticle)
     {
         $userComments = new \Projet\Models\UserModel();
-        $deleteComment = $userComments->commentDelete($id); //efface les données du commentaires de la BDD
+        $deleteComment = $userComments->commentDeleteAdmin($id); //efface les données du commentaires de la BDD
 
-        header('Location:index.php?action=blog');
+        header('Location:index.php?action=eachArticle&id='. $idArticle);
     }
 }

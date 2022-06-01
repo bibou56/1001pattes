@@ -49,6 +49,14 @@ class UserModel extends Manager
         return $req;
     }
 
+    public function findEachMember($id)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, surname, content, image, alt FROM team WHERE id=?');
+        $req->execute(array($id));
+        return $req;
+    }
+
     //permet d'afficher tous les chats créés dans la BDD
     public function allCats()
     {
@@ -98,7 +106,7 @@ class UserModel extends Manager
     public function allComments($id)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT user_id, comment.id, nickname, content, DATE_FORMAT(createdAt, "Posté le %d/%m/%Y à %H:%i") AS date FROM comment INNER JOIN user ON user_id=user.id WHERE article_id=? ORDER BY createdAt DESC');
+        $req = $bdd->prepare('SELECT user_id, article_id, comment.id, nickname, content, DATE_FORMAT(createdAt, "Posté le %d/%m/%Y à %H:%i") AS date FROM comment INNER JOIN user ON user_id=user.id WHERE article_id=? ORDER BY createdAt DESC');
         $req->execute(array($id));
         return $req;
     }
@@ -126,6 +134,14 @@ class UserModel extends Manager
 
     //efface de la BDD tous les éléments liés au commentaire
     public function commentDelete($id) 
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM comment WHERE id=?');
+        $req->execute(array($id));
+        return $req;
+    }
+
+    public function commentDeleteAdmin($id)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('DELETE FROM comment WHERE id=?');

@@ -183,7 +183,7 @@ try
         elseif($_GET['action'] == 'updateArticle')
         {   
             $data = [
-            ':id' => $_GET['id'],
+            ':id' => htmlspecialchars($_GET['id']),
             ':title' => htmlspecialchars($_POST['title']),
             ':content' => htmlspecialchars($_POST['content']),
             ':alt' => htmlspecialchars($_POST['alt']),
@@ -201,7 +201,8 @@ try
         elseif($_GET['action'] == 'deleteCommentAdmin')
         {
             $id = $_GET['id'];
-            $controllerBlog->deleteCommentAdmin($id); //va chercher la fonction deleteCommentAdmin() dans BlogController pour que l'admin puisse supprimer le commentaire d'un abonné
+            $idArticle = $_GET['articleId'];
+            $controllerBlog->deleteCommentAdmin($id, $idArticle); //va chercher la fonction deleteCommentAdmin() dans BlogController pour que l'admin puisse supprimer le commentaire d'un abonné
         }
 
         elseif($_GET['action'] == 'teamMember') // va chercher la fonction teamMember() dans AdminController pour aller sur la page de création d'un nouveau membre de l'équipe du refuge

@@ -12,9 +12,9 @@
 
                 <div class="social-media container">
                     <ul>
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="index.php?action=contact"><i class="fa-solid fa-envelope"></i></a></li>
+                        <li><a href="#" title="dirige vers la page facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#" title="dirige vers la page instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="index.php?action=contact" title="dirige vers la page contact"><i class="fa-solid fa-envelope"></i></a></li>
                     </ul>
                 </div>
 
@@ -32,7 +32,7 @@
 
             <div id="copyright" class="container">
                 <p>Copyright ©M.K 2022</p>
-                <a href="index.php?action=legal">Mentions légales</a> 
+                <a href="index.php?action=legal" title="dirige vers la page des mentions légales">Mentions légales</a> 
             </div>
         </footer>
 

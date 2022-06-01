@@ -1,7 +1,7 @@
 <?php include('header.php') ?>
 
 <main class="content-pets container">
-    <a href="index.php?action=adoptions"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="index.php?action=adoptions" title="retour vers la page adoptions"><i class="fa-solid fa-arrow-left"></i></a>
 
     <div class="page-title">
         <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
@@ -13,7 +13,7 @@
     if(isset($_SESSION['nickname'])){
         if($_SESSION['role'] === 1){ ?>
             <div class="addPet">
-                <button><a href="indexAdmin.php?action=animals">Créer une nouvelle fiche</a></button>
+                <button><a href="indexAdmin.php?action=animals" title="dirige vers la page de création d'une fiche animal">Créer une nouvelle fiche</a></button>
             </div>
         <?php }
     }
@@ -35,7 +35,7 @@
                 </div>
                 <div class="extractPet">
                     <p><span>Présentation</span> : <?= mb_substr($cat['content'], 0, 150) ?>[...]</p>
-                    <button><a href="index.php?action=eachAnimal&id=<?= $cat['id'] ?>">Lire la suite</a></button>
+                    <button><a href="index.php?action=eachAnimal&id=<?= $cat['id'] ?>" title="dirige vers la page de présentation de l'animal">Lire la suite</a></button>
                 </div>
             </div>
         </article>

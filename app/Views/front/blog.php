@@ -12,7 +12,7 @@
     if(isset($_SESSION['nickname'])){
         if($_SESSION['role'] === 1){ ?>
             <div class="addArticle">
-                <button><a href="indexAdmin.php?action=articles">Créer un nouvel article</a></button>
+                <button><a href="indexAdmin.php?action=articles" title="dirige vers la page de création d'un article">Créer un nouvel article</a></button>
             </div>
         <?php }
     }
@@ -30,7 +30,7 @@
                 <p class="titleArticle"><?= $article['title'] ?></p>
                 <p class="extractArticle"><?= mb_substr($article['content'], 0, 150) ?>[...]</p>
                 
-                <button><a href="index.php?action=eachArticle&id=<?= $article['id'] ?>">Lire la suite</a></button>
+                <button><a href="index.php?action=eachArticle&id=<?= $article['id'] ?>" title="dirige vers l'article">Lire la suite</a></button>
             </div>
         </article>
         <?php } ?>

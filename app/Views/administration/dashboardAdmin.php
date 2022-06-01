@@ -29,7 +29,7 @@
                         <td class="mailAddress"><?= $messages['mail'] ?></td>
                         <td class="mailObject"><?= $messages['objet'] ?></td>
                         <td><?= $messages['date'] ?></td>
-                        <td class="UD-mail"><a href="indexAdmin.php?action=eachMail&id=<?= $messages['id']; ?>"><img src="/app/Public/front/images/yeux.png" alt="logo oeil"></a></td>
+                        <td class="UD-mail"><a href="indexAdmin.php?action=eachMail&id=<?= $messages['id']; ?>" title="va vers la consultation du mail"><img src="/app/Public/front/images/yeux.png" alt="logo oeil"></a></td>
                     </tr>
                 <?php } 
                 ?>
@@ -56,7 +56,7 @@
                         <td><?= $users['nickname'] ?></td>
                         <td class="mailAddress"><?= $users['mail'] ?></td>
                         <td class="deleteUser">
-                            <a href="indexAdmin.php?action=deleteUser&id=<?= $users['id']; ?>"><img src="/app/Public/front/images/bin.png" alt="logo poubelle"></a>
+                            <a href="indexAdmin.php?action=deleteUser&id=<?= $users['id']; ?>" title="supprime l'abonné'"><img src="/app/Public/front/images/bin.png" alt="logo poubelle"></a>
                         </td>
                     </tr>
                 <?php } 

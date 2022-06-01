@@ -54,7 +54,7 @@
         if(isset($_SESSION['nickname'])){
             if($_SESSION['role'] === 1){ ?>
                 <div id="createEvent">
-                    <button><a href="indexAdmin.php?action=event">Créer un évènement</a></button>
+                    <button><a href="indexAdmin.php?action=event" title="dirige vers la page de création d'un évènement">Créer un évènement</a></button>
                 </div>
             <?php }
         } ?>
@@ -72,7 +72,7 @@
         for($i=0 ; $i<3 ; $i++){?>
             <article class="arrival">
                 <p><img src="app/Public/administration/images/<?= $lastPets[$i]['image'] ?>" alt="<?= $lastPets[$i]['alt'] ?>"></p>
-                <button><a href="index.php?action=eachAnimal&id=<?= $lastPets[$i]['id'] ?>">- <?= $lastPets[$i]['name'] ?> -</a></button>
+                <button><a href="index.php?action=eachAnimal&id=<?= $lastPets[$i]['id'] ?>" title="dirige vers la page de présentation de l'animal">- <?= $lastPets[$i]['name'] ?> -</a></button>
             </article>
         <?php } 
         ?>

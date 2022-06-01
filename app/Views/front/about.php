@@ -38,8 +38,8 @@
                 if(isset($_SESSION['nickname'])){
                     if($_SESSION['role'] === 1){ ?>
                         <div class="UD-team">
-                            <button><a href="indexAdmin.php?action=viewUpdateMember&id=<?= $oneMember['id'] ?>">Modifier</a></button>
-                            <button><a href="indexAdmin.php?action=deleteMember&id=<?= $oneMember['id'] ?>">Supprimer</a></button>
+                            <button><a href="indexAdmin.php?action=viewUpdateMember&id=<?= $oneMember['id'] ?>" title="dirige vers la page de modification">Modifier</a></button>
+                            <button><a href="indexAdmin.php?action=deleteMember&id=<?= $oneMember['id'] ?>" title="supprime le membre de l'équipe">Supprimer</a></button>
                         </div>
                     <?php }
                 } ?>

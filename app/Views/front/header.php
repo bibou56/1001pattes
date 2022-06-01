@@ -19,34 +19,34 @@
             <?php
             if(isset($_SESSION['nickname'])){
                 if($_SESSION['role'] === 1){ ?>
-                    <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Votre espace admin</a></p>
+                    <p><a href="/" title="dirige vers la page d'accueil du site"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Votre espace admin</a></p>
                 <?php }
                 elseif($_SESSION['role'] === 0){ ?>
-                    <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Refuge 1000 et Une Pattes</a></p>
+                    <p><a href="/" title="dirige vers la page d'accueil du site"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Refuge 1000 et Une Pattes</a></p>
                 <?php }
             }
             else { ?>
-                <p><a href="/"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Refuge 1000 et Une Pattes</a></p>
+                <p><a href="/" title="dirige vers la page d'accueil du site"><img class="logo" src="/app/Public/front/images/logobis.png" alt="logo 1001 pattes">Refuge 1000 et Une Pattes</a></p>
             <?php }
             ?>   
         </div>
 
         <div class="banner container">
             <nav class="menu-principal">     
-                <a id="link" href="#"><span id="burger"></span></a>
+                <a id="link" href="#" title="ouvre le menu burger"><span id="burger"></span></a>
                 <ul id="liste-nav">
-                    <li><a class="active" href="/">Accueil</a></li>
-                    <li><a href="index.php?action=about">A propos</a></li>
-                    <li id="adopt"><a href="index.php?action=adoptions">Adoptions</a></li>
-                    <li><a href="index.php?action=blog">Blog</a></li>
-                    <li><a href="index.php?action=contact">Contact</a></li>
+                    <li><a class="active" href="/" title="dirige vers la page d'accueil du site">Accueil</a></li>
+                    <li><a href="index.php?action=about" title="dirige vers la page A propos">A propos</a></li>
+                    <li id="adopt"><a href="index.php?action=adoptions" title="dirige vers la page adoptions">Adoptions</a></li>
+                    <li><a href="index.php?action=blog" title="dirige vers le blog">Blog</a></li>
+                    <li><a href="index.php?action=contact" title="dirige vers la page contact">Contact</a></li>
                     <?php 
                     if(isset($_SESSION['nickname'])){
                         if($_SESSION['role'] === 1){ ?>
-                            <li><a href="indexAdmin.php?action=dashboardAdmin&id=<?= $_SESSION['id'] ?>">Tableau de bord</a></li>
+                            <li><a href="indexAdmin.php?action=dashboardAdmin&id=<?= $_SESSION['id'] ?>" title="dirige vers le tableau de bord de l'administrateur">Tableau de bord</a></li>
                         <?php }
                         elseif($_SESSION['role'] === 0){ ?>
-                            <li><a href="index.php?action=dashboardUser&id=<?= $_SESSION['id'] ?>">Mon espace</a></li>
+                            <li><a href="index.php?action=dashboardUser&id=<?= $_SESSION['id'] ?>" title="dirige vers l'espace personnel de l'abonné'">Mon espace</a></li>
                         <?php }
                     }?>
                 </ul>
@@ -66,7 +66,7 @@
                 <?php }}
             
             else {?>
-                    <a href="index.php?action=connexion"><i class="fa-solid fa-user"></i></a>
+                    <a href="index.php?action=connexion" title="dirige vers la page de connexion à son compte"><i class="fa-solid fa-user"></i></a>
                 <?php }
             ?>
             </div>      

@@ -99,7 +99,7 @@ class AdminController extends Controller
     {
         $userManager = new \Projet\Models\AdminModel();
         
-        if(!empty($files['image']) && $files['image']['name'] !== "")
+        if(isset($files['image']) && $files['image']['name'] !== "")
         {
             $data[':newImg'] = $this->verifyFiles($data);
         } 
@@ -112,12 +112,11 @@ class AdminController extends Controller
         header('Location: index.php?action=about');
     }
 
-
-    public function findInfoTeam()
+    public function findInfoTeam($id)
     {
         $userManager = new \Projet\Models\UserModel();
-        $teamMembers = $userManager->findTeam();
-        $resultTeam = $teamMembers->fetchAll();
+        $teamMember = $userManager->findEachMember($id);
+        $resultTeam = $teamMember->fetch();
         return $resultTeam;
     }
 
