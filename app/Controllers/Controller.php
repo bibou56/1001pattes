@@ -20,7 +20,7 @@ class Controller{
         $nameImg = "";
         $size = 0;
         $error = 0;
-        $path = "";
+        $path = "app/Public/administration/images/";
         $maxSize = 400000;
 
         if(isset($_FILES['image']))
@@ -30,7 +30,7 @@ class Controller{
             $size = $_FILES['image']['size'];
             $error = $_FILES['image']['error'];
             $path = 
-        htmlspecialchars('app/Public/administration/images/'.$nameImg);
+        htmlspecialchars($path . $nameImg);
 
             if($size <= $maxSize && $error==0)
             {
