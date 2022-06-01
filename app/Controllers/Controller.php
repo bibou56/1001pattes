@@ -24,9 +24,9 @@ class Controller{
         }
 
         $maxSize = 400000;
-        
+        $path = 'app/Public/administration/images/'.$nameImg;
         if($size <= $maxSize && $error==0){
-            move_uploaded_file($tmpName, 'app/Public/administration/images/'.$nameImg);
+            move_uploaded_file($tmpName, $path);
 
         return $nameImg;
         } 
