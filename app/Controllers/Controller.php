@@ -16,25 +16,31 @@ class Controller{
 
     public function verifyFiles($data) //vérifie les images
     {  
-        if(isset($_FILES['image'])){
-        $tmpName = htmlspecialchars($_FILES['image']['tmp_name']);
-        $nameImg = htmlspecialchars($_FILES['image']['name']);
-        $size = $_FILES['image']['size'];
-        $error = $_FILES['image']['error'];
-        }
-
+        $tmpName = "";
+        $nameImg = "";
+        $size = 0;
+        $error = 0;
+        $path = "";
         $maxSize = 400000;
-        $path = 'app/Public/administration/images/'.$nameImg;
-        if($size <= $maxSize && $error==0){
-            move_uploaded_file($tmpName, $path);
 
-        return $nameImg;
-        } 
-        else 
+        if(isset($_FILES['image']))
         {
-            $error = '* Mauvaise extension ou taille du fichier trop importante';  
-        }    
+            $tmpName = htmlspecialchars($_FILES['image']['tmp_name']);
+            $nameImg = htmlspecialchars($_FILES['image']['name']);
+            $size = $_FILES['image']['size'];
+            $error = $_FILES['image']['error'];
+            $path = 
+        htmlspecialchars('app/Public/administration/images/'.$nameImg);
+
+            if($size <= $maxSize && $error==0)
+            {
+                move_uploaded_file($tmpName, $path);
+                return $nameImg;
+            } 
+            else 
+            {
+                $error = '* Taille du fichier trop importante';  
+            }    
+        }       
     }
-
-
 }
