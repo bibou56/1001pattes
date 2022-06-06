@@ -19,25 +19,25 @@ try
     { 
         if($_GET['action'] == 'dashboardAdmin')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAdmin->dashboardAdmin($id); //va chercher la fonction dashboardAdmin() dans AdminController pour se rendre sur la page de gestion admin
         }
 
         elseif($_GET['action'] == "eachMail")
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAdmin->eachMail($id); //va chercher la fonction eachMail() dans AdminController pour que l'admin puisse voir chaque mail reçu
         }
 
         elseif($_GET['action'] == 'deleteMail')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAdmin->deleteMail($id); //va chercher la fonction deleteMail() dans AdminController pour que l'admin puisse supprimer un mail reçu
         }
 
         elseif($_GET['action'] == 'deleteUser')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAdmin->deleteUser($id); //va chercher la fonction deleteUser() dans AdminController pour que l'admin puisse supprimer un abonné
         }
 
@@ -119,7 +119,7 @@ try
 
         elseif($_GET['action'] == 'viewUpdatePet')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAnimal->viewUpdatePet($id); //va chercher la fonction viewUpdateAnimal() dans AnimalController pour aller sur la page de modif d'une fiche animal
         }
 
@@ -140,7 +140,7 @@ try
 
         elseif($_GET['action'] == 'deletePet')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAnimal->deletePet($id); //va chercher la fonction deletePet() dans AnimalController pour supprimer un animal
         }
 
@@ -176,7 +176,7 @@ try
 
         elseif($_GET['action'] == 'viewUpdateArticle')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerBlog->viewUpdateArticle($id); //va chercher la fonction viewUpdateArticle() dans BlogController pour aller sur la page de modif d'une fiche article
         }
 
@@ -194,14 +194,14 @@ try
 
         elseif($_GET['action'] == 'deleteArticle')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerBlog->deleteArticle($id); //va chercher la fonction deleteArticle() dans BlogController pour supprimer un article
         }
 
         elseif($_GET['action'] == 'deleteCommentAdmin')
         {
-            $id = $_GET['id'];
-            $idArticle = $_GET['articleId'];
+            $id = htmlspecialchars($_GET['id']);
+            $idArticle = htmlspecialchars($_GET['articleId']);
             $controllerBlog->deleteCommentAdmin($id, $idArticle); //va chercher la fonction deleteCommentAdmin() dans BlogController pour que l'admin puisse supprimer le commentaire d'un abonné
         }
 
@@ -230,7 +230,7 @@ try
 
         elseif($_GET['action'] == 'viewUpdateMember') 
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAdmin->viewUpdateMember($id); // va chercher la fonction viewUpdateMember() dans AdminController pour se rendre sur la page de modif d'un membre
         }
 
@@ -248,7 +248,7 @@ try
 
         elseif($_GET['action'] == 'deleteMember')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerAdmin->deleteMember($id); // // va chercher la fonction deleteMember() dans AdminController pour supprimer la fiche d'un membre de l'équipe
         }   
     } 
@@ -260,10 +260,10 @@ try
 catch (Exception $e)
 {
     $error = $e->getMessage();
-    require "app/Views/front/error.php";
+    require "app/Views/front/page404.php";
 }
 catch(Error $e)
 {
     $error = $e->getMessage();
-    require "app/Views/front/error.php";
+    require "app/Views/front/oops.php";
 }

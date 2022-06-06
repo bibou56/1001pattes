@@ -4,10 +4,16 @@ session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+
+
 try {
 
     $controllerFront = new \Projet\Controllers\FrontController();
-
+    // if(empty($_SESSION))
+    // {
+    //     throw new Exception('Vous n\'êtes pas connecté', 401);
+    // }
+    
     if(isset($_GET['action']))
     {
         if($_GET['action']== 'about')
@@ -32,7 +38,7 @@ try {
 
         elseif($_GET['action']== 'eachAnimal')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerFront->eachAnimal($id); //va chercher la fonction eachAnimal() dans FrontController pour se rendre sur la page de chaque animal
         }
 
@@ -43,7 +49,7 @@ try {
 
         elseif($_GET['action']== 'eachArticle')
         {
-            $id = $_GET['id']; 
+            $id = htmlspecialchars($_GET['id']); 
             $controllerFront->eachArticle($id); //va chercher la fonction eachArticle() dans FrontController pour se rendre sur la page de chaque article
         }
 
@@ -70,13 +76,17 @@ try {
 
         elseif($_GET['action']== 'dashboardUser')
         {
-            $id = $_GET['id'];
+            if(empty($_SESSION))
+            {
+                throw new Exception('Vous n\'êtes pas connecté', 401);
+            }
+            $id = htmlspecialchars($_GET['id']);
             $controllerFront->dashboardUser($id); //va chercher la fonction dashboardUser() dans FrontController pour que chaque personne connectée à son compte puisse aller sur son espace perso
         }
 
         elseif($_GET['action'] == 'deleteComment')
         {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $controllerFront->deleteComment($id); //va chercher la fonction deleteComment() dans FrontController pour que chaque personne connectée puisse supprimer ses commentaires
         }
 
@@ -135,6 +145,8 @@ try {
         elseif($_GET['action'] == 'disconnect')
         {
             session_destroy(); // déconnecte l'utilisateur de son compte
+            unset($_SESSION);
+            // var_dump($_SESSION); die;
             header('Location:index.php');
         }
 
@@ -165,10 +177,11 @@ try {
 }
 catch (Exception $e)
 {
-    require "app/Views/front/error.php"; // renvoi à la page d'erreur 
-    
+    $error = $e->getMessage();
+    require "app/Views/front/page404.php";
 }
 catch (Error $e)
 {
-    require "app/Views/front/error.php";
+    $error = $e->getMessage();
+    require "app/Views/front/oops.php";
 }

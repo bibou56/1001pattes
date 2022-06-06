@@ -1,7 +1,7 @@
 <?php include('header.php') ?>
     
 <main class="main-content container">
-    <h1>Bienvenue sur le site de notre refuge</h1>
+    <h1>Bienvenue sur le site du refuge 1000 et Une Pattes</h1>
 
     <div id="top">
         <section id="nbrOfPets">
@@ -38,16 +38,6 @@
                     <p class="dateEvent"><?= $resultEvent['date'] ?></p>
                     <p class="contentEvent"><?= $resultEvent['content'] ?></p>
                 </div>
-                <?php
-                if(isset($_SESSION['nickname'])){
-                    if($_SESSION['role'] === 1){ ?>
-                        <div class="UD-event">
-                            <button><a href="indexAdmin.php?action=updateEvent">Modifier</a></button>
-                            <button><a href="indexAdmin.php?action=deleteEvent">Supprimer</a></button>
-                        </div>
-                    <?php }
-                } ?>
-            </div>
             <?php } ?>
 
         <?php
@@ -72,7 +62,7 @@
         for($i=0 ; $i<3 ; $i++){?>
             <article class="arrival">
                 <p><img src="app/Public/administration/images/<?= $lastPets[$i]['image'] ?>" alt="<?= $lastPets[$i]['alt'] ?>"></p>
-                <button><a href="index.php?action=eachAnimal&id=<?= $lastPets[$i]['id'] ?>" title="dirige vers la page de présentation de l'animal">- <?= $lastPets[$i]['name'] ?> -</a></button>
+                <button><a href="index.php?action=eachAnimal&id=<?= $lastPets[$i]['id'] ?>" title="dirige vers la page de présentation de l'animal">- Découvrez <?= $lastPets[$i]['name'] ?> -</a></button>
             </article>
         <?php } 
         ?>

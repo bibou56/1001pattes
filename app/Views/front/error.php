@@ -1,6 +1,11 @@
 <?php include('header.php') ?>
 
-erreur
+<main class="container errorPage">
+ERROR USER
+
+<?php echo $e ?>
+
+</main>
 
 
 <?php include('footer.php') ?>
