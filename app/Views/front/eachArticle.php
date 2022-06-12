@@ -14,7 +14,7 @@
             
             <?php
             if(isset($_SESSION['nickname'])){
-                if($_SESSION['role'] === 1){ ?>
+                if($_SESSION['role'] == 1){ ?>
                     <div class="UD-article">
                         <button><a href="indexAdmin.php?action=viewUpdateArticle&id=<?= $oneArticle['id'] ?>" title="dirige vers la page de modification de l'article">Modifier</a></button>
                         <button><a href="indexAdmin.php?action=deleteArticle&id=<?= $oneArticle['id'] ?>" title="supprime l'article">Supprimer</a></button>
@@ -52,7 +52,7 @@
             </div>
             <?php
             if(isset($_SESSION['nickname'])){
-                if($_SESSION['role'] === 1){ ?>
+                if($_SESSION['role'] == 1){ ?>
                 <div class="deleteComment">
                     <a href="indexAdmin.php?action=deleteCommentAdmin&id=<?= $comment['id'] ?>&articleId=<?= $comment['article_id'] ?>" title="supprime le commentaire"><img src="/app/Public/front/images/bin.png" alt="icone poubelle"></a>
                 </div>

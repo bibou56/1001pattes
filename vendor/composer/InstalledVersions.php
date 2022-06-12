@@ -54,7 +54,7 @@ class InstalledVersions
             $packages[] = array_keys($installed['versions']);
         }
 
-        if (1 === \count($packages)) {
+        if (1 == \count($packages)) {
             return $packages[0];
         }
 
@@ -74,7 +74,7 @@ class InstalledVersions
 
         foreach (self::getInstalled() as $installed) {
             foreach ($installed['versions'] as $name => $package) {
-                if (isset($package['type']) && $package['type'] === $type) {
+                if (isset($package['type']) && $package['type'] == $type) {
                     $packagesByType[] = $name;
                 }
             }
@@ -261,7 +261,7 @@ class InstalledVersions
     {
         @trigger_error('getRawData only returns the first dataset loaded, which may not be what you expect. Use getAllRawData() instead which returns all datasets for all autoloaders present in the process.', E_USER_DEPRECATED);
 
-        if (null === self::$installed) {
+        if (null == self::$installed) {
             // only require the installed.php file if this file is loaded from its dumped location,
             // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
             if (substr(__DIR__, -8, 1) !== 'C') {
@@ -315,7 +315,7 @@ class InstalledVersions
      */
     private static function getInstalled()
     {
-        if (null === self::$canGetVendors) {
+        if (null == self::$canGetVendors) {
             self::$canGetVendors = method_exists('Composer\Autoload\ClassLoader', 'getRegisteredLoaders');
         }
 
@@ -327,14 +327,14 @@ class InstalledVersions
                     $installed[] = self::$installedByVendor[$vendorDir];
                 } elseif (is_file($vendorDir.'/composer/installed.php')) {
                     $installed[] = self::$installedByVendor[$vendorDir] = require $vendorDir.'/composer/installed.php';
-                    if (null === self::$installed && strtr($vendorDir.'/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
+                    if (null == self::$installed && strtr($vendorDir.'/composer', '\\', '/') == strtr(__DIR__, '\\', '/')) {
                         self::$installed = $installed[count($installed) - 1];
                     }
                 }
             }
         }
 
-        if (null === self::$installed) {
+        if (null == self::$installed) {
             // only require the installed.php file if this file is loaded from its dumped location,
             // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
             if (substr(__DIR__, -8, 1) !== 'C') {

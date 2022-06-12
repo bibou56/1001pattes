@@ -1,1 +1,1 @@
-<?php header('Location: /app/Views/Front/page404.php'); ?>
+<?php header('Location: ./app/Views/Front/page404.php'); ?>

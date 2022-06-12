@@ -12,9 +12,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Listage de la structure de la base pour refuge
-CREATE DATABASE IF NOT EXISTS `refuge` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `refuge`;
+-- -- Listage de la structure de la base pour refuge
+-- CREATE DATABASE IF NOT EXISTS `refuge` /*!40100 DEFAULT CHARACTER SET utf8 */;
+-- USE `refuge`;
 
 -- Listage de la structure de la table refuge. user
 CREATE TABLE IF NOT EXISTS `user` (

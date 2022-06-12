@@ -3,9 +3,9 @@
 <main class="content-dashboardAdmin container">
 
     <div class="page-title">
-        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
         <h1>Votre tableau de bord</h1>
-        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+        <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
     </div>
 
     <section id="allMails">
@@ -29,7 +29,7 @@
                         <td class="mailAddress"><?= $messages['mail'] ?></td>
                         <td class="mailObject"><?= $messages['objet'] ?></td>
                         <td><?= $messages['date'] ?></td>
-                        <td class="UD-mail"><a href="indexAdmin.php?action=eachMail&id=<?= $messages['id']; ?>" title="va vers la consultation du mail"><img src="/app/Public/front/images/yeux.png" alt="logo oeil"></a></td>
+                        <td class="UD-mail"><a href="indexAdmin.php?action=eachMail&id=<?= $messages['id']; ?>" title="va vers la consultation du mail"><img src="./app/Public/front/images/yeux.png" alt="logo oeil"></a></td>
                     </tr>
                 <?php } 
                 ?>
@@ -51,12 +51,12 @@
             <tbody>
                 <?php
                 foreach($totalUser as $users){ 
-                    if($users['role'] === 0){?>
+                    if($users['role'] == 0){?>
                     <tr>
                         <td><?= $users['nickname'] ?></td>
                         <td class="mailAddress"><?= $users['mail'] ?></td>
                         <td class="deleteUser">
-                            <a href="indexAdmin.php?action=deleteUser&id=<?= $users['id']; ?>" title="supprime l'abonné'"><img src="/app/Public/front/images/bin.png" alt="logo poubelle"></a>
+                            <a href="indexAdmin.php?action=deleteUser&id=<?= $users['id']; ?>" title="supprime l'abonné'"><img src="./app/Public/front/images/bin.png" alt="logo poubelle"></a>
                         </td>
                     </tr>
                 <?php } 

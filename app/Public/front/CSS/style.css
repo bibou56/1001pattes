@@ -1,3 +1,4 @@
+
 /* variable CSS */
 :root{
   --vert: rgb(48, 185, 112);
@@ -60,7 +61,7 @@ li{
 /* bandeau header */
 #top-content { 
   width: 100vw;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) , url(/app/Public/front/images/collage.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) , url(./app/Public/front/images/collage.png);
   background-size: cover; 
   margin-bottom: 30px;
 }
@@ -482,7 +483,6 @@ li{
   padding: 10px 0;
   background-color: rgb(30, 114, 107, 0.8);
   border-radius: 5px;
-  /* margin-bottom: 50px; */
 }
 #ourTeam #btnCreate a{
   color: #fff;
@@ -667,7 +667,7 @@ li{
   font-size: 1.5rem;
   padding-left: 20px;
 }
-/* bouton visible unqiuement par l'admin pour créer une nouvelle fiche animal */
+/* bouton visible uniquement par l'admin pour créer une nouvelle fiche animal */
 .content-pets .addPet{
   text-align: center;
   margin: 20px 0;
@@ -680,7 +680,7 @@ li{
 .content-pets .addPet a{
   color: #fff;
 }
-/* page de présentation de toutes les 'cartes' animaux */
+/* page de présentation de toutes les 'cartes' animal */
 #allPets{
   display: flex;
   justify-content: space-between;
@@ -1117,10 +1117,15 @@ li{
   height: 70vw;
 }
 .errorPage p{
-  margin: 20px auto;
+  margin: 20px 20px 0;
+  text-align: center;
+}
+.errorPage #errorMessage{
+  color: red;
+  font-weight: bold;
 }
 .errorPage button{
-  margin-bottom: 30px;
+  margin: 30px 0;
   padding: 5px 10px;
   background-color: var(--vert-fonce);
   border-radius: 5px;
@@ -2095,10 +2100,3 @@ li{
 }
 
 
-
-
-
-
-
-
-  

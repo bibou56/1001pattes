@@ -3,13 +3,13 @@ namespace Projet\Models;
 
 use Exception;
 
-class Manager{
-
+class Manager
+{
     protected function dbConnect()
     {
         try
         {
-            $bdd = new \PDO('mysql:host=localhost;dbname=refuge;charset=utf8', 'root', '');
+            $bdd = new \PDO('mysql:host=mysql-murielk.alwaysdata.net;dbname=murielk_refuge1001pattes;charset=utf8', 'murielk', '2022Projet');
             return $bdd;
         } 
         catch (Exception $e)

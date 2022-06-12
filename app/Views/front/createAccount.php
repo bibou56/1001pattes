@@ -2,9 +2,9 @@
 
 <main class="content-form container">
     <div class="page-title">
-        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
         <h1>Créez un compte</h1>
-        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+        <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
     </div>
     <p class="text-account">En créant votre compte sur le site de <span class="our-name">1000 et Une Pattes</span>, vous pourrez recevoir des invitations à tous nos évènements et participer à la vie de notre blog. Plus notre communauté grandit, plus les animaux de notre refuge ont de chance de trouver leur nouvelle famille! Alors n'hésitez plus et rejoignez-nous!</p>
         <div class="error">  

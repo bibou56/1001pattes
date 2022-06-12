@@ -180,11 +180,11 @@ class FrontController extends Controller{
                 $_SESSION['nickname'] = $result['nickname'];
                 $_SESSION['role'] = $result['role'];
 
-            if($correctPassword && $_SESSION['role'] === 1)
+            if($correctPassword && $_SESSION['role'] == 1)
             {
                 header('Location:indexAdmin.php?action=dashboardAdmin&id='. $_SESSION['id']); //si le rôle de l'utilisateur est 1, il est connecté en tant qu'admin et renvoyé sur cet espace
             }
-            elseif($correctPassword && $_SESSION['role'] === 0)
+            elseif($correctPassword && $_SESSION['role'] == 0)
             {
                 header('Location:index.php?action=dashboardUser&id='. $_SESSION['id']); //si le rôle de l'uitlisateur est 0, il est un utilisateur normal et est connecté à son accès perso
             }

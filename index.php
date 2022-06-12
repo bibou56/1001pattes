@@ -106,7 +106,7 @@ try {
             $mail = htmlspecialchars($_POST['email']);
             $pass = $_POST['password'];
             $passVerif = $_POST['password-verif'];
-            if($pass === $passVerif){
+            if($pass == $passVerif){
                 $password = password_hash($pass, PASSWORD_DEFAULT);
                 
                 if(!empty($nickname) && (!empty($mail) && (!empty($password)))){

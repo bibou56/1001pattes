@@ -18,7 +18,7 @@
 
         <?php
         if(isset($_SESSION['nickname'])){
-            if($_SESSION['role'] === 1){ ?>
+            if($_SESSION['role'] == 1){ ?>
                 <div class="UD-pet">
                     <button><a href="indexAdmin.php?action=viewUpdatePet&id=<?= $oneAnimal['id'] ?>" title="dirige vers la page de modification de l'animal">Modifier</a></button>
                     <button><a href="indexAdmin.php?action=deletePet&id=<?= $oneAnimal['id'] ?>" title="supprime l'animal">Supprimer</a></button>

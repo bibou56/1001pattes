@@ -6,18 +6,18 @@
     <div id="top">
         <section id="nbrOfPets">
             <div class="page-title">
-                <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+                <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
                 <h2>Ils n'attendent que vous !</h2>
-                <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+                <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
             </div>
 
             <div id="nbrOfCats">
-                <p><img src="/app/Public/administration/images/cat2.jpg" alt="chat"><span><?php $totalCats = $catCount->fetch(); echo $totalCats[0]; ?></span></p>
+                <p><img src="./app/Public/administration/images/cat2.jpg" alt="chat"><span><?php $totalCats = $catCount->fetch(); echo $totalCats[0]; ?></span></p>
                 <p>chats à l'adoption</p>
             </div>
 
             <div id="nbrOfDogs">
-                <p><img src="/app/Public/administration/images/dog1.jpg" alt="chien"><span><?php $totalDogs = $dogCount->fetch(); echo $totalDogs[0]; ?></span></p>
+                <p><img src="./app/Public/administration/images/dog1.jpg" alt="chien"><span><?php $totalDogs = $dogCount->fetch(); echo $totalDogs[0]; ?></span></p>
                 <p>chiens à l'adoption</p>
             </div>
         </section>
@@ -26,9 +26,9 @@
             <?php
             if($resultEvent) { ?>
             <div class="page-title">
-                <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+                <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
                 <h2>C'est pour bientôt !</h2>
-                <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+                <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
             </div>
 
             <div class="event">
@@ -42,7 +42,7 @@
 
         <?php
         if(isset($_SESSION['nickname'])){
-            if($_SESSION['role'] === 1){ ?>
+            if($_SESSION['role'] == 1){ ?>
                 <div id="createEvent">
                     <button><a href="indexAdmin.php?action=event" title="dirige vers la page de création d'un évènement">Créer un évènement</a></button>
                 </div>
@@ -53,9 +53,9 @@
 
     <div id="lastEntrance">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h2>Nos dernières arrivées</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+            <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
 
         <?php 

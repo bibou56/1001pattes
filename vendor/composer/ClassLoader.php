@@ -390,7 +390,7 @@ class ClassLoader
     {
         spl_autoload_register(array($this, 'loadClass'), true, $prepend);
 
-        if (null === $this->vendorDir) {
+        if (null == $this->vendorDir) {
             return;
         }
 
@@ -459,7 +459,7 @@ class ClassLoader
         $file = $this->findFileWithExtension($class, '.php');
 
         // Search for Hack files if we are running on HHVM
-        if (false === $file && defined('HHVM_VERSION')) {
+        if (false == $file && defined('HHVM_VERSION')) {
             $file = $this->findFileWithExtension($class, '.hh');
         }
 
@@ -467,7 +467,7 @@ class ClassLoader
             apcu_add($this->apcuPrefix.$class, $file);
         }
 
-        if (false === $file) {
+        if (false == $file) {
             // Remember that this class does not exist.
             $this->missingClasses[$class] = true;
         }
@@ -531,7 +531,7 @@ class ClassLoader
 
         if (isset($this->prefixesPsr0[$first])) {
             foreach ($this->prefixesPsr0[$first] as $prefix => $dirs) {
-                if (0 === strpos($class, $prefix)) {
+                if (0 == strpos($class, $prefix)) {
                     foreach ($dirs as $dir) {
                         if (file_exists($file = $dir . DIRECTORY_SEPARATOR . $logicalPathPsr0)) {
                             return $file;

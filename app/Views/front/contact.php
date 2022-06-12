@@ -4,9 +4,9 @@
 
 <section id="contact-info">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h1>Nos coordonnées</h1>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+            <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
         
         <div class="address">
@@ -27,9 +27,9 @@
     
     <section class="content-form">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h2>Contactez-nous !</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+            <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
         <p class="text-account">Vous avez une question? Vous voulez devenir bénévole? Vous voulez adopter un animal? Laissez-nous votre message, nous vous répondrons le plus vite possible !</p>
 
@@ -80,9 +80,9 @@
 
     <section id="localisation">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h2>Où nous trouver ?</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+            <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
         <div id="myMap"></div>
        

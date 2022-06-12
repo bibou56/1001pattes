@@ -3,14 +3,14 @@
 <main class="content-articles container">
     
     <div class="page-title">
-        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
         <h1>La vie du refuge</h1>
-        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+        <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
     </div>
 
     <?php  
     if(isset($_SESSION['nickname'])){
-        if($_SESSION['role'] === 1){ ?>
+        if($_SESSION['role'] == 1){ ?>
             <div class="addArticle">
                 <button><a href="indexAdmin.php?action=articles" title="dirige vers la page de création d'un article">Créer un nouvel article</a></button>
             </div>

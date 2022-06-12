@@ -3,13 +3,13 @@
 <main class="container">
     <section id="presentation">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h1>Qui sommes-nous ?</h1>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+            <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
         <div id="aboutUs">
             <div id="img-presentation">
-                <img src="/app/Public/front/images/about.jpg" alt="femme assise sur un balcon qui fait un calin à un chien dans ses bras ">
+                <img src="./app/Public/front/images/about.jpg" alt="femme assise sur un balcon qui fait un calin à un chien dans ses bras ">
             </div>
             <div id="content-presentation">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptatibus doloremque, numquam, quaerat, porro id rem suscipit molestias fugiat autem facilis culpa maxime dignissimos?</p> 
@@ -22,9 +22,9 @@
 
     <section id="ourTeam">
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h2>Découvrez l'équipe</h2>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+            <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
         
         <div id="members">
@@ -36,7 +36,7 @@
                 <p class="who"><?= $oneMember['content'] ?></p>
                 <?php
                 if(isset($_SESSION['nickname'])){
-                    if($_SESSION['role'] === 1){ ?>
+                    if($_SESSION['role'] == 1){ ?>
                         <div class="UD-team">
                             <button><a href="indexAdmin.php?action=viewUpdateMember&id=<?= $oneMember['id'] ?>" title="dirige vers la page de modification">Modifier</a></button>
                             <button><a href="indexAdmin.php?action=deleteMember&id=<?= $oneMember['id'] ?>" title="supprime le membre de l'équipe">Supprimer</a></button>
@@ -49,7 +49,7 @@
 
         <?php
         if(isset($_SESSION['nickname'])){
-            if($_SESSION['role']===1){ ?>
+            if($_SESSION['role']==1){ ?>
             <button id="btnCreate"><a href="indexAdmin.php?action=teamMember">Créer un nouveau membre</a></button>
             <?php }
         } ?>

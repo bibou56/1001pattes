@@ -3,9 +3,9 @@
 <main class="container">
     
         <div class="page-title">
-            <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+            <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
             <h1>Modifiez l'article</h1>
-            <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+            <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
         </div>
 
     <section class="createElement">

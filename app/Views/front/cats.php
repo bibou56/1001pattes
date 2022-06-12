@@ -4,14 +4,14 @@
     <a href="index.php?action=adoptions" title="retour vers la page adoptions"><i class="fa-solid fa-arrow-left"></i></a>
 
     <div class="page-title">
-        <p><img src="/app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
+        <p><img src="./app/Public/front/images/dogprint-black.png" alt="empreinte de patte de chien"></p>
         <h1>Adoptez un chat !</h1>
-        <p><img src="/app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
+        <p><img src="./app/Public/front/images/catprint-black.png" alt="empreinte de patte de chat"></p>
     </div>
 
     <?php  
     if(isset($_SESSION['nickname'])){
-        if($_SESSION['role'] === 1){ ?>
+        if($_SESSION['role'] == 1){ ?>
             <div class="addPet">
                 <button><a href="indexAdmin.php?action=animals" title="dirige vers la page de création d'une fiche animal">Créer une nouvelle fiche</a></button>
             </div>
